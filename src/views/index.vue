@@ -6,10 +6,15 @@
 
 <script>
 import navigation from "@/components/nav"
-import store from "@/store/index"
+import {mapGetters} from 'vuex';
 export default {
     components: {
         navigation
+    },
+    computed:{
+        ...mapGetters({
+            getusersdata: 'getusersdata'
+        })
     },
     data(){
         return{
@@ -17,11 +22,13 @@ export default {
         }
     },
    created(){
-       this.$store.dispatch('ACTIONS_GET_USERS', {self: this})
+       this.getallusers()
    },
     methods:{
         getallusers(){
-            console.log(store.state.responseDataAPI)
+            this.$store.dispatch(`ACTIONS_GET_USERS`).then(() => {
+                console.log(this.getusersdata)
+            })
         }
     }
 }

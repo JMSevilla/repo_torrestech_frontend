@@ -13,15 +13,20 @@ export default new Vuex.Store({
         state.responseDataAPI = data
     }
   },
+  getters: {
+    getusersdata: (state) => {
+      return state.responseDataAPI
+    }
+  },
   actions: {
-   ACTIONS_GET_USERS({commit}, {self}){
-     axios.get(`https://jsonplaceholder.typicode.com/users`)
-    .then(response => {
-      commit("MUTATE_GET_USERS", response.data)
-      self.getallusers()
-    }).catch((e) => {
-      alert("errorr in getting data" + e)
-    })
+   ACTIONS_GET_USERS({commit}){
+     return new Promise((resolve, reject) => {
+       axios.get(`https://jsonplaceholder.typicode.com/users`).then(response => {
+         resolve(commit("MUTATE_GET_USERS", response.data))
+       }, error => {
+         reject(error)
+       })
+     })
     }
   },
   modules: {
