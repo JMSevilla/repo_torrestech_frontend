@@ -1,32 +1,39 @@
-// import http from "./auth"
+import http from './auth'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    responseDataAPI: []
+    responseData: '' //string / variable
   },
   mutations: {
-    MUTATE_GET_USERS(state, data) {
-        state.responseDataAPI = data
+    MUTATE_GET_USERS_DATA: (state, data) => {
+      state.responseData = data
     }
   },
   getters: {
-    getusersdata: (state) => {
-      return state.responseDataAPI
+    get_final_users_data: (state) => {
+      return state.responseData
     }
   },
   actions: {
-   ACTIONS_GET_USERS({commit}){
-     return new Promise((resolve, reject) => {
-       axios.get(`https://jsonplaceholder.typicode.com/users`).then(response => {
-         resolve(commit("MUTATE_GET_USERS", response.data))
-       }, error => {
-         reject(error)
-       })
-     })
+    ACTIONS_FETCH_USERS_DATA({commit}, {obj}){
+      try {
+        var data = new FormData();
+        data.append("firstname", obj.firstname)
+        data.append("lastname", obj.lastname)
+        return new Promise((resolve,reject) => {
+          http.post(`/api/testing-adding/adding`, data).then(response =>{
+            resolve(response.data.message)
+            commit(`MUTATE_GET_USERS_DATA`, response.data.message) //response.data.message = "success"
+          }, error => {
+            reject(error)
+          })
+        })
+      } catch (error) {
+        alert("error in inserting data" + error)
+      }
     }
   },
   modules: {
