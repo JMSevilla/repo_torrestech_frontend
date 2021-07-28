@@ -1,14 +1,14 @@
 <template>
     <div>
-        <navigation />
+        <FrontPage />
     </div>
 </template>
 
 <script>
-import navigation from "@/components/nav"
+import FrontPage from "../components/landingpage/frontpage.vue";
 export default {
     components: {
-        navigation
+        FrontPage
     }
 }
 </script>
