@@ -24,10 +24,9 @@ import Nav from "../navbar/nav";
 import Content1 from "./content_1.vue";
 import Content2 from "./content_2.vue";
 import Content3 from "./content_3.vue";
-import Content4 from "./content_4.vue";
 export default {
     components: {
-        Nav, Content1, Content2, Content3, Content4
+        Nav, Content1, Content2, Content3
     }
 }
 </script>
