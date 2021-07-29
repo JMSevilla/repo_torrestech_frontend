@@ -13,7 +13,7 @@
             <div class="sndbox">
               <div class="card" style="background: #f5f7f8;">
                 <div class="card-body">
-                  <img src="@/assets/hero-video-v1.gif" style="border-radius: 5px;" alt="" srcset="" class="img_herovid">
+                  <img src="@/assets/img/FrontPage/hero-video-v1.gif" style="border-radius: 5px;" alt="" srcset="" class="img_herovid">
                 </div>
               </div>
             </div>
@@ -23,4 +23,4 @@
     </div>
 </template>
 
-<style scoped src="@/assets/styles/frontpage_style.css"></style>
+<style scoped src="@/assets/styles/FrontPage/frontpage_style.css"></style>

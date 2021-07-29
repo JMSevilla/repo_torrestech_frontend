@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <img src="@/assets/student-section-v2.png" alt="" srcset="" width="100%" height="100%">
+                        <img src="@/assets/img/FrontPage/student-section-v2.png" alt="" srcset="" width="100%" height="100%">
                     </div>
                     <div class="col-md-6">
                         <div>

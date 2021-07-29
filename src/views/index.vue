@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import FrontPage from "../components/landingpage/frontpage.vue";
+import FrontPage from "../components/landingpage/frontpage";
 export default {
     components: {
         FrontPage

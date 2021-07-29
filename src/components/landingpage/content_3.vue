@@ -13,7 +13,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <img src="@/assets/teacher-section-v2.png" alt="" srcset="" width="100%" height="100%">
+                                <img src="@/assets/img/FrontPage/teacher-section-v2.png" alt="" srcset="" width="100%" height="100%">
                             </div>
                         </div>
                     </div>
