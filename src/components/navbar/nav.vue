@@ -34,41 +34,4 @@
   </div>
 </template>
 
-<style scoped>
-  *{
-    font-size: 18px;
-  }
-  #nav_color{
-    background: #fff;
-    /* border-bottom: 1px #555 solid; */
-  }
-  #brand_name{
-    padding: 13px 0;
-  } 
-  .btnsignup{
-    color: #fff;
-    background: #0F5298;
-    border-color: #0F5298;
-    border-radius: 7px;
-  }
-  .btnlogin{
-    border: #0F5298;
-    color: #2d4059;
-  }
-  .btnsignup:hover{
-    background-color: #0d55a1;
-    /* /* color: #5F8BBA; */
-  }
-  .btnlogin:hover{
-    color: #0d55a1;
-  }
-  .nav-link{
-    color: #2d4059;
-  }
-  .nav-link:hover{
-    color: #0d55a1;
-  }
-  .dropdown_hover:hover{
-    color: #0d55a1;
-  }
-</style>
+<style scoped src="@/assets/styles/nav.css"></style>
