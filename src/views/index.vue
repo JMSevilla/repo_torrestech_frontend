@@ -1,21 +1,14 @@
 <template>
     <div>
-        <navigation />
-        <div>
-            <productpage />
-        </div>
-
+        <FrontPage />
     </div>
 </template>
 
 <script>
-import navigation from "@/components/nav"
-import productpage from "@/components/product-template"
-import productpage2 from "@/components/product-template2"
+import FrontPage from "../components/landingpage/frontpage";
 export default {
     components: {
-        navigation, productpage, productpage2
-
+        FrontPage
     }
 }
 </script>
