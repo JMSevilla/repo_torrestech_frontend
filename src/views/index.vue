@@ -4,6 +4,7 @@
         <div>
             <productpage />
         </div>
+
     </div>
 </template>
 
@@ -14,6 +15,7 @@ import productpage2 from "@/components/product-template2"
 export default {
     components: {
         navigation, productpage, productpage2
+
     }
 }
 </script>
