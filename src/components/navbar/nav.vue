@@ -5,7 +5,7 @@
         <div class="py-2">
           <!-- <h3 id="brand_name"> -->
             <a href="">
-              <img src="@/assets/torres-logo-blue.png" alt="" height="50px">
+              <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" height="50px">
             </a>
           <!-- </h3> -->
         </div>
@@ -13,7 +13,7 @@
           <el-dropdown >
             <a class="nav-link">Learn More
               <span class="el-dropdown-link" id="navbarIcon">
-              <i class="fas fa-user"  ></i><i class="el-icon-caret-bottom"></i>
+              <i class="el-icon-caret-bottom"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
                 <a><el-dropdown-item class="dropdown_hover" icon="el-icon-s-custom">Teachers</el-dropdown-item></a>
@@ -34,4 +34,4 @@
   </div>
 </template>
 
-<style scoped src="@/assets/styles/nav.css"></style>
+<style scoped src="@/assets/styles/FrontPage/nav.css"></style>
