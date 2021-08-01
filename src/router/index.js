@@ -18,8 +18,12 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import("@/views/login")
+  },
+  {
+   path: '/dynamicpage',
+   name: 'Dynamic',
+   component: () => import("@/views/dynamicpage") 
   }
-
 ]
 
 const router = new VueRouter({
