@@ -1,3 +1,21 @@
+<script>
+export default {
+  data(){
+    return {
+      title: 'Software Development',
+      hardwaretitle: 'Hardware Maintenance'
+    }
+  },
+  methods: {
+    ontitle(){
+      this.$router.push({name :'Dynamic', query: {title: this.title}})
+    },
+    onhardware(){
+        this.$router.push({name :'Dynamic', query: {title: this.hardwaretitle}})
+    }
+  }
+}
+</script>
 <template>
   <div>
     <div style="border-top: 1px solid rgba(0, 0, 0, 0.125)">
@@ -52,8 +70,8 @@
             We partner with our clients to solve their toughest business
             challenges by providing them ,<br />
             solutions focused on the following competencies <br />
-            <strong>Software Development</strong> <br />
-            <strong>Hardware Maintenance</strong> <br />
+            <el-link type="primary" @click="ontitle">{{title}}</el-link> <br />
+            <el-link type="primary" @click="onhardware">{{hardwaretitle}}</el-link> <br />
             <strong>Network and Database Administration</strong> <br />
             <strong>Computer System/Software Subscription</strong> <br />
             <strong>Wiring Harness Manufacturing</strong><br />
