@@ -46,7 +46,7 @@
           <a class="nav-link" href="http://">Our Services</a>
         </div>
         <div>
-          <el-button plain class="btnlogin">Sign In</el-button>&nbsp;
+          <el-button plain class="btnlogin" @click="btnlogin()">Sign In</el-button>&nbsp;
           <el-button class="btnsignup">Sign Up</el-button>
         </div>
       </div>
@@ -63,6 +63,10 @@ export default {
     AboutUs() {
       this.$router.push({ name: "AboutUs" }).catch(() => {});
     },
-  },
+     btnlogin(){
+    this.$router.push({name:"Login"}).catch(()=>{});
+  }
+  }
+ 
 };
 </script>
