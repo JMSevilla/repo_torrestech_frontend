@@ -1,16 +1,19 @@
 <template>
   <div class="nav-fixed">
     <nav id="nav_color">
-      <div class="d-flex container align-items-center" style="justify-content: space-between">
+      <div
+        class="d-flex container align-items-center"
+        style="justify-content: space-between"
+      >
         <div class="py-2">
             <a href="">
               <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" class="logo-size">
             </a>
            <i class="fas fa-times" id="btnclose" @click="btn_close()"></i>
         </div>
-        <div class="displaynone" id="barsnihannah">
+        <div class="displaynone">
           <a class="nav-link">Home</a>
-          <a class="nav-link">About Us</a>
+          <a class="nav-link" @click="AboutUs()">About Us</a>
           <a class="nav-link">Our Services</a>
         </div>
         <div class="btnflex">
@@ -32,6 +35,12 @@
 <script>
 export default {
   methods: {
+   AboutUs() {
+      this.$router.push({ name: "AboutUs" }).catch(() => {});
+    },
+     btnlogin(){
+      this.$router.push({name:"Login"}).catch(()=>{});
+    },
     btnbars() {
       if(window.innerWidth > 360){
         document.querySelector(".d-flex").style.flexDirection = "column";
