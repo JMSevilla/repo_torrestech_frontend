@@ -1,27 +1,25 @@
 <template>
     <div>
         <Nav />
-        <div class="card">
-            <div class="card-body p-3">
+        <div class="wrapper">
+            <div class="p-3">
                 <Content1 />
             </div>
         </div>
-        <div class="card">
-            <div class="card-body p-5" style="background: #f5f7f8">
+        <div class="wrapper">
+            <div class="p-5" style="background: #f5f7f8">
                 <Content2 />
             </div>
         </div>
-        <div class="card">
-            <div class="card-body p-5">
+        <div class="wrapper">
+            <div class="p-5">
                 <Content3 />
             </div>
         </div>
-        <div class="card" >
-            <div class="card-body" style="background: #f5f7f8">
-                <Content4 />
-            </div>
+        <div class="container-fluid" style="background: #f5f7f8">
+            <Content4 />
         </div>
-         <div class="card">
+         <div class="container-fluid">
             <Content5 />
         </div>
         <Footer />

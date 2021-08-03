@@ -1,72 +1,93 @@
 <template>
-  <div>
+  <div class="nav-fixed">
     <nav id="nav_color">
       <div
         class="d-flex container align-items-center"
         style="justify-content: space-between"
       >
         <div class="py-2">
-          <!-- <h3 id="brand_name"> -->
-          <a href="">
-            <img
-              src="@/assets/img/FrontPage/torres-logo-blue.png"
-              alt=""
-              height="50px"
-            />
-          </a>
-          <!-- </h3> -->
-        </div>
-        <div class="d-flex">
-          <el-dropdown>
-            <a class="nav-link"
-              >Learn More
-              <span class="el-dropdown-link" id="navbarIcon">
-                <i class="el-icon-caret-bottom"></i>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <a
-                  ><el-dropdown-item
-                    class="dropdown_hover"
-                    icon="el-icon-s-custom"
-                    >Teachers</el-dropdown-item
-                  ></a
-                >
-                <a
-                  ><el-dropdown-item
-                    class="dropdown_hover"
-                    icon="el-icon-user-solid"
-                    >Students</el-dropdown-item
-                  ></a
-                >
-              </el-dropdown-menu>
+            <a href="">
+              <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" class="logo-size">
             </a>
-          </el-dropdown>
-          &nbsp;
-          <a class="nav-link mouse" @click="AboutUs()">About Us</a>&nbsp;
-          <a class="nav-link" href="http://">Our Services</a>
+           <i class="fas fa-times" id="btnclose" @click="btn_close()"></i>
         </div>
-        <div>
-          <el-button plain class="btnlogin" @click="btnlogin()">Sign In</el-button>&nbsp;
-          <el-button class="btnsignup">Sign Up</el-button>
+        <div class="displaynone">
+          <a class="nav-link">Home</a>
+          <a class="nav-link" @click="AboutUs()">About Us</a>
+          <a class="nav-link">Our Services</a>
+        </div>
+        <div class="btnflex">
+          <div style="margin-right: 5px;">
+            <el-button plain class="btnlogin">Login</el-button>
+          </div>
+          <div class="pad-top">
+            <el-button class="btnsignup">Sign Up</el-button>
+          </div>
+        </div>
+        <div id="d-bars">
+          <i class="fas fa-bars" @click="btnbars()"></i>   
         </div>
       </div>
     </nav>
   </div>
 </template>
 
-<style scoped src="@/assets/styles/FrontPage/nav.css"></style>
-<style scoped src="@/assets/styles/AboutUs/styles.css"></style>
-
 <script>
 export default {
   methods: {
-    AboutUs() {
+   AboutUs() {
       this.$router.push({ name: "AboutUs" }).catch(() => {});
     },
      btnlogin(){
-    this.$router.push({name:"Login"}).catch(()=>{});
+      this.$router.push({name:"Login"}).catch(()=>{});
+    },
+    btnbars() {
+      if(window.innerWidth > 360){
+        document.querySelector(".d-flex").style.flexDirection = "column";
+        document.querySelector(".displaynone").style.display = "flex";
+        document.querySelector(".displaynone").style.flexDirection = "column";
+        document.querySelector(".btnflex").style.display = "flex";
+        document.querySelector(".btnflex").style.flexDirection = "column";
+        document.querySelector(".pad-top").style.margin = "11px 0 ";
+        document.querySelector(".logo-size").style.marginRight = "190px";
+        document.querySelector("#d-bars").style.display = "none";
+        document.querySelector(".sndbox").style.top = "433px";
+        document.querySelector("#btnclose").style.display = "block";
+        document.querySelector("#btnclose").style.position = "absolute";
+        document.querySelector("#btnclose").style.top = "20px";
+        document.querySelector("#btnclose").style.right = "11px";
+      }
+      else {
+        document.querySelector(".d-flex").style.flexDirection = "column";
+        document.querySelector(".displaynone").style.display = "flex";
+        document.querySelector(".displaynone").style.flexDirection = "column";
+        document.querySelector(".btnflex").style.display = "flex";
+        document.querySelector(".btnflex").style.flexDirection = "column";
+        document.querySelector(".pad-top").style.margin = "11px 0 ";
+        document.querySelector(".logo-size").style.marginRight = "160px";
+        document.querySelector("#d-bars").style.display = "none";
+        document.querySelector(".sndbox").style.top = "433px";
+        document.querySelector("#btnclose").style.display = "block";
+        document.querySelector("#btnclose").style.position = "absolute";
+        document.querySelector("#btnclose").style.top = "20px";
+        document.querySelector("#btnclose").style.right = "11px";
+      }
+    },
+    btn_close() {
+      document.querySelector(".d-flex").style.display = "none";
+      document.querySelector(".displaynone").style.display = "none";
+      document.querySelector(".btnflex").style.display = "none";
+      document.querySelector(".sndbox").style.top = "237px";
+      document.querySelector(".pad-top").style.margin = "0";
+      document.querySelector("#btnclose").style.display = "none";
+      document.querySelector("#d-bars").style.display = "block";
+      document.querySelector("#d-bars").style.display = "block";
+      document.querySelector("#d-bars").style.position = "absolute";
+      document.querySelector("#d-bars").style.top = "20px";
+      document.querySelector("#d-bars").style.right = "11px";
+    }
   }
-  }
- 
-};
+}
 </script>
+
+<style scoped src="@/assets/styles/FrontPage/frontpage_style.css"></style>

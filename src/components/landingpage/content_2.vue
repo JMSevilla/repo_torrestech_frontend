@@ -35,7 +35,7 @@
         color: #fff;
         background: #0F5298;
         border-color: #0F5298;
-        border-radius: 7px;
+        /* border-radius: 7px; */
     }
     .btncreatestudent:hover{
         background-color: #0d55a1;

@@ -7,9 +7,9 @@
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <div>
-                                    <h3 class="h3_text_teacher">Are You A Teacher?</h3>
-                                    <p class="p_text_teacher">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto ex laudantium a quaerat minima iste aut repellendus, laboriosam tempora numquam rerum officia nam optio deleniti qui nostrum nihil quo, praesentium vero ratione! Eveniet, ratione.</p>
-                                    <el-button class="btncreatestudent" size="medium">CREATE AN ACCOUNT</el-button>
+                                    <h3 class="h3_text_teacher" style="text-align: right">Are You A Teacher?</h3>
+                                    <p class="p_text_teacher" style="text-align: right">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto ex laudantium a quaerat minima iste aut repellendus, laboriosam tempora numquam rerum officia nam optio deleniti qui nostrum nihil quo, praesentium vero ratione! Eveniet, ratione.</p>
+                                    <el-button class="btncreatestudent" size="medium" style="float: right">CREATE AN ACCOUNT</el-button>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -39,7 +39,7 @@
         color: #fff;
         background: #0F5298;
         border-color: #0F5298;
-        border-radius: 7px;
+        /* border-radius: 7px; */
     }
     .btncreatestudent:hover{
         background-color: #0d55a1;
