@@ -44,7 +44,6 @@
     color: #fff;
     background: #0F5298;
     border-color: #0F5298;
-    /* border-radius: 7px; */
   }
   .btnwatwedo:hover{
       background-color: #0d55a1;
@@ -83,8 +82,8 @@
   font-size: 18px;
 }
 .btnlogin{
-  border: #0F5298;
-  color: #0F5298;
+  border: #2d4059;
+  color: #2d4059;
   font-size: 18px;
 }
 .btnsignup:hover{
@@ -95,7 +94,7 @@
   color: #0d55a1;
 }
 .nav-link{
-  color: #0F5298;
+  color: #2d4059;
   cursor: pointer;
   font-size: 18px;
 }

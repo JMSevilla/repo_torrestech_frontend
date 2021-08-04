@@ -19,7 +19,7 @@
         <div class="container-fluid" style="background: #f5f7f8">
             <Content4 />
         </div>
-         <div class="container-fluid">
+        <div class="wrapper">
             <Content5 />
         </div>
         <Footer />

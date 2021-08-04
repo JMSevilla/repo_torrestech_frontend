@@ -28,14 +28,13 @@
     }
     .p_text{
         /* line-height: 1.6rem; */
-        color: #2d4059; 
-        font-size: 15px
+        color: #7f7f7f; 
+        font-size: 14px
     }
     .btncreatestudent{
         color: #fff;
         background: #0F5298;
         border-color: #0F5298;
-        /* border-radius: 7px; */
     }
     .btncreatestudent:hover{
         background-color: #0d55a1;

@@ -12,16 +12,16 @@
            <i class="fas fa-times" id="btnclose" @click="btn_close()"></i>
         </div>
         <div class="displaynone">
-          <a class="nav-link">Home</a>
+          <a class="nav-link" @click="onhome()">Home</a>
           <a class="nav-link" @click="AboutUs()">About Us</a>
           <a class="nav-link">Our Services</a>
         </div>
         <div class="btnflex">
           <div style="margin-right: 5px;">
-            <el-button plain class="btnlogin">Login</el-button>
+            <el-button plain class="btnlogin" @click="btnlogin()">Login</el-button>
           </div>
           <div class="pad-top">
-            <el-button class="btnsignup">Sign Up</el-button>
+            <el-button class="btnsignup" @click="onsignup()">Sign Up</el-button>
           </div>
         </div>
         <div id="d-bars">
@@ -85,6 +85,13 @@ export default {
       document.querySelector("#d-bars").style.position = "absolute";
       document.querySelector("#d-bars").style.top = "20px";
       document.querySelector("#d-bars").style.right = "11px";
+    },
+    // hannah 8/4/21
+    onsignup(){
+      this.$router.push({name: "signup"}).catch(() =>{});
+    },
+    onhome(){
+      this.$router.push({name: "Home"}).catch(() =>{});
     }
   }
 }
