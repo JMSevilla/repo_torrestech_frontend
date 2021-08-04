@@ -28,6 +28,11 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: () => import("@/views/Signup")
+  },
+  {
+    path: '/termsandcondition',
+    name: 'TermsAndConditions',
+    component: () => import("@/views/TermsAndConditions") 
   }
 ]
 
