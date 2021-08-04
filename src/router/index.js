@@ -23,6 +23,11 @@ const routes = [
    path: '/dynamicpage',
    name: 'Dynamic',
    component: () => import("@/views/dynamicpage") 
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import("@/views/Signup")
   }
 ]
 
