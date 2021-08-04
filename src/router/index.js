@@ -23,6 +23,11 @@ const routes = [
    path: '/dynamicpage',
    name: 'Dynamic',
    component: () => import("@/views/dynamicpage") 
+  },
+  {
+    path: '/termsandcondition',
+    name: 'TermsAndConditions',
+    component: () => import("@/views/TermsAndConditions") 
   }
 ]
 

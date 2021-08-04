@@ -44,7 +44,7 @@
 
         <div class="container-fluid" id="container2">
             <span>Copyright &copy; Torres Technology Center Corporation {{new Date().getFullYear()}}.
-                 All rights reserved. | Privacy Policy | Terms and Conditions
+                 All rights reserved. | Privacy Policy | <a class="hover" @click="TermsAndConditions()">Terms and Conditions</a>
             </span>
         </div>
   
@@ -104,4 +104,23 @@
     height: 40px;
 }
 }
+a:hover {
+    color: rgb(129, 83, 235);
+}
+a {
+    cursor: pointer;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
 </style>
+
+<script>
+export default {
+    methods: {
+        TermsAndConditions(){
+            this.$router.push({name: 'TermsAndConditions'}).catch(()=>{});
+        }
+    }
+}
+</script>
