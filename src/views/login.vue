@@ -23,7 +23,7 @@ export default {
         return{
             loginData:{
                 email:'',
-                password:''
+                password:'.......'
             }
         }
     },
