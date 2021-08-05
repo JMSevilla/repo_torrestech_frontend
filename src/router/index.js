@@ -8,6 +8,31 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import("@/views/index")
+  },
+  {
+    path: '/AboutUs',
+    name: 'AboutUs',
+    component: () => import("@/views/AboutUs")
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import("@/views/login")
+  },
+  {
+   path: '/dynamicpage',
+   name: 'Dynamic',
+   component: () => import("@/views/dynamicpage") 
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import("@/views/Signup")
+  },
+  {
+    path: '/termsandcondition',
+    name: 'TermsAndConditions',
+    component: () => import("@/views/TermsAndConditions") 
   }
 ]
 

@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="container-fluid" id="container1">
              <div class="container">
                 <div class="row">
@@ -35,8 +34,8 @@
                     </div>
                     <div class="col-md-3" id="location">
                         <span>National Highway, Calamba, 4027</span> <br>
-                        <span>cldtorrestechnology@gmail.com</span> <br>
-                        <span>09178753242</span>
+                        <span><a href="mailto:cldtorrestechnology@gmail.com">cldtorrestechnology@gmail.com </a></span> <br>
+                        <span><a href="tel:09178753242"> 09178753242</a></span>
                     </div>
                 </div>
             </div>
@@ -44,64 +43,23 @@
 
         <div class="container-fluid" id="container2">
             <span>Copyright &copy; Torres Technology Center Corporation {{new Date().getFullYear()}}.
-                 All rights reserved. | Privacy Policy | Terms and Conditions
+                 All rights reserved. | Privacy Policy | <a class="hover" @click="TermsAndConditions()">Terms and Conditions</a>
             </span>
         </div>
   
     </div>
 </template>
 
-<style scoped>
-   
-#container1{
-    background-color: #2D4059 ;
-    padding-top: 20px;
-    padding-bottom: 10px
 
-}
+<style scoped src="@/assets/styles/footer.css"></style>
 
-#firstcolumn{
-    margin-right: 5%; 
+<script>
+export default {
+    methods: {
+        TermsAndConditions(){
+            this.$router.push({name: 'TermsAndConditions'}).catch(()=>{});
+        }
+    }
 }
-#FooterLogo{
-    height: 60px;
-}
-#parag{
-    margin-top: 10px;
-    color:#f0f0f0;
-    font-size: 1.171875vw;
-}
-.list-unstyled a, #fbicon, #location{
-    color:#f0f0f0;
-    text-decoration: none;
-    line-height: 180%;
-    font-size: 1.171875vw;
-}
+</script>
 
-.list-unstyled a:hover{
-    text-decoration: underline;
-    line-height: 180%;
-}
-
-#container2{
-    background-color: #628395;
-    padding: 10px;
-    color:#f0f0f0;  
-}
-#container2 span{
-    color:#f0f0f0; 
-    display: flex;
-    justify-content: center;
-    font-size: 1.015625vw;
-}
-
-
-@media screen and (max-width: 800px) { 
-#firstcolumn{
-    margin-right: 5%; 
-}
-#FooterLogo{
-    height: 40px;
-}
-}
-</style>
