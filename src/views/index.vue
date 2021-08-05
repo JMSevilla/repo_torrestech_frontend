@@ -12,5 +12,5 @@ export default {
         FrontPage
     }
 }
-        Course
+
 </script>
