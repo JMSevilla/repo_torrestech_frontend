@@ -5,10 +5,12 @@
 </template>
 
 <script>
-import FrontPage from "../components/landingpage/frontpage";
+import FrontPage from "../components/landingpage/frontpage"
+
 export default {
     components: {
         FrontPage
     }
 }
+        Course
 </script>
