@@ -33,6 +33,11 @@ const routes = [
     path: '/termsandcondition',
     name: 'TermsAndConditions',
     component: () => import("@/views/TermsAndConditions") 
+  },
+  {
+    path: '/privacypolicy',
+    name: 'PrivacyPolicy',
+    component: () => import("@/views/PrivacyPolicy")
   }
 ]
 
