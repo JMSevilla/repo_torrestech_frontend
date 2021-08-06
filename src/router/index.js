@@ -34,6 +34,7 @@ const routes = [
     name:'resetPassword',
     component: () => import("@/views/resetPass")
   },
+  {
    path: '/dynamicpage',
    name: 'Dynamic',
    component: () => import("@/views/dynamicpage") 
