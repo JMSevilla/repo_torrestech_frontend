@@ -18,7 +18,7 @@
                     <el-card shadow="hover" id="OSHA">
                         <img src="@/assets/img/FrontPage/OSHA.png" alt="OSHA" id="OSHAimg" class="img-fluid">
                         <div>
-                            <span>OSHA</span>
+                            <span>TEST123</span>
                             <p >
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Quaerat sapiente sequi fugit rerum, officiis eaque? Optio 
