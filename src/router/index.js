@@ -20,6 +20,20 @@ const routes = [
     component: () => import("@/views/login")
   },
   {
+    path:'forgetpass',
+    name:'forgetPassword',
+    component: () => import("@/views/forgetpass")
+  },
+  {
+    path:'resetCode',
+    name:'resetByCode',
+    component: () => import("@/views/resetCode")
+  },
+  {
+    path:'resetPass',
+    name:'resetPassword',
+    component: () => import("@/views/resetPass")
+  },
    path: '/dynamicpage',
    name: 'Dynamic',
    component: () => import("@/views/dynamicpage") 

@@ -16,7 +16,7 @@
                                 <div class="textInput" >
                                     <p>Password</p>
                                     <div class="form-group" >
-                                        <input type="password" v-model="login.password" class="form-control" id="password" aria-describedby="emailHelp" placeholder="Enter your password">
+                                        <input type="password" v-model="login.password" class="form-control" id="password" aria-describedby="emailHelp" >
                                     </div>
                                 </div>
                                 <div id="rememberMe">
@@ -24,7 +24,7 @@
                                         <el-checkbox v-model="checked">Remember me </el-checkbox>    
                                     </div>
                                     <div>
-                                        <a href="#" id="forget">Forgot Password?</a>
+                                        <a @click="forgetPass()" id="forget">Forgot Password?</a>
                                     </div> 
                                 </div>  
                                 <el-button style="margin:20px 0; width:100%" @click="signIn()" class="logbtn" >SIGN IN</el-button>
@@ -45,14 +45,15 @@
 
 .logbtn{
     background: #0f5298;
-    border-radius: 7px;
     color: #ffffff;
+    font-size:14px;
+    font-weight: bold;
     
 }
 .sign{
     text-align: center;
     color: #2d4059;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom:40px;
 }
 input.form-control{
@@ -60,12 +61,15 @@ input.form-control{
 }
 ::placeholder{
     color: #7f7f7f;
-    border-color:#7f7f7f ;
+    border-color:#7f7f7f;
+    font-size: 14px;
     
 }
 #forget{
     text-decoration: none;
     color: #7f7f7f;
+    font-size: 14px;
+    cursor: pointer;
 }
 #forget:hover{
     text-decoration: underline;
@@ -85,13 +89,14 @@ input.form-control{
 }
 .textInput{
     color: #7f7f7f;
-    margin-top: 20px;
+    margin-top: 14px;
     
 }
 .textInput p{
-    font-weight:500;
+    font-weight:bold;
     border-color:#7f7f7f;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 #rememberMe{
     display: flex;
@@ -99,6 +104,7 @@ input.form-control{
     justify-content: space-between;
     color:#7f7f7f ;
     margin-top: 15px;
+    font-size: 14px;
     
    
 }
@@ -114,6 +120,18 @@ export default {
        login:Object,
        signIn:Function
 
+   },methods:{
+       forgetPass(){
+           this.$router.push({name:"forgetPassword"}).catch(()=> {});
+       }
    }
+
 }
 </script>
+
+
+
+
+    
+
+
