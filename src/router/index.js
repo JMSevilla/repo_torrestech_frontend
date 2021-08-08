@@ -38,7 +38,13 @@ const routes = [
     path: '/privacypolicy',
     name: 'PrivacyPolicy',
     component: () => import("@/views/PrivacyPolicy")
+  },
+  {
+    path: '/course-page',
+    name: 'CoursePage',
+    component: () => import("@/views/course")
   }
+
 ]
 
 const router = new VueRouter({

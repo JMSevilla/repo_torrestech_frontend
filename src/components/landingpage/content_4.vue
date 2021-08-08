@@ -29,6 +29,7 @@
                             <el-button
                             id="learnmorebtn"
                             size="medium"
+                            @click="navigate_dynamic_page()"
                             >
                             LEARN MORE
                             </el-button>
@@ -125,3 +126,14 @@
 </template>
 
 <style scoped src="@/assets/styles/FrontPage/content4_style.css"></style>
+
+<script>
+export default {
+    methods:{
+        navigate_dynamic_page(){
+         this.$router.push({name: 'CoursePage'}).catch(()=>{});
+    }
+    }
+    
+}
+</script>
