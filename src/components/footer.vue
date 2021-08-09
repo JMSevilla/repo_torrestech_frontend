@@ -42,9 +42,12 @@
         </div>
 
         <div class="container-fluid" id="container2">
-            <span>Copyright &copy; Torres Technology Center Corporation {{new Date().getFullYear()}}.
-                 All rights reserved. | <span @click="PrivacyPolicy()" style="margin:0 5px 0 5px; cursor: pointer">  Privacy Policy  </span> | <a class="hover" @click="TermsAndConditions()">Terms and Conditions</a>
-            </span>
+            <span>Copyright &copy; Torres Technology Center Corporation {{new Date().getFullYear()}}. </span>
+            <span> All rights reserved.</span> 
+            <small class="textdivider"> | </small> 
+            <span @click="PrivacyPolicy()" id="privacyPolicy">  Privacy Policy  </span> 
+            <small class="textdivider"> | </small> 
+            <span id="TermsAndConditions" @click="TermsAndConditions()">Terms and Conditions</span>
         </div>
   
     </div>

@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     font-weight: bold;
-    font-size:  13px;
+    font-size:  15px;
     margin-bottom: 10px;
 }
 #row2 p{
@@ -39,17 +39,59 @@
 
 #row2 img{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 #learnmorebtn{
     background: #0F5298;
     color: #f0f0f0;
+    font-weight: bold;
 }
 
 #learnmorebtn:hover{
     background-color: #0d55a1;
 }
 
+.el-carousel__item:nth-child(2n) {
+background-color: #fff;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+background-color: #fff;
+}
+
+.carouselDisplay{
+display: block;
+}
+.cardDisplay{
+display: block;
+}
+
+.carouselDisplay2{
+    display: block; 
+}
+
+@media screen and (max-width: 1920px){
+.carouselDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
+}
+    
+
+@media screen and (max-width: 1367px){
+.carouselDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
+}
 
 @media screen and (max-width: 1024px){ 
 #learnmorebtn{
@@ -63,56 +105,67 @@
 #ComputerProgramming span{
     text-align: center;
 }
+
+.carouselDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
 }
 
 @media screen and (max-width: 768px) { 
-
-  
-#OSHA{
-    margin-top: 20px;
-    width: 200px;
+.carouselCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#HRServices{
-    margin-top: 20px;
-    width: 200px
+.carouselDisplay{
+    display: block;
+    z-index: 1;
 }
 
-#DataAnalysis{
-    margin-top: 20px;
-    width: 200px
-}
-#BusinessManagement{
-    margin-top: 20px;
-    width: 200px;
-    margin-left: 40%;
+.cardDisplay{
+    display: none;
 }
 
-#ComputerProgramming{
-    margin-top: 20px;
-    width: 200px;
+.carouselDisplay2{
+    display: none;
+}
+
+#row2 p{
+    color: #7f7f7f;
+    font-size: 14px;
+}
+
+#row2 img{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 }
 
 @media screen and (max-width: 414px) { 
 
-#OSHA{
-    width: 100%;
+.carouselDisplay{
+    display: none;
 }
 
-#HRServices{
-    width: 100%;
+.cardDisplay{
+    display: none;
 }
 
-#DataAnalysis{
-    width: 100%;
-}
-#BusinessManagement{
-    width: 100%;
-    margin-left: auto;
+.carouselDisplay2{
+    display: block;
+    z-index: 1;
 }
 
-#ComputerProgramming{
-    width: 100%;
+.carouselCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 }
