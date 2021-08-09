@@ -4,10 +4,10 @@
             <div class="col-md-8">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <img src="@/assets/img/FrontPage/student-section-v2.png" alt="" srcset="" width="100%" height="100%">
+                        <img src="@/assets/img/FrontPage/student-section-v2.png" alt="" srcset="" class="content2_img">
                     </div>
                     <div class="col-md-6">
-                        <div>
+                        <div class="center-all">
                             <h3 class="h3_text">Are You A Student?</h3>
                             <p class="p_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis eaque fuga eveniet possimus aperiam! Quaerat rem explicabo ipsam assumenda natus quasi ex reiciendis eum molestiae! Debitis explicabo architecto dolorum quas.</p>
                             <el-button class="btncreatestudent" size="medium">CREATE AN ACCOUNT</el-button>
@@ -19,24 +19,4 @@
     </div>
 </template>
 
-<style scoped>
-    .h3_text{
-        color: #2d4059; 
-        font-size: 25px; 
-        font-weight: 600;
-        /* line-height: 1.6rem; */
-    }
-    .p_text{
-        /* line-height: 1.6rem; */
-        color: #7f7f7f; 
-        font-size: 14px
-    }
-    .btncreatestudent{
-        color: #fff;
-        background: #0F5298;
-        border-color: #0F5298;
-    }
-    .btncreatestudent:hover{
-        background-color: #0d55a1;
-    }
-</style>
+<style scoped src="@/assets/styles/FrontPage/content2_style.css"></style>

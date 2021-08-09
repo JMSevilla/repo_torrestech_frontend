@@ -44,6 +44,7 @@
     color: #fff;
     background: #0F5298;
     border-color: #0F5298;
+    font-weight: bold;
   }
   .btnwatwedo:hover{
       background-color: #0d55a1;
@@ -273,6 +274,13 @@
     .btnflex{
       display: none;
     }
+
+    /* .btnlogin{
+      margin-right: 35px;
+    }
+    .btnsignup{
+      margin-left: 15px;
+    } */
 
     /* content_1 */
     .main_div{
