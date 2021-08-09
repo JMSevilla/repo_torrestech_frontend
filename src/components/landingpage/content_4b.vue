@@ -16,6 +16,7 @@
                             </div>
                             <center>
                                 <el-button
+                                @click="navigate_dynamic_page()"
                                 id="learnmorebtn"
                                 size="medium"
                                 >
@@ -113,5 +114,13 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    props: {
+        navigate_dynamic_page: Function
+    }
+}
+</script>
 
 <style scoped src="@/assets/styles/FrontPage/content4_style.css"></style>

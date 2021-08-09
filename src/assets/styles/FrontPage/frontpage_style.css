@@ -270,9 +270,11 @@
     }
     .displaynone{
       display: none;
+      text-align: center;
     }
     .btnflex{
       display: none;
+      text-align: center;
     }
 
     /* .btnlogin{
