@@ -1,18 +1,18 @@
 <template>
     <div>
         <Nav />
-        <div class="card">
-            <div class="card-body p-3">
+        <div class="wrapper">
+            <div id="content1" class="p-5">
                 <Content1 />
             </div>
         </div>
-        <div class="card">
-            <div class="card-body p-5" style="background: #f5f7f8">
-                <Content2 />
+        <div class="wrapper">
+            <div id="content2">
+                  <Content2 />
             </div>
         </div>
-        <div class="card">
-            <div class="card-body p-5">
+        <div class="wrapper">
+            <div id="content3">
                 <Content3 />
             </div>
         </div>
@@ -42,3 +42,18 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    #content2{
+        background-color: #f5f7f8;
+        padding: 25px;
+    }
+    #content1{
+        background-color: white;
+        padding: 25px;
+    }
+    #content3{
+        background-color: white;
+        padding: 25px;
+    }
+</style>
