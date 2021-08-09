@@ -33,6 +33,10 @@ import content4c from "./content_4c"
 export default {
     components:{
         content4a, content4b, content4c
+    },
+    methods:{
+        navigate_dynamic_page(){
+         this.$router.push({name: 'CoursePage'}).catch(()=>{});
     }
 }
 </script>
