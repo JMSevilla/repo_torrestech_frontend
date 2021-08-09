@@ -14,13 +14,13 @@
                 </div>      
             </div>
             <div>
-                <content4a />
+                <content4a :navigate_dynamic_page="navigate_dynamic_page" />
             </div>
             <div>
-                <content4b />
+                <content4b :navigate_dynamic_page="navigate_dynamic_page" />
             </div>
             <div> 
-                <content4c />
+                <content4c :navigate_dynamic_page="navigate_dynamic_page" />
             </div>
         </div>
     </div>
@@ -36,7 +36,8 @@ export default {
     },
     methods:{
         navigate_dynamic_page(){
-         this.$router.push({name: 'CoursePage'}).catch(()=>{});
+            this.$router.push({name: 'CoursePage'}).catch(()=>{});
+        }
     }
 }
 </script>
