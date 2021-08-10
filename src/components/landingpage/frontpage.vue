@@ -2,26 +2,28 @@
     <div>
         <Nav />
         <div class="wrapper">
-            <div id="content1" class="p-5">
+
+            <div class="p-3">
+
                 <Content1 />
             </div>
         </div>
         <div class="wrapper">
-            <div id="content2">
-                  <Content2 />
+
+            <div class="p-5" style="background: #f5f7f8">
+                <Content2 />
             </div>
         </div>
         <div class="wrapper">
-            <div id="content3">
+            <div class="p-5">
+
                 <Content3 />
             </div>
         </div>
-        <div class="card" >
-            <div class="card-body" style="background: #f5f7f8">
-                <Content4 />
-            </div>
+        <div class="container-fluid" style="background: #f5f7f8">
+            <Content4 />
         </div>
-         <div class="card">
+        <div class="wrapper">
             <Content5 />
         </div>
         <Footer />
@@ -43,17 +45,3 @@ export default {
 }
 </script>
 
-<style scoped>
-    #content2{
-        background-color: #f5f7f8;
-        padding: 25px;
-    }
-    #content1{
-        background-color: white;
-        padding: 25px;
-    }
-    #content3{
-        background-color: white;
-        padding: 25px;
-    }
-</style>
