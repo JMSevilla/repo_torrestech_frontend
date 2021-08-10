@@ -1,31 +1,30 @@
-import request from "./auth"
+import http from './auth'
+import api from './routeapi'
+import constructor from './data'
 
-const state = {
-    getcontent(queryparams, resolve) {
+const state = { 
+    identifyAdmin(resolve) { 
         try {
-            var res = request.get(`dynamicpage/get-by-title?title=${queryparams}`)
-            response.getresponse(res, resolve)
+            var restful = http.get(api.EntryPoint(`administrator`) + `/detect-admin-registration`)
+            response.responseData(restful, resolve)
         } catch (error) {
             alert(error)
         }
     }
 }
 
-const response ={
-    getresponse(res, resolve){
+const response = { 
+    responseData(res, resolve) {
         return resolve(res)
     }
 }
 
-const build = {
-    async buildgetter(queryparams){
-        return await this.contentbuild(queryparams)
-    },
-    async contentbuild(queryparams){
-        return new Promise((resolve) => {
-            return state.getcontent(queryparams, resolve)
-        })
+const request = { 
+    async check_admin(){
+        return await api.requestSetup.admin_data_check()
     }
 }
 
-export default build
+export default { 
+    state, request
+}

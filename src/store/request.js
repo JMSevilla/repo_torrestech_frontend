@@ -1,5 +1,5 @@
-import guidbuild from "./builder"
+import initiateRequest from './builder'
 
-export function requestgetter(q){
-    return guidbuild.buildgetter(q)
+export function checkadminprocess(){
+    return initiateRequest.request.check_admin()
 }

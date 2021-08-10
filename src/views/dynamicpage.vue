@@ -1,5 +1,5 @@
 <script>
-import {requestgetter} from "@/store/request"
+
 export default {
     data(){
         return{
@@ -11,9 +11,7 @@ export default {
     },
     methods: {
         checkdata(){
-            requestgetter(this.$route.query.title).then(response => {
-               this.arrayable = response.data[0]
-            })
+           
         }
     }
 }

@@ -2,17 +2,21 @@
     <div>
         <Nav />
         <div class="wrapper">
+
             <div class="p-3">
+
                 <Content1 />
             </div>
         </div>
         <div class="wrapper">
+
             <div class="p-5" style="background: #f5f7f8">
                 <Content2 />
             </div>
         </div>
         <div class="wrapper">
             <div class="p-5">
+
                 <Content3 />
             </div>
         </div>
@@ -40,3 +44,4 @@ export default {
     }
 }
 </script>
+
