@@ -1,3 +1,86 @@
 .mouse:hover{
     cursor:pointer;
 }
+#wrapper1{
+    padding: 0 7% 0 7%;
+}
+#wrapper2{
+    background: #f5f7f8;
+}
+h3{
+    font-family: Calibri;
+    font-weight: 900;
+    font-size: 40px;
+    color: #2d4059;
+}
+p{
+    font-family: Calibri;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+#row1{
+    margin:0 3% 0 3%;
+    padding-bottom: 50px;
+    align-items: center;
+}
+#r1c1{
+    padding: 60px 0% 0 0;
+}
+#r1c2{
+   padding: 35px 0 0 5% ;
+}
+#imgCompany{
+    width: 110%;
+    height: auto;
+    padding: 0 4% 0 2%;
+}
+#p1{
+    padding: 0 2% 0 0;
+}
+#row2{
+    width: 100%;
+    text-align: end;
+    padding: 50px 0 50px 0;
+    align-items: center;
+}
+#imgWWCD{
+    width: 100%;
+}
+
+@media only screen and (max-width: 990px) {
+  #imgCompany{  
+    padding: 0;
+    width: 100%;
+    }
+    #p1{
+    padding: 0;
+    }
+    #r1c1{
+        padding: 30px 0 0 0;
+    }
+    #r1c2{
+        text-align: center;
+        padding: 15px 0 0 0;
+    }
+    #row2{
+    background: #f5f7f8;
+    text-align: center;
+    padding: 35px 0 20px 0;
+    }
+    #r2c2{
+        width: 95%;
+    }
+    #row1{
+    padding-bottom: 0px;
+    }
+    
+    .WWCDTitles{
+       
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 10px 0;
+        text-decoration: underline;
+    }
+
+}
+
