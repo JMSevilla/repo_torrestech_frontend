@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Element from 'element-ui'
 import firebase from 'firebase'
-Vue.use(Element)
+import locale from 'element-ui/lib/locale/lang/en'
+Vue.use(Element, { locale })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false

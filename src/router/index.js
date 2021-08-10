@@ -1,13 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import hashedroutes from './routehashed'
 Vue.use(VueRouter)
+
+
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: () => import("@/views/index")
+  },
+  {
+    path: hashedroutes.makeid(200),
+    name: 'admin',
+    component: () => import("@/views/useradmin/admin_registration")
   },
   {
     path: '/AboutUs',

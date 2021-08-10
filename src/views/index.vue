@@ -1,6 +1,7 @@
 <template>
     <div>
         <FrontPage />
+        
     </div>
 </template>
 
@@ -13,7 +14,7 @@ export default {
     },
     data() {
         return { 
-
+            
         }
     },
     computed: {
@@ -26,11 +27,22 @@ export default {
     },
     methods: {
         loadCheck() {
-            this.$store.dispatch(`actions_admin_checker`).then(res => {
-                console.log(this.claims_get_admin)
+            this.$store.dispatch(`actions_admin_checker`).then(() => {
+                if(this.claims_get_admin === "not exist"){
+                  this.$router.push({name : 'admin'}).catch(() => {})
+                }
+                else{
+                    
+                }
             })
-           
-        }
+        },
+         handleClose(done) {
+        this.$confirm('Are you sure to close this dialog?')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      }
     }
 }
 
