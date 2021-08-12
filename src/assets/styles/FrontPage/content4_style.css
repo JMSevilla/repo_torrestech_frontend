@@ -15,73 +15,157 @@
     display: flex;
     justify-content: center;
     font-weight: 600;
-    font-size: 1.953125vw;
+    font-size: 25px;
 }
 #row1 p{
-    color: #2D4059;
-    font-size: 1.171875vw;
+    color: #7f7f7f;
+    font-size: 14px;
+    text-align: center;
 }
 
-.main-div span{
+#row2 span{
     color: #2D4059;
     display: flex;
     justify-content: center;
-    font-weight: bolder;
-    font-size:  1.015625vw;
+    font-weight: bold;
+    font-size:  15px;
     margin-bottom: 10px;
 }
-.main-div p{
-    color: #2D4059;
+#row2 p{
+    color: #7f7f7f;;
     text-align: justify;
-    font-size: 1.171875vw;
+    font-size: 14px;
 }
 
-.sub-div img{
-    width: 100%; 
-    height: auto;
+#row2 img{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 #learnmorebtn{
     background: #0F5298;
     color: #f0f0f0;
-    border-radius: .4375rem;
-    font-size: 1.171875vw;
+    font-weight: bold;
 }
 
+#learnmorebtn:hover{
+    background-color: #0d55a1;
+}
+
+.el-carousel__item:nth-child(2n) {
+background-color: #fff;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+background-color: #fff;
+}
+
+.carouselDisplay{
+display: block;
+}
+.cardDisplay{
+display: block;
+}
+
+.carouselDisplay2{
+    display: block; 
+}
+
+@media screen and (max-width: 1920px){
+.carouselDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
+}
+    
+
+@media screen and (max-width: 1367px){
+.carouselDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
+}
 
 @media screen and (max-width: 1024px){ 
-
 #learnmorebtn{
-    background: #0F5298;
-    color: #f0f0f0;
-    border-radius: 7px;
-    font-size: 10px;
+    font-size: 13px;   
+}
+
+#BusinessManagement span{
+    text-align: center;
+}
+
+#ComputerProgramming span{
+    text-align: center;
+}
+
+.carouselDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
 }
 }
 
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 768px) { 
+.carouselCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-.sub-div img{
-    width: 100%; 
-    height: auto;
+.carouselDisplay{
+    display: block;
+    z-index: 1;
+}
+
+.cardDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
+
+#row2 p{
+    color: #7f7f7f;
+    font-size: 14px;
+}
+
+#row2 img{
     margin-bottom: 10px;
-}
-
-#learnmorebtn{
-    background: #0F5298;
-    color: #f0f0f0;
-    border-radius: 7px;
-    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
 }
 }
 
-@media screen and (max-width: 640px) { 
-#learnmorebtn{
-    background: #0F5298;
-    color: #f0f0f0;
-    padding: 4px 5px;
-    border-radius: 3px;
-    font-size: 7px;
+@media screen and (max-width: 415px) { 
+
+.carouselDisplay{
+    display: none;
 }
+
+.cardDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: block;
+    z-index: 1;
+}
+
+.carouselCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 }

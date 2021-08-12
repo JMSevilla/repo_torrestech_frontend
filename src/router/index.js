@@ -1,13 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import hashedroutes from './routehashed'
 Vue.use(VueRouter)
+
+
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: () => import("@/views/index")
+  },
+  {
+    path: hashedroutes.makeid(200),
+    name: 'admin',
+    component: () => import("@/views/useradmin/admin_registration")
   },
   {
     path: '/AboutUs',
@@ -33,6 +40,31 @@ const routes = [
     path:'resetPass',
     name:'resetPassword',
     component: () => import("@/views/loginViews/resetPass")
+  },
+  {
+   path: '/dynamicpage',
+   name: 'Dynamic',
+   component: () => import("@/views/dynamicpage") 
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import("@/views/Signup")
+  },
+  {
+    path: '/termsandcondition',
+    name: 'TermsAndConditions',
+    component: () => import("@/views/TermsAndConditions") 
+  },
+  {
+    path: '/privacypolicy',
+    name: 'PrivacyPolicy',
+    component: () => import("@/views/PrivacyPolicy")
+  },
+  {
+    path: '/course-page',
+    name: 'CoursePage',
+    component: () => import("@/views/course")
   }
 
 ]

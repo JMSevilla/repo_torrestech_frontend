@@ -1,0 +1,75 @@
+   
+#container1{
+    background-color: #2D4059 ;
+    padding-top: 20px;
+    padding-bottom: 10px
+}
+
+#firstcolumn{
+    margin-right: 5%; 
+}
+#FooterLogo{
+    height: 50px;
+}
+#parag{
+    margin-top: 10px;
+    color:#f0f0f0;
+    font-size: 14px;
+}
+.list-unstyled a, #fbicon, #location{
+    color:#f0f0f0;
+    text-decoration: none;
+    line-height: 180%;
+    font-size: 14px;
+}
+
+#location a{
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.list-unstyled a:hover{
+    text-decoration: underline;
+    line-height: 180%;
+}
+
+#container2{
+    background-color: #628395;
+    padding: 10px;
+    color:#f0f0f0;  
+    text-align: center;
+}
+#container2 span{
+    color:#f0f0f0;
+    text-align: center;
+    font-size: 12px;
+    margin: 0px 2px ; 
+}
+
+#privacyPolicy{
+    cursor: pointer;
+}
+
+#privacyPolicy:hover{
+    text-decoration: underline;
+}
+
+#TermsAndConditions{
+    cursor: pointer;  
+}
+
+#TermsAndConditions:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 415px) { 
+
+#container2 span{
+    display: grid;
+    text-align: left;
+}
+
+.textdivider{
+    display: none;
+}
+}

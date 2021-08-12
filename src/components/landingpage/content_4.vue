@@ -1,124 +1,45 @@
 <template>
-    <div class="py-4">
-        <div>
+    <div>
+        <div class="container py-5" id="content4">
             <div class="row justify-content-center" id="row1">
                 <div class="col-md-6">
                         <h3>Our Services</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                         Perspiciatis, laudantium, sequi totam nihil cum doloribus 
                         fugit quasi pariatur voluptate ratione quas eaque culpa mollitia 
+                        iure dolores officiis aut ab libero,sequi totam nihil cum doloribus 
+                        fugit quasi pariatur voluptate ratione quas eaque culpa mollitia 
                         iure dolores officiis aut ab libero.
                     </p>
                 </div>      
             </div>
-        </div>
-        <div class="d-flex main-div">
-            <div class="sub-div">
-                <el-card shadow="hover">
-                    <img src="@/assets/img/FrontPage/OSHA.png" alt="OSHA" class="img-fluid">
-                    <div>
-                        <span>OSHA</span>
-                        <p >
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quaerat sapiente sequi fugit rerum, officiis eaque? Optio 
-                            cupiditate amet, dolores,
-                        </p>
-                    </div>
-                    <center>
-                        <el-button
-                        id="learnmorebtn"
-                        size="medium"
-                        >
-                        LEARN MORE
-                        </el-button>
-                    </center>
-                </el-card>
+            <div>
+                <content4a :navigate_dynamic_page="navigate_dynamic_page" />
             </div>
-            <div class="sub-div">
-                <el-card shadow="hover">
-                    <img src="@/assets/img/FrontPage/HRServices.png" alt="HRServices" class="img-fluid">
-                    <div>
-                        <span>HR Services</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quaerat sapiente sequi fugit rerum, officiis eaque? Optio 
-                            cupiditate amet, dolores,
-                        </p>
-                    </div>
-                    <center>
-                        <el-button
-                        id="learnmorebtn"
-                        size="medium"
-                        >
-                        LEARN MORE
-                        </el-button>
-                    </center>
-                </el-card>
+            <div>
+                <content4b :navigate_dynamic_page="navigate_dynamic_page" />
             </div>
-            <div class="sub-div">
-                <el-card shadow="hover">
-                    <img src="@/assets/img/FrontPage/DataAnalysis.png" alt="Data Analysis" class="img-fluid">
-                    <div>
-                        <span>Data Analysis</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quaerat sapiente sequi fugit rerum, officiis eaque? Optio 
-                            cupiditate amet, dolores,
-                        </p>
-                    </div>
-                    <center>
-                        <el-button
-                        id="learnmorebtn"
-                        size="medium"
-                        >
-                        LEARN MORE
-                        </el-button>
-                    </center>
-                </el-card>
-            </div>
-            <div class="sub-div">
-                <el-card shadow="hover">
-                    <img src="@/assets/img/FrontPage/BusinessManagement.png" alt="Business Management" class="img-fluid">
-                    <div>
-                        <span>Business Management</span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quaerat sapiente sequi fugit rerum, officiis eaque? Optio 
-                            cupiditate amet, dolores,
-                        </p>
-                    </div>
-                    <center>
-                        <el-button
-                        id="learnmorebtn"
-                        size="medium"
-                        >
-                        LEARN MORE
-                        </el-button>
-                    </center>
-                </el-card>
-            </div>
-            <div class="sub-div">
-                <el-card shadow="hover">
-                    <img src="@/assets/img/FrontPage/ComputerProgramming.png" alt="Computer Programming" class="img-fluid" >
-                    <div>
-                        <span style="word-wrap: break-word;">Computer Programming</span>
-                        <p style="word-wrap: break-word;">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Quaerat sapiente sequi fugit rerum, officiis eaque? Optio 
-                            cupiditate amet, dolores,
-                        </p>
-                    </div>
-                    <center>
-                        <el-button
-                        id="learnmorebtn"
-                        >
-                        LEARN MORE
-                        </el-button>
-                    </center>
-                </el-card>
+            <div> 
+                <content4c :navigate_dynamic_page="navigate_dynamic_page" />
             </div>
         </div>
     </div>
 </template>
+
+<script>
+import content4a from "./content_4a"
+import content4b from "./content_4b"
+import content4c from "./content_4c"
+export default {
+    components:{
+        content4a, content4b, content4c
+    },
+    methods:{
+        navigate_dynamic_page(){
+            this.$router.push({name: 'CoursePage'}).catch(()=>{});
+        }
+    }
+}
+</script>
 
 <style scoped src="@/assets/styles/FrontPage/content4_style.css"></style>
