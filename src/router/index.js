@@ -24,22 +24,22 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import("@/views/login")
+    component: () => import("@/views/loginViews/login")
   },
   {
     path:'forgetpass',
     name:'forgetPassword',
-    component: () => import("@/views/forgetpass")
+    component: () => import("@/views/loginViews/forgetpass")
   },
   {
     path:'resetCode',
     name:'resetByCode',
-    component: () => import("@/views/resetCode")
+    component: () => import("@/views/loginViews/resetCode")
   },
   {
     path:'resetPass',
     name:'resetPassword',
-    component: () => import("@/views/resetPass")
+    component: () => import("@/views/loginViews/resetPass")
   },
   {
    path: '/dynamicpage',

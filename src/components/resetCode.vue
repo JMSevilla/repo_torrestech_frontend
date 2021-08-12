@@ -27,53 +27,7 @@
         </div>
     </div>
 </template>
-<style scoped>
-.forget{
-    text-align: center;
-    color:#2d4059 ;
-    font-weight: bold;
-    margin-bottom: 14px;
-}
-.textInput{
-    color: #7f7f7f ;
-    margin-top: 14px;
-    font-size: 14px;
-}
-::placeholder{
-    color: #7f7f7f;
-    border-color:#7f7f7f ;
-     font-size: 14px;
-}
-.cBtn{
-    background:#0f5298 ;
-    color: #ffffff ;
-    width: 40%;
-    font-size: 14px;
-    font-weight: bold;
-}
-.sBtn{
-    background:#0f5298 ;
-    color: #ffffff ;
-    width: 40%;
-    float: right;
-    margin-bottom: 40px;
-    font-size: 14px;
-    font-weight: bold;
-}
-.form-control{
-    border: 2px solid #7f7f7f ;
-    box-shadow: none;
-}
-input.form-control{
-    background-color:#d7e2ed ;
-}
-.remind{
-    text-align: center;
-    color: #7f7f7f;
-}
-.textInput p{
-    margin-bottom: 5px;
-}
+<style scoped src="@/assets/styles/login/resetCode.css">
 </style>
 <script>
 export default {
