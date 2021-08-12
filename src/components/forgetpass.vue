@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="wrapper">
-            <div style="padding:50px; background-color:#f5f7f8">
+            <div  class="p-4" style="background-color:#f5f7f8 ">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
                         <div class="card" style="box-shadow:rgba(0, 0, 0, 0.16)0px 10px 36px 0px,rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;">
@@ -27,50 +27,7 @@
         </div>
     </div>
 </template>
-<style scoped>
-.forget{
-    text-align: center;
-    color:#2d4059 ;
-    font-weight: bold;
-    margin-bottom: 14px;
-}
-.textInput{
-    color: #7f7f7f ;
-    margin-top: 14px;
-}
-::placeholder{
-    color: #7f7f7f;
-    border-color:#7f7f7f ;
-}
-.cBtn{
-    background:#0f5298 ;
-    color: #ffffff ;
-    width: 40%;
-    font-size: 14px;
-}
-.sBtn{
-    background:#0f5298 ;
-    color: #ffffff ;
-    width: 40%;
-    float: right;
-    margin-bottom: 40px;
-    font-size: 14px;
-}
-.form-control{
-    border: 2px solid #7f7f7f ;
-    box-shadow: none;
-}
-input.form-control{
-    background-color:#d7e2ed ;
-}
-.remind{
-    text-align: center;
-    color: #7f7f7f;
-}
-.textInput p{
-    margin-bottom: 5px;
-}
-</style>
+<style scoped src="@/assets/styles/login/forgot.css"></style>
 <script>
 export default {
     props:{
