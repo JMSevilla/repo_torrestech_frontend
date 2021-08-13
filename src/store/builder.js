@@ -10,6 +10,14 @@ const state = {
         } catch (error) {
             alert(error)
         }
+    },
+    storeAdmin(obj, resolve){
+        try {
+            var restful = http.post(api.EntryPoint(`administrator`) + `/admin-store-data`, constructor.datamanagement(obj))
+            response.responseData(restful, resolve)
+        } catch (error) {
+            alert(error)
+        }
     }
 }
 
@@ -22,6 +30,9 @@ const response = {
 const request = { 
     async check_admin(){
         return await api.requestSetup.admin_data_check()
+    },
+    async adminrequest(obj){
+        return await api.requestSetup.admin_store_data(obj)
     }
 }
 
