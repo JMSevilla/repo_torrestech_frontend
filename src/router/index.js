@@ -49,7 +49,7 @@ const routes = [
   {
     path: '/signup',
     name: 'signup',
-    component: () => import("@/views/Signup")
+    component: () => import("@/views/userstudent/student_registration")
   },
   {
     path: '/termsandcondition',
