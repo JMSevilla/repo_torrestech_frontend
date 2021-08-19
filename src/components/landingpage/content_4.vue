@@ -2,7 +2,7 @@
     <div>
         <div class="container py-5" id="content4">
             <div class="row justify-content-center" id="row1">
-                <div class="col-md-6">
+                <div class="col-md-6 header-column">
                         <h3>Our Services</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                         Perspiciatis, laudantium, sequi totam nihil cum doloribus 
@@ -14,13 +14,13 @@
                 </div>      
             </div>
             <div>
-                <content4a :navigate_dynamic_page="navigate_dynamic_page" />
+                <content4a :navigate_dynamic_page="navigate_dynamic_page" :test="test"/>
             </div>
             <div>
-                <content4b :navigate_dynamic_page="navigate_dynamic_page" />
+                <content4b :navigate_dynamic_page="navigate_dynamic_page" :test="test" />
             </div>
             <div> 
-                <content4c :navigate_dynamic_page="navigate_dynamic_page" />
+                <content4c :navigate_dynamic_page="navigate_dynamic_page" :test="test"/>
             </div>
         </div>
     </div>
@@ -37,6 +37,9 @@ export default {
     methods:{
         navigate_dynamic_page(){
             this.$router.push({name: 'CoursePage'}).catch(()=>{});
+        },
+        test(){
+            alert("test lang")
         }
     }
 }

@@ -1,0 +1,71 @@
+.logbtn{
+    background: #0f5298;
+    color: #ffffff;
+    font-size:14px;
+    font-weight: bold;
+    
+}
+.sign{
+    text-align: center;
+    color: #2d4059;
+    font-weight: bold;
+    margin-bottom:40px;
+    font-size: 40px;
+}
+input.form-control{
+    background: #D7E2ED;
+    border-color: #7f7f7f;
+    border-width: .1em;
+    color: #7f7f7f;
+    font-size: 14px;
+    border-radius: 7px
+}
+::placeholder{
+    color: #7f7f7f;
+    border-color:#7f7f7f;
+    font-size: 14px;
+    
+}
+#forget{
+    color: #7f7f7f;
+    font-size: 14px;
+    cursor: pointer;
+}
+#create{
+    display:flex;
+    justify-content: center;
+    color: #7f7f7f;
+    margin-bottom: 10px;
+}
+#create a{
+    text-decoration: none;
+    color: #7f7f7f;
+}
+#create a:hover{
+    text-decoration: underline;
+}
+.textInput{
+    color: #7f7f7f;
+    margin-top: 14px;
+    
+}
+.textInput p{
+    font-weight:bold;
+    border-color:#7f7f7f;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+#rememberMe{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:#7f7f7f ;
+    margin-top: 15px;
+    font-size: 14px;
+    
+   
+}
+.form-control{
+    border: 2px solid #7f7f7f;
+    box-shadow: none;
+}

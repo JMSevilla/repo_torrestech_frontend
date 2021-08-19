@@ -4,24 +4,24 @@
             <div class="col-md-9 paragtext">
                 <h6>Please complete the following details below.</h6>
                 <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" label-width="120px" :labelPosition="labelPosition">
-                    <el-form-item label="Firstname" prop="firstname">
+                    <el-form-item label="Firstname" prop="firstname"  class="el-form-item--label-top">
                         <el-input
                             placeholder="Enter your First Name" 
                             v-model="signup.firstname"
                             clearable>
                         </el-input>
                     </el-form-item>
-                    <el-form-item label="Last Name" prop="lastname">
+                    <el-form-item label="Last Name" prop="lastname" class="el-form-item--label-top">
                         <el-input
                             placeholder="Enter your Last Name" 
                             v-model="signup.lastname"
                             clearable>
                         </el-input>
                     </el-form-item>
-                     <el-form-item label="Birthdate" prop="bdate">
+                     <el-form-item label="Birthdate" prop="bdate" class="el-form-item--label-top">
                         <el-date-picker type="date" placeholder="Pick a date" v-model="signup.bdate" style="width: 100%;"></el-date-picker>
                     </el-form-item>
-                    <el-form-item label="Age" prop="age">
+                    <el-form-item label="Age" prop="age" class="el-form-item--label-top">
                         <el-input
                             placeholder="Enter your Age" 
                             style="width: 60%"
@@ -33,7 +33,7 @@
                         <el-radio v-model="signup.gender" label="1">Female</el-radio>
                         <el-radio v-model="signup.gender" label="2">Male</el-radio>
                     </el-form-item>
-                    <el-form-item label="Mobile Number" prop="mobile">
+                    <el-form-item label="Mobile Number" prop="mobile" class="el-form-item--label-top">
                         <el-input
                             style="width: 60%"
                             type="number"
