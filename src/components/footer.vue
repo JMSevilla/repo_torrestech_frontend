@@ -57,7 +57,7 @@
                         <span @click="TermsAndConditions()" class="sub-footer-link">Terms and Conditions</span> 
                     </div>
                     <div class="col-md-3 sub-footer-link-column2">
-                        <span class="sub-footer-link" >Having issue with the site? Report a bug now.</span>
+                        <span class="sub-footer-link" @click="ReportABug()">Having issue with the site? Report a bug now.</span>
                     </div>
                 </div>
             </div>
@@ -77,6 +77,9 @@ export default {
         },
         PrivacyPolicy(){
             this.$router.push({name: 'PrivacyPolicy'}).catch(()=>{});
+        },
+        ReportABug(){
+            this.$router.push({name: 'ReportABug'}).catch(()=>{});
         }
     }
 }

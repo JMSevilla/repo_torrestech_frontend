@@ -65,6 +65,11 @@ const routes = [
     path: '/course-page',
     name: 'CoursePage',
     component: () => import("@/views/course")
+  },
+  {
+    path: '/report-a-bug',
+    name: 'ReportABug',
+    component: () => import("@/views/ReportABug")
   }
 
 ]
