@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="row justify-content-center">
-            <div class="col-md-7">
-                <el-card shadow="always" style="border-radius: 10px">
+            <div class="col-md-7 stepper-column">
+                <el-card shadow="always" style="border-radius: 10px" class="stepper-card">
                     <div v-if="active < 5">
                         <h3>Student's Account Creation</h3>
                         <el-steps :active="active" finish-status="success" align-center>

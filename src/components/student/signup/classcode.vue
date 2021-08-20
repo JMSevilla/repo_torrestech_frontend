@@ -4,7 +4,7 @@
             <div class="col-md-7 paragtext">
                 <h6>Please enter your class code provided by the company.</h6>
                 <div class="mb-4">
-                    <el-form status-icon :model="signup" :rules="rules" ref="ruleForm">
+                    <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" label-position="top">
                         <el-form-item label="Enter Class Code" prop="ccode">
                             <el-input v-model="signup.ccode" placeholder="Enter your Class Code" clearable></el-input>
                         </el-form-item>

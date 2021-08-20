@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="carouselDisplay">
-            <el-carousel :interval="3000"  type="card" height="410px">
+            <el-carousel :interval="3000"  type="card" height="410px" >
                 <div class="row justify-content-center" id="row2">
                     <div class="col-md">
                         <el-carousel-item  class="carouselCenter">
@@ -40,6 +40,7 @@
                                 <el-button
                                 id="learnmorebtn"
                                 size="medium"
+                                @click="test()"
                                 >
                                 LEARN MORE
                                 </el-button>
@@ -61,6 +62,7 @@
                                 <el-button
                                 id="learnmorebtn"
                                 size="medium"
+                                @click="test()"
                                 >
                                 LEARN MORE
                                 </el-button>
@@ -82,6 +84,7 @@
                                 <el-button
                                 id="learnmorebtn"
                                 size="medium"
+                                @click="test()"
                                 >
                                 LEARN MORE
                                 </el-button>
@@ -103,6 +106,7 @@
                                 <el-button
                                 id="learnmorebtn"
                                 size="medium"
+                                @click="test()"
                                 >
                                 LEARN MORE
                                 </el-button>
@@ -118,7 +122,8 @@
 <script>
 export default {
     props: {
-        navigate_dynamic_page: Function
+        navigate_dynamic_page: Function,
+        test: Function 
     }
 }
 </script>
