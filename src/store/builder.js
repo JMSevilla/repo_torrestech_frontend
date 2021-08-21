@@ -1,6 +1,7 @@
 import http from './auth'
 import api from './routeapi'
 import constructor from './data'
+import axios from 'axios'
 
 const state = { 
     identifyAdmin(resolve) { 
@@ -18,6 +19,22 @@ const state = {
         } catch (error) {
             alert(error)
         }
+    },
+    checkClasscode(obj, resolve) {
+        try {
+            var restful = http.post(api.EntryPoint(`students`) + '/student-classcode', constructor.classcodechecker(obj));
+            response.responseData(restful, resolve);
+        } catch (error) {
+            alert(error)
+        }
+    },
+    studentRegister(obj, resolve) {
+        try {          
+            var restful = http.post(api.EntryPoint(`students`) + '/add-student', constructor.registrationstudent(obj));
+            response.responseData(restful, resolve);
+        } catch (error) {
+            alert(alert)
+        }
     }
 }
 
@@ -33,7 +50,13 @@ const request = {
     },
     async adminrequest(obj){
         return await api.requestSetup.admin_store_data(obj)
-    }
+    },
+    async classcoderequest(obj) {
+        return await api.requestSetup.classcode_student_scan(obj)
+    },
+    async studentRegister_request(obj) {
+        return await api.requestSetup.student_registration_setup(obj);
+    } 
 }
 
 export default { 
