@@ -39,6 +39,7 @@
 <style scoped src="@/assets/styles/Student/signup_page.css"> </style>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
     props:{
         onprevious: Function,
@@ -47,11 +48,29 @@ export default {
         rules: Object,
         labelPosition: String
     },
+    computed: {
+        ...mapGetters({
+            getStudentReg: 'claims_get_student_signup_response'
+        })
+    },
     methods:{
         onsubmit(ruleForm){
             this.$refs[ruleForm].validate((valid) => {
                 if (valid) {
-                    this.onnext();
+                    this.$store.dispatch(`actions_student_signup_setup`, {object: this.signup}).then(() => {
+                        if(this.getStudentReg === 'success') {
+                            this.$notify.success({
+                                title: 'Success',
+                                message: 'Success'
+                            })
+                        }
+                        else {
+                            this.$notify.error({
+                                title: 'Error',
+                                message: 'Error'
+                            })
+                        }
+                    })
                 } else {
                     return false;
                 }

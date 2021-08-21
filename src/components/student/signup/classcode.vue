@@ -22,19 +22,34 @@
 <style scoped src="@/assets/styles/Student/signup_page.css"> </style>
 
 <script>
+import { mapGetters } from "vuex"
 export default {
     props:{
         onnext: Function,
         oncancel: Function,
         signup: Object,
-        rules: Object,
-
+        rules: Object
+    },
+    computed: {
+        ...mapGetters({
+            getcheckCode: 'claims_get_classcodecheck_response'
+        })
     },
     methods:{
         onsubmit(ruleForm){
             this.$refs[ruleForm].validate((valid) => {
             if (valid) {
-                this.onnext();
+                this.$store.dispatch(`actions_classcode_checker_setup`, {object: this.signup}).then(() => {
+                    if(this.getcheckCode === 'success') {
+                        this.onnext();
+                    }
+                    else {
+                        this.$notify.error({
+                            title: 'Error',
+                            message: this.getcheckCode
+                        })
+                    }
+                })
             } else {
                 return false;
             }

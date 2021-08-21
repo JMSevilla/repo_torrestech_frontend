@@ -47,17 +47,37 @@ export default {
         document.querySelector(".displaynone").style.display = "flex";
         document.querySelector(".displaynone").style.flexDirection = "column";
         document.querySelector(".btnflex").style.display = "flex";
+
+        document.querySelector(".d-flex").style.width = "100%";
+        document.querySelector(".d-flex").style.height = "100%";
+        document.querySelector(".d-flex").style.backgroundColor = "#fff";
+        document.querySelector(".d-flex").style.zIndex = 5;
+        document.querySelector(".main_div").style.marginBottom = "159px";
+        document.querySelector(".btnlogin").style.backgroundColor = "#fff";
+        document.querySelector(".d-flex").style.transition = "ease-out 0.9s";
+
         document.querySelector(".btnflex").style.flexDirection = "column";
         document.querySelector(".pad-top").style.margin = "11px 0 ";
         document.querySelector(".logo-size").style.marginRight = "190px";
         document.querySelector("#d-bars").style.display = "none";
-        document.querySelector(".sndbox").style.top = "433px";
+        document.querySelector(".fstbox").style.top = "74px";
+        // document.querySelector(".sndbox").style.top = "10px";
         document.querySelector("#btnclose").style.display = "block";
         document.querySelector("#btnclose").style.position = "absolute";
         document.querySelector("#btnclose").style.top = "20px";
         document.querySelector("#btnclose").style.right = "11px";
       }
       else {
+        document.querySelector(".d-flex").style.width = "100%";
+        document.querySelector(".d-flex").style.height = "100%";
+        document.querySelector(".d-flex").style.backgroundColor = "#fff";
+        document.querySelector(".d-flex").style.zIndex = 5;
+        document.querySelector(".main_div").style.marginBottom = "159px";
+        document.querySelector(".fstbox").style.top = "74px";
+        document.querySelector(".btnlogin").style.backgroundColor = "#fff";
+
+        document.querySelector(".d-flex").style.transition = "ease-out 0.9s";
+
         document.querySelector(".d-flex").style.flexDirection = "column";
         document.querySelector(".displaynone").style.display = "flex";
         document.querySelector(".displaynone").style.flexDirection = "column";
@@ -66,7 +86,7 @@ export default {
         document.querySelector(".pad-top").style.margin = "11px 0 ";
         document.querySelector(".logo-size").style.marginRight = "160px";
         document.querySelector("#d-bars").style.display = "none";
-        document.querySelector(".sndbox").style.top = "433px";
+        // document.querySelector(".sndbox").style.top = "433px";
         document.querySelector("#btnclose").style.display = "block";
         document.querySelector("#btnclose").style.position = "absolute";
         document.querySelector("#btnclose").style.top = "20px";
@@ -74,10 +94,18 @@ export default {
       }
     },
     btn_close() {
+      // document.querySelector(".d-flex").style.width = "100%";
+      // document.querySelector(".d-flex").style.height = "100%";
+      document.querySelector(".d-flex").style.backgroundColor = "#fff";
+      // document.querySelector(".d-flex").style.zIndex = 5;
+      document.querySelector(".main_div").style.marginBottom = "355px";
+      document.querySelector(".d-flex").style.transition = "ease-in 0.9s";
+      // document.querySelector(".fstbox").style.top = "74px";
+
       document.querySelector(".d-flex").style.display = "none";
       document.querySelector(".displaynone").style.display = "none";
       document.querySelector(".btnflex").style.display = "none";
-      document.querySelector(".sndbox").style.top = "237px";
+      // document.querySelector(".sndbox").style.top = "237px";
       document.querySelector(".pad-top").style.margin = "0";
       document.querySelector("#btnclose").style.display = "none";
       document.querySelector("#d-bars").style.display = "block";

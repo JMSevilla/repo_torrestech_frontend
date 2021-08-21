@@ -113,6 +113,7 @@ export default {
                 password:'',
                 confirmpwd:'',
                 verificationcode:'',
+                imageurl: ''
                 
             }, 
             rules: {
@@ -182,7 +183,7 @@ export default {
         },
         oncancel(){
             this.$router.push({name: "Home"}).catch(()=>{})
-        } 
+        }
     }
 }
 </script>

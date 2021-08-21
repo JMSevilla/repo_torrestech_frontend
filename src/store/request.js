@@ -7,3 +7,11 @@ export function checkadminprocess(){
 export function adminprocess(obj){
     return initiateRequest.request.adminrequest(obj)
 }
+
+export function classcodescannerprocess(obj) {
+    return initiateRequest.request.classcoderequest(obj);
+}
+
+export function registrationstudentprocess(obj) {
+    return initiateRequest.request.studentRegister_request(obj);
+}

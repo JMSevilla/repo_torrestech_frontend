@@ -65,6 +65,11 @@ const routes = [
     path: '/course-page',
     name: 'CoursePage',
     component: () => import("@/views/course")
+  },
+  {
+    path: '/admindash',
+    name: 'AdminDashboard',
+    component: () => import("@/views/admindash_views/AdminDashPage")
   }
 
 ]

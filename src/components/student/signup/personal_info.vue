@@ -19,7 +19,8 @@
                         </el-input>
                     </el-form-item>
                      <el-form-item label="Birthdate" prop="bdate" class="el-form-item--label-top">
-                        <el-date-picker type="date" placeholder="Pick a date" v-model="signup.bdate" style="width: 100%;"></el-date-picker>
+                        <el-date-picker type="date" placeholder="Pick a date" v-model="signup.bdate" 
+                         format="yyyy/MM/dd" value-format="yyyy/MM/dd" style="width: 100%;"></el-date-picker>
                     </el-form-item>
                     <el-form-item label="Age" prop="age" class="el-form-item--label-top">
                         <el-input
