@@ -12,8 +12,8 @@
                         </el-input>
                     </el-form-item>
                    <el-form-item class="mt-4">
-                        <el-button class="previousbtn" @click="onprevious()">PREVIOUS</el-button> 
-                        <el-button class="nextbtn" @click="onsubmit('ruleForm')">NEXT</el-button> 
+                        <el-button class="previousbtn verificationbtn" @click="onprevious()">PREVIOUS</el-button> 
+                        <el-button class="nextbtn verificationbtn" @click="onsubmit('ruleForm')">NEXT</el-button> 
                     </el-form-item>
                 </el-form>
             </div>

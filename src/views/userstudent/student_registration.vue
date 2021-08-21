@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="signup-container">
         <div> <Navigation /> </div>
-        <div class="wrapper p-4" style="background: #f5f7f8"> <Stepper /> </div>
+        <div class="wrapper-stepper p-4"> <Stepper /> </div>
         <div> <Footer /> </div>
     </div>
 </template>
@@ -17,3 +17,5 @@ export default {
     
 }
 </script>
+
+<style scoped src="@/assets/styles/Student/signup_page.css"></style>

@@ -39,6 +39,7 @@
                             <el-button
                             id="learnmorebtn"
                             size="medium"
+                            @click="test()"
                             >
                             LEARN MORE
                             </el-button>
@@ -60,6 +61,7 @@
                             <el-button
                             id="learnmorebtn"
                             size="medium"
+                            @click="test()"
                             >
                             LEARN MORE
                             </el-button>
@@ -81,6 +83,7 @@
                             <el-button
                             id="learnmorebtn"
                             size="medium"
+                            @click="test()"
                             >
                             LEARN MORE
                             </el-button>
@@ -102,6 +105,7 @@
                             <el-button
                             id="learnmorebtn"
                             size="medium"
+                            @click="test()"
                             >
                             LEARN MORE
                             </el-button>
@@ -116,7 +120,8 @@
 <script>
 export default {
     props: {
-        navigate_dynamic_page: Function
+        navigate_dynamic_page: Function,
+        test: Function  
     }
 }
 </script>
