@@ -1,0 +1,44 @@
+h3{
+    font-weight: bold;
+    font-size: 40px;
+    color: #2d4059
+}
+
+.training-headline{
+    font-weight: bold;
+    font-size: 40px;
+    color: #2d4059;
+    margin: 20px;
+}
+
+.paragtext{
+    color: #7f7f7f;
+    font-size: 14px;
+}
+
+h6 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.next-button{
+    background: #0f5298;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    width: 13%;
+    float: right;
+    margin: 30px 0 0 30px;
+}
+
+.browse-btn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.browse-btn:hover{
+    background: #0f5298;
+    color: #fff;
+}
