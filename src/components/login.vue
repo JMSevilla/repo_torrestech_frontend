@@ -4,37 +4,24 @@
             <div  class="p-4" style="background-color:#f5f7f8 ">
                 <div class="row justify-content-center ">
                     <div class="col-md-4">
-                        <div class="card" style="box-shadow:rgba(0, 0, 0, 0.16)0px 10px 36px 0px,rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;">
-                            <div class="card-body" style="padding: 30px">
+                        <el-card  style="padding: 30px" shadow="always" >
                                 <h3 class="sign">Login</h3>
-                                <div class="textInput" >
-                                    <p>Email or Username</p>
-                                    <div class="form-group">
-                                        <input  type="email" v-model="login.email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
-                                    </div>
-                                </div>
-                                <div class="textInput" >
-                                    <p>Password</p>
-                                    <div class="form-group" >
-                                        <input type="password" v-model="login.password" class="form-control" id="password" aria-describedby="emailHelp" >
-                                    </div>
-                                </div>
-                                <div id="rememberMe">
-                                    <div>
-                                        <el-checkbox v-model="checked">Remember me </el-checkbox>    
-                                    </div>
-                                    <div>
-                                        <el-link @click="forgetPass()" id="forget">Forgot Password</el-link>
-                                    </div> 
-                                </div>  
-                                <el-button style="margin:20px 0; width:100%" @click="signIn()" class="logbtn" >SIGN IN</el-button>
-                                 <div id="create">
-                                     <span style="margin-right: 5px;">Don't have an account?</span> 
-                                     <a href="#" >Sign Up</a> 
-                                 </div>
-                            </div>
-                                                             
-                        </div>
+                                <el-form ref="formName" :model="login" label-width="120px" :labelPosition="labelPosition" :rules="rules">
+                                    <el-form-item label="Email or Username" prop="email">
+                                        <el-input  type="email" v-model="login.email"  placeholder="Enter your email" clearable></el-input>
+                                    </el-form-item>
+                                    <el-form-item label="Password" prop="password">
+                                        <el-input type="password" v-model="login.password" clearable show-password placeholder="Enter your password"></el-input>
+                                    </el-form-item> 
+                                    <el-form-item>
+                                        <el-checkbox v-model="checked">Remember me </el-checkbox>
+                                         <el-link @click="forgetPass()" id="forget">Forgot Password</el-link> 
+                                    </el-form-item>
+                                    <el-form-item>
+                                        <el-button style="margin:20px 0; width:100%" @click="signIn('formName')" class="logbtn" >SIGN IN</el-button>
+                                    </el-form-item>
+                                    </el-form>
+                        </el-card>
                     </div>   
                 </div>
             </div>
@@ -47,11 +34,19 @@
 export default {
    props:{
        login:Object,
-       signIn:Function
-
+       signIn:Function,
+       labelPosition:String,
+       rules:Object
    },methods:{
        forgetPass(){
            this.$router.push({name:"forgetPassword"}).catch(()=> {});
+       },
+       signIn(formName){
+           this.$refs[formName].validate((valid) => { 
+               if (valid) { alert('submit!'); 
+               } else { 
+                   console.log('error submit!!'); return false;
+                } });
        }
    }
 

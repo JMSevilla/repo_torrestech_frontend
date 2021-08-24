@@ -30,6 +30,7 @@ input.form-control{
     color: #7f7f7f;
     font-size: 14px;
     cursor: pointer;
+    float: right;
 }
 #create{
     display:flex;
@@ -69,3 +70,31 @@ input.form-control{
     border: 2px solid #7f7f7f;
     box-shadow: none;
 }
+@media only screen and (max-width: 1024px) {
+   .col-md-4{
+       width: 50%;
+   } 
+  }
+@media only screen and (max-width: 768px) {
+    .col-md-4{
+        width: 65%;
+    } 
+   }
+   @media only screen and (max-width: 415px) {
+    .col-md-4{
+        width: 100%;
+    } 
+   }
+  
+@media only screen and (max-width: 376px) {
+    .col-md-4{
+        width: 100%;
+    } 
+   }
+@media only screen and (max-width: 320px) {
+    .col-md-4{
+        width: 100%;
+    } 
+   }
+  
+   

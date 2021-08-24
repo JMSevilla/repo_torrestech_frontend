@@ -4,7 +4,7 @@
              <Nav />
         </div>
         <div>
-             <Login :login="loginData" :signIn="sign" />
+             <Login :login="loginData" :labelPosition="labelPosition" :rules="rules" :signIn="sign" />
         </div>
         <div>
             <Footer />
@@ -21,16 +21,23 @@ export default {
     },
      data(){
         return{
+            labelPosition: 'top',
             loginData:{
                 email:'',
-                password:'.......'
+                password:''
+            },
+            rules:{
+                email: [
+                    { required: true, message: 'Please input email address' },
+                    { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+                ],
+                password:[
+                    {required:true,message:'Please input your Password'}
+                ]
             }
-        }
-    },
-    methods:{
-        sign(){
-            console.log(this.loginData)
+            
         }
     }
-}
+
+    }
 </script>
