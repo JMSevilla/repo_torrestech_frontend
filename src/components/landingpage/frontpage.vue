@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import Nav from "../navbar/nav";
+import Nav from "../navbar/nav.vue"
 import Content1 from "./content_1";
 import Content2 from "./content_2";
 import Content3 from "./content_3";

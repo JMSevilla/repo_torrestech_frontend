@@ -2,7 +2,7 @@
     <div>
         <!-- <el-row class="tac">
             <el-col :span="4"> -->
-                <el-menu style="height: 100vh; border-right: 2px #e6e6e6 solid"
+                <el-menu style="min-height: 100vh; border-right: 2px #e6e6e6 solid"
                 default-active="2"
                 class="el-menu-vertical-demo"
                 @open="handleOpen"
@@ -204,9 +204,4 @@
     </div>
 </template>
 
-<style scoped>
-    /* .hoverBG:hover{
-        background: #0f5298;
-    } */
-</style>
 

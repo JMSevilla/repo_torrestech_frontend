@@ -1,7 +1,7 @@
 <template>
 <div>
         <div>
-            <Nav />
+           <Nav />
         </div>
         <div>
             <forgetPassword :forgetPassword="forgetPasswordData" :send="resend" />

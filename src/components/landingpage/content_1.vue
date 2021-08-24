@@ -29,7 +29,7 @@
     </div>
 </template>
 
-<style scoped src="@/assets/styles/FrontPage/frontpage_style.css"></style>
+<style scoped src="@/assets/styles/FrontPage/content1_style.css"></style>
 
 <script>
 export default {

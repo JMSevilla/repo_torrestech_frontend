@@ -1,5 +1,5 @@
 <template>
-    <div style="background: #f5f7f8; width: 100%; height: 100vh">
+    <div style="background: #f5f7f8; width: 100%; min-height: 100vh">
       <el-row class="tac">
         <el-col :span="4">
             <SideDash />
