@@ -2,7 +2,7 @@
     <div>
         <!-- <el-row class="tac">
             <el-col :span="4"> -->
-                <el-menu style="height: 100vh; border-right: 2px #e6e6e6 solid"
+                <el-menu style="min-height: 100vh; border-right: 2px #e6e6e6 solid"
                 default-active="2"
                 class="el-menu-vertical-demo"
                 @open="handleOpen"
@@ -33,17 +33,9 @@
                     <i class="fas fa-book"></i>
                     <span style="margin-left: 10px">TRAININGS</span>
                     </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="2-1">item one</el-menu-item>
-                    <el-menu-item index="2-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="2-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="2-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
+                    <el-menu-item index="2-1" @click="onaddnewtraining()">Add New Training</el-menu-item>
+                    <el-menu-item index="2-2">All Trainings</el-menu-item>
+                    <el-menu-item index="2-3" @click="ontrainingcategories()">Manage Categories</el-menu-item>
                 </el-submenu>
                 <el-submenu index="3">
                     <template slot="title">
@@ -209,4 +201,18 @@
         background: #0f5298;
     } */
 </style>
+
+<script>
+export default {
+    methods:{
+        ontrainingcategories(){
+            this.$router.push({name: "TrainingsCategories"}).catch(()=>{})
+           
+        },
+        onaddnewtraining(){
+            this.$router.push({name: "AddNewTraining"}).catch(()=>{})
+        }
+    }
+}
+</script>
 

@@ -69,13 +69,20 @@ const routes = [
   {
     path: '/admindash',
     name: 'AdminDashboard',
-    component: () => import("@/views/admindash_views/AdminDashPage")
-  },
-  {
-    path: '/report-a-bug',
-    name: 'ReportABug',
-    component: () => import("@/views/ReportABug")
-  }
+    component: () => import("@/views/admindash_views/AdminDashPage"),
+    children: [
+      {
+        path: '/admindash/add-new-training',
+        name: 'AddNewTraining',
+        component: () => import("@/views/admindash_views/trainings/add_new_training")
+      }
+    ]
+   },
+    {
+      path: '/report-a-bug',
+      name: 'ReportABug',
+      component: () => import("@/views/ReportABug")
+    }
 
 ]
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="signup-container">
+    <div>
         <div> <Navigation /> </div>
         <div class="wrapper-stepper p-4"> <Stepper /> </div>
         <div> <Footer /> </div>

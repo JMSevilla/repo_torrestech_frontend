@@ -24,8 +24,8 @@
 }
 
 #yticon{
-    margin-right: 5px;
-    width: 7%;
+    margin-right: 10px;
+    width: 14px;
     height: auto;
 }
 
@@ -88,13 +88,11 @@
 }
 
 .social-media-link a{
-    margin-left: -2%;
+    margin-left: -10px;
 }
 
 #yticon{
-    margin: 0 4% 0 5%;
-    width: 20px;
-    height: auto;
+    margin: 0 15px;
 }
 
 .social-media-link li{
