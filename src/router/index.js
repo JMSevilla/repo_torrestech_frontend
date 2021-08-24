@@ -70,6 +70,11 @@ const routes = [
     path: '/admindash',
     name: 'AdminDashboard',
     component: () => import("@/views/admindash_views/AdminDashPage")
+  },
+  {
+    path: '/report-a-bug',
+    name: 'ReportABug',
+    component: () => import("@/views/ReportABug")
   }
 
 ]
