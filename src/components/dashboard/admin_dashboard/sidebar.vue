@@ -196,11 +196,6 @@
     </div>
 </template>
 
-<style scoped>
-    /* .hoverBG:hover{
-        background: #0f5298;
-    } */
-</style>
 
 <script>
 export default {
