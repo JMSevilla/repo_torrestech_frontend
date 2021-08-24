@@ -1,100 +1,67 @@
 <template>
-  <div class="nav-fixed">
-    <nav id="nav_color">
-      <div
-        class="d-flex container align-items-center"
-        style="justify-content: space-between"
-      >
-        <div class="py-2">
-            <a href="">
-              <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" class="logo-size">
-            </a>
-           <i class="fas fa-times" id="btnclose" @click="btn_close()"></i>
-        </div>
-        <div class="displaynone">
-          <a class="nav-link" @click="onhome()">Home</a>
-          <a class="nav-link" @click="AboutUs()">About Us</a>
-          <a class="nav-link">Our Services</a>
-        </div>
-        <div class="btnflex">
-          <div style="margin-right: 5px;">
-            <el-button plain class="btnlogin" @click="btnlogin()">Login</el-button>
-          </div>
-          <div class="pad-top">
-            <el-button class="btnsignup" @click="onsignup()">Sign Up</el-button>
-          </div>
-        </div>
-        <div id="d-bars">
-          <i class="fas fa-bars" @click="btnbars()"></i>   
-        </div>
-      </div>
-    </nav>
-  </div>
+    <div class="nav_color">
+        <nav class="container space_between">
+            <div class="py-2">
+                <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" class="logo" @click="homelink()">
+            </div>
+            <i class="fas fa-bars toggle-bars" @click="btnbars()"></i> 
+            <i class="fas fa-times toggle-close" id="btnclose" @click="btn_close()"></i>
+            <ul class="navlinks">
+                <li>
+                    <a @click="homelink()" class="nav-link">Home</a>
+                </li>
+                 <li>
+                    <a @click="AboutUs()" class="nav-link">About Us</a>
+                </li>
+                 <li>
+                    <a class="nav-link">Our Services</a>
+                </li>
+            </ul>
+            <div class="btn_nav">
+                <div>
+                <el-button @click="btnlogin()" plain class="btnlogin">Login</el-button>
+                </div>
+                <div>
+                <el-button @click="onsignup()" class="btnsignup">Sign Up</el-button>
+                </div>
+            </div>
+        </nav>
+    </div>
 </template>
 
 <script>
 export default {
-  methods: {
-   AboutUs() {
-      this.$router.push({ name: "AboutUs" }).catch(() => {});
-    },
-     btnlogin(){
-      this.$router.push({name:"Login"}).catch(()=>{});
-    },
-    btnbars() {
-      if(window.innerWidth > 360){
-        document.querySelector(".d-flex").style.flexDirection = "column";
-        document.querySelector(".displaynone").style.display = "flex";
-        document.querySelector(".displaynone").style.flexDirection = "column";
-        document.querySelector(".btnflex").style.display = "flex";
-        document.querySelector(".btnflex").style.flexDirection = "column";
-        document.querySelector(".pad-top").style.margin = "11px 0 ";
-        document.querySelector(".logo-size").style.marginRight = "190px";
-        document.querySelector("#d-bars").style.display = "none";
-        document.querySelector(".sndbox").style.top = "433px";
-        document.querySelector("#btnclose").style.display = "block";
-        document.querySelector("#btnclose").style.position = "absolute";
-        document.querySelector("#btnclose").style.top = "20px";
-        document.querySelector("#btnclose").style.right = "11px";
-      }
-      else {
-        document.querySelector(".d-flex").style.flexDirection = "column";
-        document.querySelector(".displaynone").style.display = "flex";
-        document.querySelector(".displaynone").style.flexDirection = "column";
-        document.querySelector(".btnflex").style.display = "flex";
-        document.querySelector(".btnflex").style.flexDirection = "column";
-        document.querySelector(".pad-top").style.margin = "11px 0 ";
-        document.querySelector(".logo-size").style.marginRight = "160px";
-        document.querySelector("#d-bars").style.display = "none";
-        document.querySelector(".sndbox").style.top = "433px";
-        document.querySelector("#btnclose").style.display = "block";
-        document.querySelector("#btnclose").style.position = "absolute";
-        document.querySelector("#btnclose").style.top = "20px";
-        document.querySelector("#btnclose").style.right = "11px";
-      }
-    },
-    btn_close() {
-      document.querySelector(".d-flex").style.display = "none";
-      document.querySelector(".displaynone").style.display = "none";
-      document.querySelector(".btnflex").style.display = "none";
-      document.querySelector(".sndbox").style.top = "237px";
-      document.querySelector(".pad-top").style.margin = "0";
-      document.querySelector("#btnclose").style.display = "none";
-      document.querySelector("#d-bars").style.display = "block";
-      document.querySelector("#d-bars").style.display = "block";
-      document.querySelector("#d-bars").style.position = "absolute";
-      document.querySelector("#d-bars").style.top = "20px";
-      document.querySelector("#d-bars").style.right = "11px";
-    },
-    // hannah 8/4/21
-    onsignup(){
-      this.$router.push({name: "signup"}).catch(() =>{});
-    },
-    onhome(){
-      this.$router.push({name: "Home"}).catch(() =>{});
+    methods: {
+        btnlogin(){
+            this.$router.push({name:"Login"}).catch(()=>{});
+        },
+        btnbars() {
+            document.querySelector('.navlinks').style.display = 'flex'
+            // document.querySelector('.navlinks').style.zIndex = 5
+            // document.querySelector('.navlinks').style.position = 'fixed'
+            document.querySelector('.btn_nav').style.display = 'flex'
+            document.querySelector('.toggle-bars').style.display = 'none'
+            document.querySelector('.toggle-close').style.display = 'flex'
+            document.querySelector(".main_div").style.marginBottom = '128px'
+        },
+        btn_close() {
+            document.querySelector('.navlinks').style.display = 'none'
+            document.querySelector('.btn_nav').style.display = 'none'
+            document.querySelector('.toggle-close').style.display = 'none'
+            document.querySelector('.toggle-bars').style.display = 'flex'
+            document.querySelector(".main_div").style.marginBottom = '355px'
+        },
+        onsignup() {
+            this.$router.push({name: 'signup'}).catch(() => {})
+        },
+        homelink() {
+            this.$router.push({name: 'Home'}).catch(() => {})
+        },
+        AboutUs(){
+            this.$router.push({name: "AboutUs"}).catch(() =>{});
+        },
     }
-  }
 }
 </script>
 
-<style scoped src="@/assets/styles/FrontPage/frontpage_style.css"></style>
+<style scoped src="@/assets/styles/FrontPage/navbarstyle.css"></style>

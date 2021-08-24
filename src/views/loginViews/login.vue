@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-             <Nav />
+            <Nav />
         </div>
         <div>
              <Login :login="loginData" :labelPosition="labelPosition" :rules="rules" :signIn="sign" />
@@ -12,8 +12,8 @@
     </div>
 </template>
 <script>
-import Footer from "@/components/footer"
 import Nav from "@/components/navbar/nav"
+import Footer from "@/components/footer"
 import Login from "@/components/login"
 export default {
     components:{

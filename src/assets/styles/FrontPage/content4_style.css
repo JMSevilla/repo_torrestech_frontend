@@ -39,8 +39,8 @@
 
 #row2 img{
     margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: auto;
 }
 
 #learnmorebtn{
@@ -73,6 +73,11 @@ display: block;
 }
 
 @media screen and (max-width: 1920px){
+
+.cardDisplay{
+    display: block;
+}
+
 .carouselDisplay{
     display: none;
 }
@@ -84,26 +89,9 @@ display: block;
     
 
 @media screen and (max-width: 1367px){
-.carouselDisplay{
-    display: none;
-}
 
-.carouselDisplay2{
-    display: none;
-}
-}
-
-@media screen and (max-width: 1024px){ 
-#learnmorebtn{
-    font-size: 13px;   
-}
-
-#BusinessManagement span{
-    text-align: center;
-}
-
-#ComputerProgramming span{
-    text-align: center;
+.cardDisplay{
+    display: block;
 }
 
 .carouselDisplay{
@@ -113,6 +101,42 @@ display: block;
 .carouselDisplay2{
     display: none;
 }
+}
+
+@media screen and (max-width: 1025px){ 
+.carouselCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carouselDisplay{
+    display: block;
+    z-index: 1;
+}
+
+.cardDisplay{
+    display: none;
+}
+
+.carouselDisplay2{
+    display: none;
+}
+
+#row2 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 70%;
+    height: auto;
+}
+
+.header-column{
+    width: 60%;
+}
+
+
 }
 
 @media screen and (max-width: 768px) { 
@@ -140,10 +164,15 @@ display: block;
     font-size: 14px;
 }
 
+
 #row2 img{
     margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
+    width: 80%;
+    height: auto;
+}
+
+.header-column{
+    width: 90%;
 }
 }
 

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import navbar from "@/components/navbar/nav";
+import navbar from "@/components/navbar/nav"
 import footerTorres from "@/components/footer";
 import privacypolicy from "@/components/PrivacyPolicy";
 export default {

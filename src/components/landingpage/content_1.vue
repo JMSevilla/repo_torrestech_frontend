@@ -9,7 +9,7 @@
                     <h3 class="h3_content1">"We Develop</h3>
                     <h3 class="h3_content1">Young Professionals"</h3>      
                     <p class="p_text">Different fields of expertise we offer various tracks.</p>
-                    <el-button class="btnwatwedo" size="medium">WHAT WE DO</el-button>
+                    <el-button @click="watwedo_link()" class="btnwatwedo" size="medium">WHAT WE DO</el-button>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -29,4 +29,14 @@
     </div>
 </template>
 
-<style scoped src="@/assets/styles/FrontPage/frontpage_style.css"></style>
+<style scoped src="@/assets/styles/FrontPage/content1_style.css"></style>
+
+<script>
+export default {
+  methods: {
+    watwedo_link() {
+      this.$router.push({ name: 'AboutUs' }).catch(() => {});
+    }
+  }
+}
+</script>

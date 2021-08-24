@@ -16,6 +16,21 @@ const requestSetup = {
         return await new Promise((resolve) => {
             return statemanagement.state.identifyAdmin(resolve)
         })
+    },
+    async admin_store_data(obj){
+        return await new Promise((resolve) => {
+            return statemanagement.state.storeAdmin(obj, resolve)
+        })
+    },
+    async classcode_student_scan(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.checkClasscode(obj, resolve)
+        })
+    },
+    async student_registration_setup(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.studentRegister(obj, resolve);
+        });
     }
 }
 

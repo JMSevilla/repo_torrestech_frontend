@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container-fluid" id="container1">
+        <div class="container-fluid main-footer">
              <div class="container">
                 <div class="row">
                     <div class="col-md-3" id="firstcolumn">
@@ -25,11 +25,15 @@
                             </ul>
                     </div>
                     <div class="col-md-3">
-                        <ul class="list-unstyled">
-                        <li>
-                            <i class="fab fa-facebook-f" id="fbicon" style="margin-right: 10px"></i>
-                            <a href="#">Facebook</a>
-                        </li>
+                        <ul class="list-unstyled social-media-link">
+                            <li>
+                                <i class="fab fa-facebook-f" id="fbicon" style="margin-right: 14px"></i>
+                                <a href="https://www.facebook.com/TorresTechnologyCenterCorporation">Facebook</a>
+                            </li>
+                            <li>
+                                <img src="@/assets/img/FrontPage/youtube.svg" class="img-fluid" id="yticon" alt="Youtube">
+                                <a href="#">Youtube</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-3" id="location">
@@ -41,13 +45,22 @@
             </div>
         </div>
 
-        <div class="container-fluid" id="container2">
-            <span>Copyright &copy; Torres Technology Center Corporation {{new Date().getFullYear()}}. </span>
-            <span> All rights reserved.</span> 
-            <small class="textdivider"> | </small> 
-            <span @click="PrivacyPolicy()" id="privacyPolicy">  Privacy Policy  </span> 
-            <small class="textdivider"> | </small> 
-            <span id="TermsAndConditions" @click="TermsAndConditions()">Terms and Conditions</span>
+        <div class="container-fluid sub-footer">
+            <div class="container">
+                <div class="row flex-direc">
+                    <div class="col-md-9 sub-footer-link-column1">
+                        <span class="text-align">Copyright &copy; Torres Technology Center Corporation {{new Date().getFullYear()}}. </span>
+                        <span class="text-align"> All rights reserved.</span> 
+                        <small class="textdivider"> | </small> 
+                        <span @click="PrivacyPolicy()" class="sub-footer-link">  Privacy Policy  </span> 
+                        <small> | </small> 
+                        <span @click="TermsAndConditions()" class="sub-footer-link">Terms and Conditions</span> 
+                    </div>
+                    <div class="col-md-3 sub-footer-link-column2">
+                        <span @click="ReportABug()" class="sub-footer-link" >Having issue with the site? Report a bug now.</span>
+                    </div>
+                </div>
+            </div>
         </div>
   
     </div>
@@ -64,6 +77,9 @@ export default {
         },
         PrivacyPolicy(){
             this.$router.push({name: 'PrivacyPolicy'}).catch(()=>{});
+        },
+        ReportABug(){
+            this.$router.push({name: 'ReportABug'}).catch(()=>{});
         }
     }
 }

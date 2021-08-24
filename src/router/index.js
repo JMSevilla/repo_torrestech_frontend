@@ -49,7 +49,7 @@ const routes = [
   {
     path: '/signup',
     name: 'signup',
-    component: () => import("@/views/Signup")
+    component: () => import("@/views/userstudent/student_registration")
   },
   {
     path: '/termsandcondition',
@@ -65,7 +65,24 @@ const routes = [
     path: '/course-page',
     name: 'CoursePage',
     component: () => import("@/views/course")
-  }
+  },
+  {
+    path: '/admindash',
+    name: 'AdminDashboard',
+    component: () => import("@/views/admindash_views/AdminDashPage"),
+    children: [
+      {
+        path: '/admindash/add-new-training',
+        name: 'AddNewTraining',
+        component: () => import("@/views/admindash_views/trainings/add_new_training")
+      }
+    ]
+   },
+    {
+      path: '/report-a-bug',
+      name: 'ReportABug',
+      component: () => import("@/views/ReportABug")
+    }
 
 ]
 
