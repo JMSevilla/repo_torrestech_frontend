@@ -1,0 +1,186 @@
+#r1{
+    align-items: center;
+     background: #f3f0d7;
+     width: 100%;
+     margin: 0;
+}
+#r1c1{
+    text-align: center;
+}
+#r1c2{
+    padding: 70px 5% 0 5%;
+    text-align: center;
+    background: #fff;
+}
+svg{
+    fill: #ff6600;
+    width: 25%;
+}
+h3{
+    font-family: Calibri;
+    color: #2d4059;
+    font-weight: 900;
+    font-size: 40px;
+}
+p{ 
+    font-family: Calibri;
+    color: #7f7f7f;
+    font-size: 14px;
+}
+input.form-control{
+    background: #D7E2ED;
+    border-color: #7f7f7f;
+    border-width: .1em;
+    font-family: Calibri;
+    font-weight: 550;
+    color: #7f7f7f;
+    font-size: 14px;
+    border-radius: 7px;
+    padding: 0 0 0 15px;
+}
+textarea.form-control{
+    background: #D7E2ED;
+    border-color: #7f7f7f;
+    border-width: .1em;
+    font-family: Calibri;
+    font-weight: 550;
+    color: #7f7f7f;
+    font-size: 14px;
+    border-radius: 7px;
+    padding: 5px 0 0 5px;
+}
+.form-control{
+    border: 2px solid #7f7f7f;
+    box-shadow: none;
+}
+.rowInput{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0 10% 0 8%;
+    margin: 0 0 15px 0;
+}
+.rowInput p{
+    width: 150px;
+    border: none;
+    font-weight: bold;
+    text-align: start;
+    margin: 0;
+    
+}
+.rowInput input{
+    width: 100%;
+}
+::placeholder{
+    font-family: Calibri;
+    font-weight: 550;
+    margin: 0;
+}
+button{
+    color: #ffff;
+    background-color: #0f5298;
+    width: 100%; 
+    font-family: Calibri !important;
+}
+#attach{
+    background-color: #7f7f7f;
+    float:right;
+    width: 150px;
+}
+#send{
+    background: #0f5298;
+    margin-bottom: 60px;
+}
+.rowInput div{
+    width: 20%;
+}
+.svg{
+    display: flex;
+}
+@media only screen and (max-width: 1025px) and (min-height: 1365px){
+    #r1{
+        height: 80vh;
+    }
+    #r1c2{
+        height: 80vh;
+    }
+}
+@media only screen and (max-width: 800px){
+    #r1{
+        flex-direction: column;
+        background-color: #fff;
+        margin: 0;
+        padding: 0 ;
+        width: 100%;
+    }
+    #r1c2{
+        width: 100%;
+        padding: 20px 6% 0 5%;
+    }
+    .rowInput{
+      
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 400px){
+    #r1{
+        flex-direction: column;
+        background-color: #fff;
+        margin: 0;
+        padding: 0 ;
+        width: 100%;
+        padding: 10px 0 0 0;
+    }
+    #r1c2{
+        
+        text-align: center;
+        width: 100%;
+        padding: 7px 5% 0 5%;
+    }
+    .rowInput{
+        flex-direction: column;
+        align-items: center;
+        margin: 15px;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .rowInput p{
+        margin: 0;
+        padding: 0 0 0 10px;
+        width: 100%;
+        font-size: 18px;
+    }
+    
+    .rowInput textarea{
+        margin: 0;
+        padding: 0 0 0 10px;
+        width: 100%;
+        font-size: 18px;
+    }
+    svg{
+        width: 35%;
+    }
+    input.form-control{
+        padding: 5px 0 5px 10px;
+        font-size: 18px;
+    }
+    textarea.form-control{
+        padding: 5px 0 5px 10px;
+    }
+    #attach{
+        width: 100%;
+        font-size: 18px;
+    }
+    #rowAttached{
+        flex-direction: column;
+        
+    }
+    #send{
+        font-size: 18px;
+        /* margin: 0 0 10px 0; */
+        width: 100%;
+    }
+}
