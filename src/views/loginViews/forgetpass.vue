@@ -4,7 +4,7 @@
            <Nav />
         </div>
         <div>
-            <forgetPassword :forgetPassword="forgetPasswordData" :send="resend" />
+            <forgetPassword :rules="rules" :forgetPassword="forgetPasswordData" :labelPosition="labelPosition" />
         </div>
         <div>
              <Footer />
@@ -22,15 +22,18 @@ export default {
     },
     data(){
         return{
+            labelPosition:'top',
             forgetPasswordData:{
                 email:''
+            },
+            rules:{
+                email:[
+                    {required:true,message:'Please input email address'},
+                    {type: 'email',message:'Please input correct email address',trigger:['blur','change'] }
+                ]
             }
         }
-    },
-    methods:{
-      resend(){
-          console.log(this.forgetPasswordData)
-      }  
     }
+    
 }
 </script>

@@ -3,7 +3,7 @@
         <div>
             <Nav />
         </div>
-        <resetByCode :resetByCode="resetByCode" :send="reset" />
+        <resetByCode :resetByCode="resetByCode" :rules="rules" :labelPosition="labelPosition"/>
         <div>
              <Footer />
         </div>
@@ -19,15 +19,16 @@ export default {
     },
     data(){
         return{
+            labelPosition: 'top',
             resetByCode:{
                code: ''
+            },rules:{
+                code:[
+                  {required:true,message:'Please input your verification code'} 
+                ]
             }
         }
-    },
-    methods:{
-        reset(){
-            console.log(this.resetByCode)
-        }
     }
+   
 }
 </script>
