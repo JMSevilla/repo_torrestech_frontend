@@ -1,6 +1,6 @@
 <template>
     <div>
-         <div class="row p-3">
+         <div class="row p-5">
             <div class="col-md">
                 <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
                     <div class="card-header" style="background: #FFF">
