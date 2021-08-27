@@ -1,21 +1,18 @@
 <template>
-    <div style="background: #f5f7f8; width: 100%; min-height: 100vh">
-      <el-row class="tac">
-        <el-col :span="4">
-            <SideDash />
-        </el-col>
-        <el-col :span="20">
-            <HeaderDash />
-            <router-view>
-              
-            </router-view>
-        </el-col>
-      </el-row>
-      <el-row class="tac">
-        <el-col :span="24">
-            <FooterDash />
-        </el-col>
-      </el-row>
+    <div style="background: #f4f4f4">
+      <div class="d-flex">
+        <div class="sidebar-dash">
+          <SideDash />
+        </div>
+        <div style="width: 100%;">
+          <HeaderDash />
+          <router-view>
+          </router-view>
+        </div>
+      </div>
+      <div style="width: 100%;">
+        <FooterDash />
+      </div>
     </div>
 </template>
 
@@ -29,3 +26,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+  .sidebar-dash {
+    background: #fff; 
+    width: 18%; min-height: 100vh; 
+    border-right: 3px #e6e6e6 solid
+  }
+</style>
