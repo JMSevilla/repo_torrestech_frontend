@@ -218,8 +218,8 @@
                 </div>
             </b-row>
             <!-END THREE SECTION-->
-                
         </b-container>
+        <!-- <RelatedProducts /> -->
         <Footer />
     </div>
 </template>
@@ -227,9 +227,10 @@
 <script>
 import Nav from "@/components/navbar/nav";
 import Footer from "@/components/footer";
+import RelatedProducts from "@/components/course_template/relatedproducts";
 export default {
     components: {
-        Nav, Footer
+        Nav, RelatedProducts, Footer
     }
 }
 
