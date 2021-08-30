@@ -31,6 +31,11 @@ const requestSetup = {
         return await new Promise(resolve => {
             return statemanagement.state.studentRegister(obj, resolve);
         });
+    },
+    async signin_setup(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.signinController(obj, resolve);
+        })
     }
 }
 

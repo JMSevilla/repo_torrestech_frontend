@@ -31,6 +31,12 @@ class __constructor__ {
         data.append("image_url", obj.imageurl);
         return data;
     }
+    signindata(obj) { 
+        var data = new FormData();
+        data.append("email", obj.email)
+        data.append("password", obj.password)
+        return data
+    }
 }
 
 export default new __constructor__();

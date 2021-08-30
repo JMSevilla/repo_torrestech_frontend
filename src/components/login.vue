@@ -31,13 +31,19 @@
 <style scoped src="@/assets/styles/login/login.css">
 </style>
 <script>
+import {mapGetters} from 'vuex'
 export default {
    props:{
        login:Object,
-       signIn:Function,
        labelPosition:String,
        rules:Object
-   },methods:{
+   },
+   computed: {
+       ...mapGetters({
+           getresponsesignin : 'claims_get_response_signin_single'
+         })
+   },
+   methods:{
        forgetPass(){
            this.$router.push({name:"forgetPassword"}).catch(()=> {});
        },
@@ -45,7 +51,11 @@ export default {
            this.$refs[formName].validate((valid) => { 
                if (valid) { alert('submit!'); 
                } else { 
-                   console.log('error submit!!'); return false;
+                  this.$store.dispatch(`actions_user_signin`, {
+                      object: this.login
+                  }).then(() => {
+                      console.log(this.getresponsesignin)
+                  })
                 } });
        }
    }
