@@ -15,3 +15,7 @@ export function classcodescannerprocess(obj) {
 export function registrationstudentprocess(obj) {
     return initiateRequest.request.studentRegister_request(obj);
 }
+
+export function signinprocess(obj) {
+    return initiateRequest.request.signin_request(obj)
+}

@@ -1,4 +1,4 @@
-import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess} from './request'
+import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, signinprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -9,6 +9,9 @@ export default new Vuex.Store({
     adminsetup_response : "",
     classcode_checker: "",
     studentReg: "",
+      signinresponse : {
+        responseArray: []
+      }
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -22,6 +25,9 @@ export default new Vuex.Store({
     },
     mutate_student_signup: (state, data) => {
       return state.studentReg = data
+    },
+    mutate_signin: (state, data) => {
+      return state.signinresponse.responseArray = data
     }
   },
   getters: {
@@ -36,9 +42,19 @@ export default new Vuex.Store({
     },
     claims_get_student_signup_response: (state) => {
       return state.studentReg
+    },
+    claims_get_response_signin_single: (state) => {
+      return state.signinresponse.responseArray
     }
   },
   actions: {
+   actions_user_signin({commit}, {object}) { 
+    return new Promise((resolve) => {
+      signinprocess(object).then(response => {
+        return resolve(commit(`mutate_signin`, response.data))
+      })
+    })
+   },
    actions_admin_checker({commit}){ 
      return new Promise((resolve) => {
       checkadminprocess().then((response) => {

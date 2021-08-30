@@ -35,6 +35,14 @@ const state = {
         } catch (error) {
             alert(alert)
         }
+    },
+    signinController(obj, resolve) { 
+        try {
+            var restful = http.post(api.EntryPoint(`signin`) + `/standard-login`, constructor.signindata(obj))
+            response.responseData(restful, resolve)
+        } catch (error) {
+            alert(error)
+        }
     }
 }
 
@@ -56,7 +64,10 @@ const request = {
     },
     async studentRegister_request(obj) {
         return await api.requestSetup.student_registration_setup(obj);
-    } 
+    },
+    async signin_request(obj) {
+        return await api.requestSetup.signin_setup(obj);
+    }
 }
 
 export default { 
