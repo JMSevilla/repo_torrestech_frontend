@@ -1,4 +1,5 @@
-import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, signinprocess} from './request'
+import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, signinprocess, updatetokenprocess,
+  scantokenprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -11,7 +12,11 @@ export default new Vuex.Store({
     studentReg: "",
       signinresponse : {
         responseArray: []
-      }
+      },
+      signinArray: [],
+      tokenresponse: '',
+      tokenArray: [],
+      scantokenresponse: ''
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -28,6 +33,12 @@ export default new Vuex.Store({
     },
     mutate_signin: (state, data) => {
       return state.signinresponse.responseArray = data
+    },
+    mutate_token_updater: (state, data) => {
+      return state.tokenresponse = data
+    },
+    mutate_scan_token: (state, data) => {
+      return state.scantokenresponse = data
     }
   },
   getters: {
@@ -45,9 +56,29 @@ export default new Vuex.Store({
     },
     claims_get_response_signin_single: (state) => {
       return state.signinresponse.responseArray
+    },
+    claims_get_response_token_update: (state) => {
+      return state.tokenresponse
+    },
+    claims_scan_token: (state) => {
+      return state.scantokenresponse
     }
   },
   actions: {
+    actions_scan_token({commit}, {token, email}) {
+      return new Promise((resolve) => {
+        scantokenprocess(token, email).then(response => {
+          return resolve(commit(`mutate_scan_token`, response.data))
+        })
+      })
+    },
+   actions_token_update({commit}, {email, token}) {
+    return new Promise((resolve) => {
+      updatetokenprocess(email, token).then(response => {
+        return resolve(commit(`mutate_token_updater`, response.data))
+      })
+    })
+   },
    actions_user_signin({commit}, {object}) { 
     return new Promise((resolve) => {
       signinprocess(object).then(response => {

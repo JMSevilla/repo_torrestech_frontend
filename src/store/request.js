@@ -19,3 +19,11 @@ export function registrationstudentprocess(obj) {
 export function signinprocess(obj) {
     return initiateRequest.request.signin_request(obj)
 }
+
+export function updatetokenprocess(email, token) {
+    return initiateRequest.request.updatetoken_request(email, token)
+}
+
+export function scantokenprocess(token, email){
+    return initiateRequest.request.scantoken_request(token, email)
+}

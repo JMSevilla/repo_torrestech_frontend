@@ -43,6 +43,22 @@ const state = {
         } catch (error) {
             alert(error)
         }
+    },
+    updateTokenController(email, token, resolve) {
+        try {
+            var restful = http.put(api.EntryPoint(`signin`) + `/update-token-admin` + constructor.updateToken(email, token))
+            response.responseData(restful, resolve)
+        } catch (error) {
+            alert(error)
+        }
+    },
+    scanTokenLoader(token, email, resolve) {
+        try {
+            var restful = http.get(api.EntryPoint(`signin`) + `/check-token` + constructor.scanToken(token, email))
+            response.responseData(restful, resolve)
+        } catch (error) {
+            alert(error)
+        }
     }
 }
 
@@ -67,6 +83,12 @@ const request = {
     },
     async signin_request(obj) {
         return await api.requestSetup.signin_setup(obj);
+    },
+    async updatetoken_request(email, token) {
+        return await api.requestSetup.updatetoken_setup(email, token)
+    },
+    async scantoken_request(token, email) {
+        return await api.requestSetup.scantoken_setup(token, email)
     }
 }
 
