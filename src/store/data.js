@@ -37,6 +37,14 @@ class __constructor__ {
         data.append("password", obj.password)
         return data
     }
+    updateToken(email, token) {
+        var markup = `?email=${email}&token=${token}`
+        return markup
+    }
+    scanToken(token , email) {
+        var markup = `?token=${token}&email=${email}`
+        return markup
+    }
 }
 
 export default new __constructor__();

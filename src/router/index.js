@@ -72,7 +72,7 @@ const routes = [
     component: () => import("@/views/admindash_views/AdminDashPage"),
     children: [
       {
-        path: '/admindash/add-new-training',
+        path: '/admindash/add-new-training' + hashedroutes.makeid(200),
         name: 'AddNewTraining',
         component: () => import("@/views/admindash_views/trainings/add_new_training")
       }
