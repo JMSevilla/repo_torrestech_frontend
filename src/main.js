@@ -8,6 +8,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Element from 'element-ui'
 import firebase from 'firebase'
 import locale from 'element-ui/lib/locale/lang/en'
+import SplitCarousel from "vue-split-carousel";
+import "vue-split-carousel/dist/vue-split-carousel.css";
+Vue.use(SplitCarousel);
 Vue.use(Element, { locale })
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

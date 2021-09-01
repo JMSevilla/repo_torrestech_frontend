@@ -3,7 +3,7 @@
          <div class="row p-5">
             <div class="col-md">
                 <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
-                    <div class="card-header" style="background: #FFF">
+                    <div class="card-header p-0" style="background: #FFF">
                         <h3 class="training-headline">Setup your training</h3>
                     </div>
                     <div class="mt-5">
@@ -107,7 +107,6 @@ export default {
                 categories:'',
                 startdate:'',
                 enddate:'',
-                enrolmentcloses:'',
                 listassignee:[{
                         label: 'John Doe',
                         value: 'John Doe'
@@ -146,9 +145,6 @@ export default {
                 payment: [
                     { required: true, message: 'Please select payment' }
                 ],
-                coursefee: [
-                    { required: true, message: 'Please input course fee' }
-                ],
                 effort: [
                     { required: true, message: 'Please input week required in the training' }
                 ],
@@ -163,9 +159,6 @@ export default {
                 ],
                 enddate: [
                     { required: true, message: 'Please select training end date' }
-                ],
-                enrolmentcloses: [
-                    { required: true, message: 'Please select enrollment closes date' }
                 ],
                 assignee: [
                     { required: true, message: 'Please select assigned employee' }

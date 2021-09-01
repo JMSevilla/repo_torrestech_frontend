@@ -35,8 +35,8 @@ import Nav from "../navbar/nav.vue"
 import Content1 from "./content_1";
 import Content2 from "./content_2";
 import Content3 from "./content_3";
-import Content4 from "./content_4"
-import Content5 from "./content_5"
+import Content4 from "./content_4";
+import Content5 from "./content_5";
 import Footer from "../footer";
 export default {
     components: {
