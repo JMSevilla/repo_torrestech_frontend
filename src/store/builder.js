@@ -6,7 +6,7 @@ import axios from 'axios'
 const state = { 
     identifyAdmin(resolve) { 
         try {
-            var restful = http.get(api.EntryPoint(`administrator`) + `/detect-admin-registration`)
+            var restful = http.get(api.EntryPoint(`v1/resources/administrator`) + `/detect-admin-registration`)
             response.responseData(restful, resolve)
         } catch (error) {
             alert(error)
@@ -14,7 +14,7 @@ const state = {
     },
     storeAdmin(obj, resolve){
         try {
-            var restful = http.post(api.EntryPoint(`administrator`) + `/admin-store-data`, constructor.datamanagement(obj))
+            var restful = http.post(api.EntryPoint(`v1/resources/administrator`) + `/admin-store-data`, constructor.datamanagement(obj))
             response.responseData(restful, resolve)
         } catch (error) {
             alert(error)
@@ -38,7 +38,7 @@ const state = {
     },
     signinController(obj, resolve) { 
         try {
-            var restful = http.post(api.EntryPoint(`signin`) + `/standard-login`, constructor.signindata(obj))
+            var restful = http.post(api.EntryPoint(`v1/resources/signin`) + `/standard-login`, constructor.signindata(obj))
             response.responseData(restful, resolve)
         } catch (error) {
             alert(error)
@@ -46,7 +46,7 @@ const state = {
     },
     updateTokenController(email, token, resolve) {
         try {
-            var restful = http.put(api.EntryPoint(`signin`) + `/update-token-admin` + constructor.updateToken(email, token))
+            var restful = http.put(api.EntryPoint(`v1/resources/signin`) + `/update-token-admin` + constructor.updateToken(email, token))
             response.responseData(restful, resolve)
         } catch (error) {
             alert(error)
