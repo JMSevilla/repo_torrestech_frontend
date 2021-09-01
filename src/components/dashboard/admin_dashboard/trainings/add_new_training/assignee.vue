@@ -1,6 +1,6 @@
 <template>
     <div>
-         <div class="justify-content-center mt-5 mb-1 paragtext">
+         <div class="justify-content-center mt-5 paragtext">
             <h6>Fill each section and click 'Next' to continue.</h6>
             <div>
                 <el-form status-icon :model="trainingtask" :rules="rules" ref="ruleForm" label-position="top">
@@ -16,8 +16,8 @@
                             </el-select>
                         </el-form-item>
                     </div>
-                    <div class="card-footer"  style="background: #FFF">
-                        <el-form-item>
+                    <div class="card-footer p-0"  style="background: #FFF">
+                        <el-form-item style="margin-right: 30px">
                             <el-button class="next-button" @click="onsubmit('ruleForm')">SAVE</el-button>
                             <el-button class="next-button" @click="onback()">BACK</el-button>
                         </el-form-item>
@@ -42,7 +42,7 @@ export default {
         onsubmit(ruleForm){
             this.$refs[ruleForm].validate((valid) =>{
                 if(valid){
-                    this.onnext();
+                    alert("Successfully Saved")
                 }
                 else{
                     return false;

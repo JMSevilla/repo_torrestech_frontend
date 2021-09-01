@@ -2,10 +2,10 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-7 pt-1">
                     <h3>Add Online Training</h3>
                 </div>
-                <div class="col-md-5 p-3">
+                <div class="col-md-5 pt-3">
                     <el-breadcrumb separator="/">
                         <el-breadcrumb-item :to="{ path: '' }">Dashboard</el-breadcrumb-item>
                         <el-breadcrumb-item :to="{ path: 'add-new-training' }">Add New Training</el-breadcrumb-item>
