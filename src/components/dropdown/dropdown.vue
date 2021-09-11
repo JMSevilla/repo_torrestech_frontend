@@ -13,9 +13,9 @@
     <i class="el-icon-caret-bottom" style="margin-left: 5px; margin-right: 50px"></i>
   </span>
   <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item command="a">Profile</el-dropdown-item>
-    <el-dropdown-item command="b">Activity Log</el-dropdown-item>
-    <el-dropdown-item command="c">Logout</el-dropdown-item>
+    <el-dropdown-item command="AdminProfile">Profile</el-dropdown-item>
+    <el-dropdown-item command="ActivityLog">Activity Log</el-dropdown-item>
+    <el-dropdown-item command="Login">Logout</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
   </div>
@@ -41,7 +41,14 @@
       },
       onLeave() {
         this.$refs.dropdown.visible = false;
-      }
+      },
+        handleCommand(command) {
+        this.$router.push({name: ''+command}).catch(()=>{});
+        if(command=="Login"){
+          this.$message('Successfully logged-out!');
+        }
+      },
+
     }
   }
 </script>
