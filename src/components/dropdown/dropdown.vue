@@ -1,11 +1,4 @@
 <template>
-  <!-- <div @mouseover="onOver" @mouseleave="onLeave">
-  <b-dropdown id="dropdown-offset" offset="-100" variant="#2d4059" toggle-class="text-white" size = "sm" text="" ref="dropdown" class="m-md-2">
-    <b-dropdown-item>Profile</b-dropdown-item>
-    <b-dropdown-item>Activity Log</b-dropdown-item>
-    <b-dropdown-item>Logout</b-dropdown-item>
-  </b-dropdown>
-</div> -->
   <div>
     <el-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
