@@ -1,35 +1,31 @@
 <template>
     <div>
-         <div class="row p-5">
-            <div class="col-md">
-                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
-                    <div class="card-header p-0" style="background: #FFF">
-                        <h3 class="training-headline">Setup your training</h3>
-                    </div>
-                    <div class="mt-5">
-                        <el-steps :active="active" finish-status="success" align-center>
-                            <el-step title="Type"></el-step>
-                            <el-step title="Info"></el-step>
-                            <el-step title="Options"></el-step>
-                            <el-step title="Scheduling"></el-step>
-                            <el-step title="Assigned Employee"></el-step>              
-                        </el-steps>
-                        <div v-if="active == 0">
-                            <Type :trainingtask="trainingtask" :onnext="onnext" :rules="rules" />
-                        </div>
-                        <div v-else-if="active == 1" >
-                            <Info :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
-                        </div>
-                        <div v-else-if="active == 2" >
-                            <Options :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
-                        </div>
-                        <div v-else-if="active == 3" >
-                            <Scheduling :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
-                        </div>
-                        <div v-else-if="active == 4" >
-                            <Assignee :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
-                        </div>
-                    </div>
+        <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+            <div class="card-header" style="background: #FFF">
+                <h3 class="training-headline">Setup your training</h3>
+            </div>
+            <div class="mt-5">
+                <el-steps :active="active" finish-status="success" align-center>
+                    <el-step title="Type"></el-step>
+                    <el-step title="Info"></el-step>
+                    <el-step title="Options"></el-step>
+                    <el-step title="Scheduling"></el-step>
+                    <el-step title="Assigned Employee"></el-step>              
+                </el-steps>
+                <div v-if="active == 0">
+                    <Type :trainingtask="trainingtask" :onnext="onnext" :rules="rules" />
+                </div>
+                <div v-if="active == 1" >
+                    <Info :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
+                </div>
+                <div v-else-if="active == 2" >
+                    <Options :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
+                </div>
+                <div v-else-if="active == 3" >
+                    <Scheduling :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
+                </div>
+                <div v-else-if="active == 4" >
+                    <Assignee :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
                 </div>
             </div>
         </div>
@@ -56,30 +52,34 @@ export default {
                 trainingName:'',
                 shortDescription:'',
                 fullDescription:'',
+                whatyoulearn:'',
                 liststatus:[{
-                        label: 'Disabled',
-                        value: 'Disabled'
-                    },{
-                        label: 'Enabled',
-                        value: 'Enabled'
+                        label: 'Enable',
+                        value: 'Enable'
+                    },
+                    {
+                        label: 'Disable',
+                        value: 'Disable'
                     }
                 ],
                 status:'',
                 listforum:[{
-                        label: 'Disabled',
-                        value: 'Disabled'
-                    },{
-                        label: 'Enabled',
-                        value: 'Enabled'
+                        label: 'Enable',
+                        value: 'Enable'
+                    },
+                    {
+                        label: 'Disable',
+                        value: 'Disable'
                     }
                 ],
                 forum:'',
                 listlivechat:[{
-                        label: 'Disabled',
-                        value: 'Disabled'
-                    },{
-                        label: 'Enabled',
-                        value: 'Enabled'
+                        label: 'Enable',
+                        value: 'Enable'
+                    },
+                    {
+                        label: 'Disable',
+                        value: 'Disable'
                     }
                 ],
                 livechat:'',
@@ -122,13 +122,16 @@ export default {
                     { required: true, message: 'Please select type of training'}
                 ],
                 trainingName: [
-                    { required: true, message: 'Please enter training name' }
+                    { required: true, message: 'Please input training name' }
                 ],
                 shortDescription: [
-                    { required: true, message: 'Please enter short description' }
+                    { required: true, message: 'Please input short description' }
                 ],
                 fullDescription: [
-                    { required: true, message: 'Please enter full description' }
+                    { required: true, message: 'Please input full description' }
+                ],
+                whatyoulearn: [
+                    { required: true, message: 'Please input details'}
                 ],
                 status:  [
                     { required: true, message: 'Please select status' }

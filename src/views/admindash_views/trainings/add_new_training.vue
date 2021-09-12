@@ -3,7 +3,7 @@
         <div style="background: #fff">
             <Header />
         </div>
-        <div class="container">
+        <div class="p-4">
            <Stepper />
         </div>
         

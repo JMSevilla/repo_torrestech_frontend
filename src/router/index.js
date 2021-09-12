@@ -72,9 +72,31 @@ const routes = [
     component: () => import("@/views/admindash_views/AdminDashPage"),
     children: [
       {
-        path: '/admindash/add-new-training' + hashedroutes.makeid(200),
+        path: '/admindash/add-new-training',
         name: 'AddNewTraining',
         component: () => import("@/views/admindash_views/trainings/add_new_training")
+      }, 
+      {
+        path: '/admindash/activity-logs',
+        name: 'ActivityLogs',
+        component: () => import("@/views/admindash_views/header/activity_logs")
+      }
+    ]
+   },
+   {
+    path: '/employeedash',
+    name: 'EmployeeDashboard',
+    component: () => import("@/views/employee_dashboard/EmployeeDashPage"),
+    children: [
+      {
+        path: '/employeedash/add-class',
+        name: 'AddClass',
+        component: () => import("@/views/employee_dashboard/classes/add_class")
+      },
+      {
+        path: '/employeedash/all-class',
+        name: 'AllClass',
+        component: () => import("@/views/employee_dashboard/classes/all_class")
       }
     ]
    },

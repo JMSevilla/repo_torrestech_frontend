@@ -4,8 +4,8 @@
             <div>
                 <i class="el-icon-s-unfold text-white" style="padding: 19px 0"></i>
             </div>
-            <div style="display: flex">
-                <Dropdown />
+            <div style="">
+                <i class="fas fa-user-alt text-white" style="padding: 19px 0; margin-right: 50px"></i>
             </div>
         </nav>
     </div>
@@ -18,13 +18,3 @@
         background: #2d4059;
     }
 </style>
-
-<script>
-import Dropdown from "../../dropdown/dropdown.vue";
-
-export default {
-    components: {
-        Dropdown
-    },
-}
-</script>
