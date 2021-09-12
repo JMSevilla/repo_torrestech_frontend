@@ -24,6 +24,14 @@
                                 v-model="trainingtask.fullDescription">
                             </el-input>
                         </el-form-item>
+                        <el-form-item label="What you'll learn" prop="whatyoulearn">
+                            <el-input
+                                type="textarea"
+                                :rows="3"
+                                placeholder="Enter details"
+                                v-model="trainingtask.whatyoulearn">
+                            </el-input>
+                        </el-form-item>
                         <el-form-item label="Upload Photo">
                             <el-upload
                                 class="upload-demo"
@@ -39,7 +47,7 @@
                     <div class="card-footer p-0"  style="background: #FFF">
                         <el-form-item style="margin-right: 30px">
                             <el-button class="next-button" @click="onsubmit('ruleForm')">NEXT</el-button>
-                            <el-button class="next-button" @click="onback()">BACK</el-button>
+                            <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>
@@ -54,8 +62,8 @@
 export default {
     props:{
         trainingtask: Object,
-        onback: Function,
         onnext: Function,
+        onback: Function,
         rules: Object
 
     },

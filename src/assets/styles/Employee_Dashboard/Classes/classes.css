@@ -1,0 +1,94 @@
+h3{
+    font-weight: bold;
+    color: #2d4059
+}
+
+.classcode-btn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+    width: 75px;
+}
+
+.classcode-btn:hover{
+    background: #0f5298;
+    color: #fff;
+}
+
+.classcode-headline{
+    font-weight: bold;
+    color: #2d4059;
+    margin: 0;
+    padding: 0;
+}
+
+.add-classcode-btn{
+    color: #fff;
+    background: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.add-classcode-btn:hover{
+    background-color: #0d55a1;
+}
+
+.el-icon-plus{
+    font-weight: bold;
+}
+
+.save-button{
+    background: #0f5298;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    width: 13%;
+    float: right;
+    margin: 30px 0 0 30px;
+}
+
+.save-button:hover{
+    background-color: #0d55a1;
+}
+
+h6{
+    color: #2d4059;
+}
+
+.sub-title{
+    margin: 15px 0px 5px 10px;
+    font-size: 14px;
+}
+
+p{
+    font-size: 14px;
+    color: #7f7f7f;
+    text-align: justify; 
+}
+
+.submission-link{
+    font-size: 20px;
+    color: #7f7f7f;
+    margin: 0px 0px 15px 30px
+
+}
+
+.classname-title{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.class-code{
+    color: #2d4059;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.class-btn{
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    color: #0f5298;
+}

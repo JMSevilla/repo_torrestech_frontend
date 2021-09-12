@@ -70,3 +70,68 @@
     color: #2d4059;
     font-size: 20px;
   }
+
+  .el-tabs__item{
+    font-size: 20px;
+    color: #2d4059;
+  }
+
+  .el-tabs__item.is-active {
+    color: #2d4059;
+    font-weight: 550;
+}
+
+
+.el-table{
+  color: #7f7f7f;
+  font-size: 14px;
+}
+
+
+
+/* sidebar */
+.el-submenu__title {
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+.el-submenu__icon-arrow {
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+.el-menu {
+  border: none;
+}
+.el-submenu__title:focus, .el-submenu__title:hover {
+  outline: 0;
+  background: #0f5298;
+  color: #fff;
+}
+.el-submenu .el-menu {
+  background-color: #d7e2ed;
+}
+.el-menu-item {
+  color: #0f5298;
+}
+.active span {
+  color: #fff;
+}
+.active i{
+  color: #fff;
+}
+.active{
+  background-color: #0f5298;
+}
+.active_1 {
+  font-weight: bold;
+}
+.el-menu-item:focus, .el-menu-item:hover {
+  outline: 0;background-color: #d7e2ed;
+  color: #0f5298;
+  font-weight: bold;
+}
+.el-menu-item.is-active {
+  color: #0f5298;
+}
+/* sidebar */

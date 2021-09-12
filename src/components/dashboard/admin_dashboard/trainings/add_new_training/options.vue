@@ -95,7 +95,7 @@
                     <div class="card-footer p-0"  style="background: #FFF">
                         <el-form-item style="margin-right: 30px">
                             <el-button class="next-button" @click="onsubmit('ruleForm')">NEXT</el-button>
-                            <el-button class="next-button" @click="onback()">BACK</el-button>
+                            <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>
