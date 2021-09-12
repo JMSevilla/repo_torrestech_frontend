@@ -1,6 +1,6 @@
 <template>
     <div style="background: #F5F7F8">
-      <div class="d-flex">
+        <div class="d-flex">
         <div class="sidebar-dash">
           <SideDash />
         </div>
@@ -9,21 +9,22 @@
           <router-view>
           </router-view>
         </div>
-      </div>
-      <div style="width: 100%;">
-        <FooterDash />
-      </div>
+        </div>
+        <div style="width: 100%;">
+            <FooterDash />
+        </div>
     </div>
 </template>
 
 <script>
-import HeaderDash from "@/components/dashboard/admin_dashboard/header"
-import SideDash from "@/components/dashboard/admin_dashboard/sidebar"
+import HeaderDash from "@/components/dashboard/employee_dashboard/header"
+import SideDash from "@/components/dashboard/employee_dashboard/sidebar"
 import FooterDash from "@/components/dashboard/subfooter"
 export default {
     components: {
         HeaderDash, SideDash, FooterDash
     }
+    
 }
 </script>
 
