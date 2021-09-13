@@ -27,3 +27,7 @@ export function updatetokenprocess(email, token) {
 export function scantokenprocess(token, email){
     return initiateRequest.request.scantoken_request(token, email)
 }
+
+export function addtrainingprocess(obj){
+    return initiateRequest.request.addTraining_request(obj)
+}
