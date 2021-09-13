@@ -17,12 +17,13 @@
 </template>
 
 <script>
+import Dashboard from "@/components/dashboard/admin_dashboard/dashboard";
 import HeaderDash from "@/components/dashboard/admin_dashboard/header"
 import SideDash from "@/components/dashboard/admin_dashboard/sidebar"
 import FooterDash from "@/components/dashboard/subfooter"
 export default {
     components: {
-        HeaderDash, SideDash, FooterDash
+        HeaderDash, SideDash, FooterDash, Dashboard
     }
 }
 </script>

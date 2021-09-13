@@ -31,6 +31,15 @@ class __constructor__ {
         data.append("image_url", obj.imageurl);
         return data;
     }
+    bugreport(obj) {
+        var data = new FormData();
+        data.append("email", obj.email);
+        data.append("fullname", obj.fullName);
+        data.append("bugTitle", obj.bug);
+        data.append("bugdescription", obj.bugDescription);
+        data.append("bugLocation", obj.bugLink);
+        return data;
+    }
 }
 
 export default new __constructor__();

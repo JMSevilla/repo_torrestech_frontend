@@ -72,10 +72,40 @@ const routes = [
     component: () => import("@/views/admindash_views/AdminDashPage"),
     children: [
       {
+        path: '/admindash',
+        name: 'AdminDashboardTab',
+        component: () => import("@/components/dashboard/admin_dashboard/dashboard")
+      },
+      {
         path: '/admindash/add-new-training',
         name: 'AddNewTraining',
         component: () => import("@/views/admindash_views/trainings/add_new_training")
-      }
+      },
+      {
+        path: '/admindash/addnewemployee',
+        name: 'AddNewEmployee',
+        component: () => import("@/views/admindash_views/employee/insert_employee")
+      },
+      {
+        path: '/admindash/allemployee',
+        name: 'AllEmployee',
+        component: () => import("@/views/admindash_views/employee/employee_list")
+      },
+      {
+        path: '/admindash/allstudents',
+        name: 'AllStudents',
+        component: () => import("@/views/admindash_views/students/all_students")
+      },
+      {
+        path: '/admindash/activestudents',
+        name: 'ActiveStudents',
+        component: () => import("@/views/admindash_views/students/active_students")
+      },
+      {
+        path: '/admindash/classcode',
+        name: 'ClassCode',
+        component: () => import("@/views/admindash_views/students/class_code")
+      },
     ]
    },
     {

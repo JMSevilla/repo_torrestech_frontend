@@ -31,6 +31,11 @@ const requestSetup = {
         return await new Promise(resolve => {
             return statemanagement.state.studentRegister(obj, resolve);
         });
+    },
+    async report_bug_setup(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.reportBug(obj, resolve);
+        })
     }
 }
 

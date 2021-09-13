@@ -1,4 +1,6 @@
-import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess} from './request'
+import {
+  checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess
+} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -9,6 +11,7 @@ export default new Vuex.Store({
     adminsetup_response : "",
     classcode_checker: "",
     studentReg: "",
+    report: "" 
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -22,6 +25,9 @@ export default new Vuex.Store({
     },
     mutate_student_signup: (state, data) => {
       return state.studentReg = data
+    },
+    mutate_bug_report: (state, data) => {
+      return state.report = data
     }
   },
   getters: {
@@ -36,6 +42,9 @@ export default new Vuex.Store({
     },
     claims_get_student_signup_response: (state) => {
       return state.studentReg
+    },
+    claims_get_report_bug_response: (state) => {
+      return state.report
     }
   },
   actions: {
@@ -66,7 +75,14 @@ export default new Vuex.Store({
         return resolve(commit(`mutate_student_signup`, response.data.message))
       })
      })
-   }
+   },
+   actions_bug_report_setup({commit}, {object}) {
+    return new Promise(resolve => {
+      reportabugprocess(object).then(response => {
+        return resolve(commit(`mutate_bug_report`, response.data.message))
+     })
+    })
+  }
   },
   modules: {
   }

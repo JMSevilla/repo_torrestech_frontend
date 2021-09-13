@@ -35,6 +35,14 @@ const state = {
         } catch (error) {
             alert(alert)
         }
+    },
+    reportBug(obj, resolve) {
+        try {
+            var restful = http.post(api.EntryPoint(`mr_report`) + '/report-a-bug', constructor.bugreport(obj));
+            response.responseData(restful, resolve);
+        } catch(error) {
+            alert(error);
+        }
     }
 }
 
@@ -56,7 +64,10 @@ const request = {
     },
     async studentRegister_request(obj) {
         return await api.requestSetup.student_registration_setup(obj);
-    } 
+    },
+    async reportbug_request(obj) {
+        return await api.requestSetup.report_bug_setup(obj);
+    }
 }
 
 export default { 

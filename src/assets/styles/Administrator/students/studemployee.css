@@ -1,0 +1,29 @@
+.btnactions{
+    color: #0F5298;
+    background: #fff;
+    border-color: #0F5298;
+    /* border-radius: 7px; */
+    font-size: 14px;
+    font-weight: bold;
+}
+.btnactions:hover{
+  background-color: #0d55a1;
+  color: #fff;
+}
+
+.btnadd{
+  color: #fff;
+  background: #0F5298;
+  border-color: #0F5298;
+  /* border-radius: 7px; */
+  font-size: 14px;
+  font-weight: bold;
+}
+.btnadd:hover{
+  background-color: #0d55a1;
+  /* color: #fff; */
+}
+.el-icon-plus {
+  /* font-size: 14px; */
+  font-weight: bold;
+}
