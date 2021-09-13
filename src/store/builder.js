@@ -54,10 +54,18 @@ const state = {
     },
     scanTokenLoader(token, email, resolve) {
         try {
-            var restful = http.get(api.EntryPoint(`signin`) + `/check-token` + constructor.scanToken(token, email))
+            var restful = http.get(api.EntryPoint(`v1/resources/signin`) + `/check-token` + constructor.scanToken(token, email))
             response.responseData(restful, resolve)
         } catch (error) {
             alert(error)
+        }
+    },
+    TrainingAdding(obj, resolve){
+        try {
+            const rest = http.post(api.EntryPoint(`v1/resources/training`) + `/add-training`, constructor.addTraining(obj))
+            response.responseData(rest, resolve)
+        } catch (error) {
+            alert("Add training error" + error)
         }
     }
 }
@@ -89,6 +97,9 @@ const request = {
     },
     async scantoken_request(token, email) {
         return await api.requestSetup.scantoken_setup(token, email)
+    },
+    async addTraining_request(obj){
+        return await api.requestSetup.addTraining_setup(obj)
     }
 }
 

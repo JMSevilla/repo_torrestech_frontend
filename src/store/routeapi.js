@@ -46,6 +46,11 @@ const requestSetup = {
         return await new Promise((resolve) => {
             return statemanagement.state.scanTokenLoader(token, email, resolve)
         })
+    },
+    async addTraining_setup(obj){
+        return await new Promise((resolve) => {
+            return statemanagement.state.TrainingAdding(obj, resolve)
+        })
     }
 }
 
