@@ -32,9 +32,7 @@
                                 <b-button variant="danger" size="lg" block>Wishlist &nbsp;<i class="far fa-heart"></i></b-button>
                             </a>
                         </div>
-                        <!-- <div class="dynamic-btn">
-                            <b-button variant="danger" size="lg">Share</b-button>
-                        </div> -->
+                        
                         
                     </div>
                 </b-col>
@@ -71,155 +69,14 @@
             <!--START RELATED PRODUCTS-->
             <b-row>
                 <div class="related-products-main-container">
-                    <h2>Related Products</h2>
-                    <div class="container-flex">
-                        <div class="product-container">
-                            <div class="product-image">
-                                <img src="@/assets/img/CoursePage/services-computer-programming-v2.png" alt="man with safety hat">
-                            </div>
-                            <div>
-                                <h3>Product Title Here</h3>
-                            </div>
-                            <div class="product-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-                            </div>
-                            <div class="product-price">
-                                <h3>$119.99</h3>
-                            </div>
-                            <div id="outer">
-                                <a href="#">
-                                    <div class="button_slide slide_right">ENROLL NOW</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-container">
-                            <div class="product-image">
-                                <img src="@/assets/img/CoursePage/services-computer-programming-v2.png" alt="man with safety hat">
-                            </div>
-                            <div>
-                                <h3>Product Title Here</h3>
-                            </div>
-                            <div class="product-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-                            </div>
-                            <div class="product-price">
-                                <h3>$119.99</h3>
-                            </div>
-                            <div id="outer">
-                                <a href="#">
-                                    <div class="button_slide slide_right">ENROLL NOW</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-container">
-                            <div class="product-image">
-                                <img src="@/assets/img/CoursePage/services-computer-programming-v2.png" alt="man with safety hat">
-                            </div>
-                            <div>
-                                <h3>Product Title Here</h3>
-                            </div>
-                            <div class="product-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-                            </div>
-                            <div class="product-price">
-                                <h3>$119.99</h3>
-                            </div>
-                            <div id="outer">
-                                <a href="#">
-                                <div class="button_slide slide_right">ENROLL NOW</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-container">
-                            <div class="product-image">
-                                <img src="@/assets/img/CoursePage/services-computer-programming-v2.png" alt="man with safety hat">
-                            </div>
-                            <div>
-                                <h3>Product Title Here</h3>
-                            </div>
-                            <div class="product-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-                            </div>
-                            <div class="product-price">
-                                <h3>$119.99</h3>
-                            </div>
-                            <div id="outer">
-                                <a href="#">
-                                <div class="button_slide slide_right">ENROLL NOW</div>
-                                </a>
-                            </div>
-                        </div>
-                        
-                    </div>
+                    <h2>Other Trainings</h2>
+                    
                 </div>
             </b-row>
             <!--END RELATED PRODUCTS-->      
 
-            <!--START THREE SECTION->
-            <b-row>
-                <div class="three-section-main-container">
-                    <div class="three-section-container">
-                        <h3>OUR PARTNERS:</h3>
-                        <div class="three-section-content">
-                            <i class="far fa-building fa-2x"></i>
-                            <a href="#" class="three-section-cta">
-                                Dummy Company I
-                            </a>
-                        </div>
-                        <div  class="three-section-content">
-                            <i class="far fa-building fa-2x"></i>
-                            <a href="#"  class="three-section-cta">
-                                Dummy Company II
-                            </a>
-                        </div>
-                    </div>
-                    <div class="three-section-container">
-                        <h3>FOLLOW US:</h3>
-                        <div  class="three-section-content">
-                            <i class="fab fa-facebook-square fa-2x"></i>
-                            <a href="#"  class="three-section-cta">
-                                Facebook
-                            </a>
-                        </div>
-                        <div  class="three-section-content">
-                            <i class="fab fa-linkedin-in fa-2x"></i>
-                            <a href="#"  class="three-section-cta">
-                                LinkedIn
-                            </a>
-                        </div>
-                        <div  class="three-section-content">
-                            <i class="fab fa-youtube fa-2x"></i>
-                            <a href="#"  class="three-section-cta">
-                                Youtube
-                            </a>
-                        </div>
-                    </div>
-                    <div class="three-section-container">
-                        <h3>GENERAL INFORMATION:</h3>
-                        <div  class="three-section-content">
-                            <i class="far fa-envelope fa-2x"></i>
-                            <a href="mailto:info@testingmail.com"  class="three-section-cta">
-                                info@testingmail.com
-                            </a>
-                        </div>
-                        <div  class="three-section-content">
-                            <i class="fas fa-sms fa-2x"></i>
-                            <a href="tel:+63 912 345 6789"  class="three-section-cta">
-                                +63 912 345 6789
-                            </a>
-                        </div>
-                        <div  class="three-section-content">
-                            <i class="fas fa-map-marked fa-2x"></i>
-                            <a href="#"  class="three-section-cta">
-                                Brgy, Molino - Paliparan Rd,<br> Molino IV, Bacoor, 641001 Cavite
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </b-row>
-            <!-END THREE SECTION-->
-                
         </b-container>
+        <RelatedProductTest />
         <Footer />
     </div>
 </template>
@@ -227,9 +84,11 @@
 <script>
 import Nav from "@/components/navbar/nav";
 import Footer from "@/components/footer";
+import RelatedProducts from "@/components/course_template/relatedproducts";
+import RelatedProductTest from "@/components/course_template/related_product_test"
 export default {
     components: {
-        Nav, Footer
+        Nav, RelatedProductTest, Footer
     }
 }
 

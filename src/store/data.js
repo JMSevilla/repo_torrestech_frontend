@@ -39,6 +39,19 @@ class __constructor__ {
         data.append("bugdescription", obj.bugDescription);
         data.append("bugLocation", obj.bugLink);
         return data;
+    signindata(obj) { 
+        var data = new FormData();
+        data.append("email", obj.email)
+        data.append("password", obj.password)
+        return data
+    }
+    updateToken(email, token) {
+        var markup = `?email=${email}&token=${token}`
+        return markup
+    }
+    scanToken(token , email) {
+        var markup = `?token=${token}&email=${email}`
+        return markup
     }
 }
 

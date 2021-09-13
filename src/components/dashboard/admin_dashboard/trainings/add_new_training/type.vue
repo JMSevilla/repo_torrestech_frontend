@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="justify-content-center mt-5 mb-1 paragtext">
+        <div class="justify-content-center mt-5 paragtext">
             <h6>Choose the type of training.</h6>
             <div>
                 <el-form status-icon :model="trainingtask" :rules="rules" ref="ruleForm" > 
@@ -12,8 +12,8 @@
                             </el-radio-group>
                         </el-form-item>
                     </div>
-                    <div class="card-footer"  style="background: #FFF">
-                        <el-form-item>
+                    <div class="card-footer p-0"  style="background: #FFF">
+                        <el-form-item style="margin-right: 30px">
                             <el-button class="next-button"  @click="onsubmit('ruleForm')">NEXT</el-button>
                         </el-form-item>
                     </div>

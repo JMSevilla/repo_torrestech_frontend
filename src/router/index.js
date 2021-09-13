@@ -106,6 +106,28 @@ const routes = [
         name: 'ClassCode',
         component: () => import("@/views/admindash_views/students/class_code")
       },
+      {
+        path: '/admindash/activity-logs',
+        name: 'ActivityLogs',
+        component: () => import("@/views/admindash_views/header/activity_logs")
+      }
+    ]
+   },
+   {
+    path: '/employeedash',
+    name: 'EmployeeDashboard',
+    component: () => import("@/views/employee_dashboard/EmployeeDashPage"),
+    children: [
+      {
+        path: '/employeedash/add-class',
+        name: 'AddClass',
+        component: () => import("@/views/employee_dashboard/classes/add_class")
+      },
+      {
+        path: '/employeedash/all-class',
+        name: 'AllClass',
+        component: () => import("@/views/employee_dashboard/classes/all_class")
+      }
     ]
    },
     {

@@ -1,5 +1,5 @@
 <template>
-    <div style="background: #f4f4f4">
+    <div style="background: #F5F7F8">
       <div class="d-flex">
         <div class="sidebar-dash">
           <SideDash />

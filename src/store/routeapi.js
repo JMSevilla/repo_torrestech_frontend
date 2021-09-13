@@ -35,6 +35,21 @@ const requestSetup = {
     async report_bug_setup(obj) {
         return await new Promise(resolve => {
             return statemanagement.state.reportBug(obj, resolve);
+        });
+    },
+    async signin_setup(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.signinController(obj, resolve);
+        })
+    },
+    async updatetoken_setup(email, token) {
+        return await new Promise(resolve => {
+            return statemanagement.state.updateTokenController(email, token, resolve)
+        })
+    },
+    async scantoken_setup(token, email) {
+        return await new Promise((resolve) => {
+            return statemanagement.state.scanTokenLoader(token, email, resolve)
         })
     }
 }

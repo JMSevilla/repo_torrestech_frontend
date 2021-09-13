@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="justify-content-center mt-5 mb-1 paragtext">
+        <div class="justify-content-center mt-5 paragtext">
             <h6>Fill each section and click 'Next' to continue.</h6>
             <div>
                 <el-form status-icon :model="trainingtask" :rules="rules" ref="ruleForm" label-position="top">
@@ -24,35 +24,30 @@
                                 v-model="trainingtask.fullDescription">
                             </el-input>
                         </el-form-item>
-                        <div  class="d-flex">
-                            <el-form-item label="Upload Small Photo (300 x 193)">
-                                <el-upload
-                                    class="upload-demo"
-                                    action="https://jsonplaceholder.typicode.com/posts/"
-                                    :on-preview="handlePreview"
-                                    :on-remove="handleRemove"
-                                    :file-list="fileList"
-                                    list-type="picture">
-                                    <el-button size="small" class="browse-btn">Browse</el-button>
-                                </el-upload>
-                            </el-form-item>
-                            <el-form-item label="Upload Large Photo (764 x 382)" style="margin-left: 200px">
-                                <el-upload
-                                    class="upload-demo"
-                                    action="https://jsonplaceholder.typicode.com/posts/"
-                                    :on-preview="handlePreview"
-                                    :on-remove="handleRemove"
-                                    :file-list="fileList"
-                                    list-type="picture">
-                                    <el-button size="small" class="browse-btn">Browse</el-button>
-                                </el-upload>
-                            </el-form-item>
-                        </div>
+                        <el-form-item label="What you'll learn" prop="whatyoulearn">
+                            <el-input
+                                type="textarea"
+                                :rows="3"
+                                placeholder="Enter details"
+                                v-model="trainingtask.whatyoulearn">
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item label="Upload Photo">
+                            <el-upload
+                                class="upload-demo"
+                                action="https://jsonplaceholder.typicode.com/posts/"
+                                :on-preview="handlePreview"
+                                :on-remove="handleRemove"
+                                :file-list="fileList"
+                                list-type="picture">
+                                <el-button size="small" class="browse-btn">Browse</el-button>
+                            </el-upload>
+                        </el-form-item>
                     </div>
-                    <div class="card-footer"  style="background: #FFF">
-                        <el-form-item>
+                    <div class="card-footer p-0"  style="background: #FFF">
+                        <el-form-item style="margin-right: 30px">
                             <el-button class="next-button" @click="onsubmit('ruleForm')">NEXT</el-button>
-                            <el-button class="next-button" @click="onback()">BACK</el-button>
+                            <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>
@@ -67,8 +62,8 @@
 export default {
     props:{
         trainingtask: Object,
-        onback: Function,
         onnext: Function,
+        onback: Function,
         rules: Object
 
     },
