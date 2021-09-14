@@ -1,6 +1,5 @@
 import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess, signinprocess, updatetokenprocess,
-  scantokenprocess} from './request'
-
+  scantokenprocess, addtrainingprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -18,7 +17,8 @@ export default new Vuex.Store({
       signinArray: [],
       tokenresponse: '',
       tokenArray: [],
-      scantokenresponse: ''
+      scantokenresponse: '',
+      TrainingResponse: ''
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -44,6 +44,9 @@ export default new Vuex.Store({
     },
     mutate_scan_token: (state, data) => {
       return state.scantokenresponse = data
+    },
+    mutate_training: (state, data) => {
+      return state.TrainingResponse = data
     }
   },
   getters: {
@@ -70,9 +73,19 @@ export default new Vuex.Store({
     },
     claims_scan_token: (state) => {
       return state.scantokenresponse
+    },
+    claims_get_training_response: (state) => {
+      return state.TrainingResponse
     }
   },
   actions: {
+    actions_training_add({commit}, {object}){
+      return new Promise((resolve) => {
+        addtrainingprocess(object).then(({ data }) => {
+          return resolve(commit(`mutate_training`, data.message))
+        })
+      })
+    },
     actions_scan_token({commit}, {token, email}) {
       return new Promise((resolve) => {
         scantokenprocess(token, email).then(response => {

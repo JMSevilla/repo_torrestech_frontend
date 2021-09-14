@@ -53,6 +53,28 @@ class __constructor__ {
         var markup = `?token=${token}&email=${email}`
         return markup
     }
+    addTraining(obj){
+        const data = new FormData();
+        data.append("isonline", obj.types)
+        data.append("trainingName", obj.trainingName)
+        data.append("SD", obj.shortDescription)
+        data.append("FD", obj.fullDescription)
+        data.append("WYL", obj.whatyoulearn)
+        data.append("imageurl", obj.imageurl)
+        data.append("isstatus", obj.status)
+        data.append("isforum", obj.forum)
+        data.append("islivechat", obj.livechat)
+        data.append("capacity", obj.capacity)
+        data.append("ispayment", obj.payment)
+        data.append("coursefee", obj.coursefee)
+        data.append("effort", obj.effort)
+        data.append("tLength", obj.length)
+        data.append("categories", obj.categories)
+        data.append("trainingStart", obj.startdate)
+        data.append("trainingEnd", obj.enddate)
+        data.append("assignee", obj.assignee)
+        return data
+    }
 }
 
 export default new __constructor__();
