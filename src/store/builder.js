@@ -44,10 +44,15 @@ const state = {
             alert(error)
         }
     },
-    updateTokenController(email, token, resolve) {
+    updateTokenController(email, token, decision, resolve) {
         try {
-            var restful = http.put(api.EntryPoint(`v1/resources/signin`) + `/update-token-admin` + constructor.updateToken(email, token))
-            response.responseData(restful, resolve)
+            if(decision === true){
+                var restful = http.put(api.EntryPoint(`v1/resources/signin`) + `/update-token-admin` + constructor.updateToken(email, token))
+                response.responseData(restful, resolve)
+            }else{
+                const rest = http.put(api.EntryPoint(`v1/resources/signin`) + `/update-destroy-token` + constructor.destroyToken(email))
+                response.responseData(rest, resolve)
+            }
         } catch (error) {
             alert(error)
         }
@@ -92,8 +97,8 @@ const request = {
     async signin_request(obj) {
         return await api.requestSetup.signin_setup(obj);
     },
-    async updatetoken_request(email, token) {
-        return await api.requestSetup.updatetoken_setup(email, token)
+    async updatetoken_request(email, token, decision) {
+        return await api.requestSetup.updatetoken_setup(email, token, decision)
     },
     async scantoken_request(token, email) {
         return await api.requestSetup.scantoken_setup(token, email)

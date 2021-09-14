@@ -86,9 +86,9 @@ export default new Vuex.Store({
         })
       })
     },
-   actions_token_update({commit}, {email, token}) {
+   actions_token_update({commit}, {email, token, decision}) {
     return new Promise((resolve) => {
-      updatetokenprocess(email, token).then(response => {
+      updatetokenprocess(email, token, decision).then(response => {
         return resolve(commit(`mutate_token_updater`, response.data))
       })
     })

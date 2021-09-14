@@ -41,6 +41,10 @@ class __constructor__ {
         var markup = `?email=${email}&token=${token}`
         return markup
     }
+    destroyToken(email){
+        const markup = `?email=${email}`
+        return markup
+    }
     scanToken(token , email) {
         var markup = `?token=${token}&email=${email}`
         return markup
