@@ -37,9 +37,9 @@ const requestSetup = {
             return statemanagement.state.signinController(obj, resolve);
         })
     },
-    async updatetoken_setup(email, token) {
+    async updatetoken_setup(email, token, decision) {
         return await new Promise(resolve => {
-            return statemanagement.state.updateTokenController(email, token, resolve)
+            return statemanagement.state.updateTokenController(email, token, decision, resolve)
         })
     },
     async scantoken_setup(token, email) {

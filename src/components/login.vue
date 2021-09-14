@@ -88,7 +88,8 @@ export default {
                             this.randomizeToken(10)
                             this.$store.dispatch(`actions_token_update`, {
                                 email : this.login.email,
-                                token : this.tokenGetter
+                                token : this.tokenGetter,
+                                decision: true
                             }).then(() => {
                                this.$store.state.tokenArray = this.tokenResponse.databulk
                                localStorage.setItem("state", this.tokenGetter)

@@ -20,8 +20,8 @@ export function signinprocess(obj) {
     return initiateRequest.request.signin_request(obj)
 }
 
-export function updatetokenprocess(email, token) {
-    return initiateRequest.request.updatetoken_request(email, token)
+export function updatetokenprocess(email, token, decision) {
+    return initiateRequest.request.updatetoken_request(email, token, decision)
 }
 
 export function scantokenprocess(token, email){
