@@ -1,5 +1,5 @@
-import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, signinprocess, updatetokenprocess,
-  scantokenprocess} from './request'
+import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess, signinprocess, updatetokenprocess,
+  scantokenprocess, addtrainingprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -10,13 +10,15 @@ export default new Vuex.Store({
     adminsetup_response : "",
     classcode_checker: "",
     studentReg: "",
+    report: "",
       signinresponse : {
         responseArray: []
       },
       signinArray: [],
       tokenresponse: '',
       tokenArray: [],
-      scantokenresponse: ''
+      scantokenresponse: '',
+      TrainingResponse: ''
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -31,6 +33,9 @@ export default new Vuex.Store({
     mutate_student_signup: (state, data) => {
       return state.studentReg = data
     },
+    mutate_bug_report: (state, data) => {
+      return state.report = data
+    },
     mutate_signin: (state, data) => {
       return state.signinresponse.responseArray = data
     },
@@ -39,6 +44,9 @@ export default new Vuex.Store({
     },
     mutate_scan_token: (state, data) => {
       return state.scantokenresponse = data
+    },
+    mutate_training: (state, data) => {
+      return state.TrainingResponse = data
     }
   },
   getters: {
@@ -54,6 +62,9 @@ export default new Vuex.Store({
     claims_get_student_signup_response: (state) => {
       return state.studentReg
     },
+    claims_get_report_bug_response: (state) => {
+      return state.report
+    },
     claims_get_response_signin_single: (state) => {
       return state.signinresponse.responseArray
     },
@@ -62,9 +73,19 @@ export default new Vuex.Store({
     },
     claims_scan_token: (state) => {
       return state.scantokenresponse
+    },
+    claims_get_training_response: (state) => {
+      return state.TrainingResponse
     }
   },
   actions: {
+    actions_training_add({commit}, {object}){
+      return new Promise((resolve) => {
+        addtrainingprocess(object).then(({ data }) => {
+          return resolve(commit(`mutate_training`, data.message))
+        })
+      })
+    },
     actions_scan_token({commit}, {token, email}) {
       return new Promise((resolve) => {
         scantokenprocess(token, email).then(response => {
@@ -72,9 +93,9 @@ export default new Vuex.Store({
         })
       })
     },
-   actions_token_update({commit}, {email, token}) {
+   actions_token_update({commit}, {email, token, decision}) {
     return new Promise((resolve) => {
-      updatetokenprocess(email, token).then(response => {
+      updatetokenprocess(email, token, decision).then(response => {
         return resolve(commit(`mutate_token_updater`, response.data))
       })
     })
@@ -113,7 +134,14 @@ export default new Vuex.Store({
         return resolve(commit(`mutate_student_signup`, response.data.message))
       })
      })
-   }
+   },
+   actions_bug_report_setup({commit}, {object}) {
+    return new Promise(resolve => {
+      reportabugprocess(object).then(response => {
+        return resolve(commit(`mutate_bug_report`, response.data.message))
+     })
+    })
+  }
   },
   modules: {
   }

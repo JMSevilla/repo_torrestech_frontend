@@ -45,10 +45,16 @@
 <script>
 import navigation from "@/components/navbar/nav";
 import footerTorres from "@/components/footer";
+import { mapGetters } from "vuex";
   export default {
     components: {
     navigation,
     footerTorres,
+  },
+  computed: {
+    ...mapGetters({
+      getReportBug: 'claims_get_report_bug_response'
+    })
   },
     data() {
       return {
@@ -82,7 +88,21 @@ import footerTorres from "@/components/footer";
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            console.log(this.ruleForm);
+            // console.log(this.ruleForm);
+            this.$store.dispatch(`actions_bug_report_setup`, {object: this.ruleForm}).then(() => {
+              if(this.getReportBug === 'success') {
+                this.$notify.success({
+                  title: 'Success',
+                  message: 'Success'
+                })
+              }
+              else {
+                this.$notify.error({
+                  title: 'Error',
+                  message: 'Error'
+                })
+              }
+            })
           } else {
             console.log('error submit!!');
             return false;

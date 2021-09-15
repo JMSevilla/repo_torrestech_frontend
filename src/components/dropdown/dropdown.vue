@@ -27,7 +27,13 @@
 </style>
 
 <script>
+import {mapGetters} from 'vuex'
   export default {
+    computed: {
+      ...mapGetters({
+        destroyedToken : 'claims_get_response_token_update'
+      })
+    },
     methods: {
       onOver() {
         this.$refs.dropdown.visible = true;
@@ -36,9 +42,28 @@
         this.$refs.dropdown.visible = false;
       },
         handleCommand(command) {
-        this.$router.push({name: ''+command}).catch(()=>{});
         if(command=="Login"){
-          this.$message('Successfully logged-out!');
+          const loading = this.$loading({
+                    lock: true,
+                    text: 'please wait...',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                    });
+          setTimeout(() => {
+            this.$store.dispatch(`actions_token_update`, {
+                                email : localStorage.getItem('ems'),
+                                token : "",
+                                decision: false
+                            }).then(() => {
+                              const response = this.destroyedToken
+                              if(response.status === "update token admin logout"){
+                                loading.close()
+                              localStorage.setItem("state", "")
+                               localStorage.setItem("ems", "")
+                               this.$router.push({name : 'Login'}).catch(() => {})
+                              }
+                            })
+          }, 2000)
         }
       },
 
