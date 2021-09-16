@@ -78,8 +78,13 @@ const routes = [
       }, 
       {
         path: '/admindash/activity-logs',
-        name: 'ActivityLogs',
+        name: 'ActivityLog',
         component: () => import("@/views/admindash_views/header/activity_logs")
+      },
+      {
+        path: '/admindash/admin-profile',
+        name: 'AdminProfile',
+        component: () => import("@/views/admindash_views/header/admin_profile")
       }
     ]
    },
