@@ -36,8 +36,8 @@ export default {
     props:{
         trainingtask: Object,
         onback: Function,
-        onnext: Function,
-        rules: Object
+        rules: Object,
+        onsave: Function
     },
     computed: {
         ...mapGetters({
@@ -81,7 +81,6 @@ export default {
                         })
                     }, 3000)
                 })
-            
         }
     }
 }

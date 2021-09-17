@@ -37,11 +37,11 @@ export default {
                 classtype:'',
                 listclasstype:[{
                         label: 'Online',
-                        value: 'Online'
+                        value: '1'
                     },
                     {
                         label: 'In-person',
-                        value: 'In-person'
+                        value: '0'
                     }
                 ],
                 status:'',

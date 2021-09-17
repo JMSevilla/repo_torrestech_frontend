@@ -4,7 +4,7 @@
           <div class="card-header" style="background: #FFF">
               <h3 class="classcode-headline">Add New Class</h3>
           </div>
-          <div style="margin: 10px">
+          <div style="margin: 10px 0px">
                 <el-form status-icon :model="classcode" :rules="rules" ref="ruleForm" label-position="top">
                     <div style="margin: 0 50px">
                         <el-row>
@@ -15,7 +15,7 @@
                             </el-col>
                             <el-col :span="12">
                                 <el-form-item label="Training Under" prop="training">
-                                    <el-select style="width: 90%" v-model="classcode.training">
+                                    <el-select style="width: 90%" v-model="classcode.training" placeholder="Select training">
                                         <el-option
                                             v-for="item in classcode.listtraining"
                                             :key="item.value"
@@ -29,7 +29,7 @@
                         <el-row>
                             <el-col :span="12">
                                 <el-form-item label="Class Type" prop="classtype">
-                                    <el-select style="width: 90%" v-model="classcode.classtype">
+                                    <el-select style="width: 90%" v-model="classcode.classtype" placeholder="Select class type">
                                         <el-option
                                             v-for="item in classcode.listclasstype"
                                             :key="item.value"
@@ -41,7 +41,7 @@
                             </el-col>
                             <el-col :span="12">
                                 <el-form-item label="Status" prop="status">
-                                    <el-select style="width: 90%" v-model="classcode.status">
+                                    <el-select style="width: 90%" v-model="classcode.status" placeholder="Select status">
                                         <el-option
                                             v-for="item in classcode.liststatus"
                                             :key="item.value"
@@ -59,7 +59,7 @@
                                         style="width: 95%"
                                         type="textarea"
                                         :rows="4"
-                                        placeholder="Type your message here"
+                                        placeholder="Type your description here"
                                         v-model="classcode.description">
                                     </el-input>
                                 </el-form-item>
