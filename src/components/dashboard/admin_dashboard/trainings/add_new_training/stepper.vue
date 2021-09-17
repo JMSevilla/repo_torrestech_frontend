@@ -48,6 +48,10 @@ export default {
         return{
             active: 0,
             trainingtask:{
+                uploadpercent: 0,
+                img1:'',
+                imageData:'',
+                imageurl: '',
                 types:'',
                 trainingName:'',
                 shortDescription:'',
@@ -55,31 +59,31 @@ export default {
                 whatyoulearn:'',
                 liststatus:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: '1'
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: '0'
                     }
                 ],
                 status:'',
                 listforum:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: '1'
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: '0'
                     }
                 ],
                 forum:'',
                 listlivechat:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: '1'
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: '0'
                     }
                 ],
                 livechat:'',

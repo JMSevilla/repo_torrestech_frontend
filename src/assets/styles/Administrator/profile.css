@@ -1,0 +1,47 @@
+
+.submitbtn{
+    background: #0f5298;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    
+}
+
+
+.fileselect{
+    background: #0f5298;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+   
+}
+
+.upload{
+    background: #0f5298;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+}
+
+.cancelbtn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    
+}
+
+.browse-btn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.browse-btn:hover{
+    background: #0f5298;
+    color: #fff;
+}

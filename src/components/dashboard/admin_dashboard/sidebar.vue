@@ -9,22 +9,11 @@
                 <div style="border-bottom: 2px #e6e6e6 solid; text-align: center">
                     <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" srcset="" class="py-2" width="150px" height="auto">
                 </div>
-                <el-submenu index="1" @click.native="activeMenu = 'dash'" :class="{ active: activeMenu === 'dash' }">
+                <el-submenu index="1" @click.native="ondashboardMenu()" :class="{ active: activeMenu === 'dash' }">
                     <template slot="title">
                         <i class="fas fa-home"></i>
                         <span style="margin-left: 10px">DASHBOARD</span>
                     </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="1-1">item one</el-menu-item>
-                    <el-menu-item index="1-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="1-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="1-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
                 </el-submenu>
                 <el-submenu index="2" class="hoverBG" @click.native="activeMenu = 'trainings'" :class="{ active: activeMenu === 'trainings' }">
                     <template slot="title">
@@ -40,34 +29,17 @@
                     <i class="fas fa-users"></i>
                     <span style="margin-left: 10px">STUDENTS</span>
                     </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="3-1">item one</el-menu-item>
-                    <el-menu-item index="3-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="3-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="3-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="3-4-1">item one</el-menu-item>
-                    </el-submenu>
+                    <el-menu-item index="3-2" @click="onallstudents()" :class="{ active_1: activeItem === 'allstudents' }">All Students</el-menu-item>
+                    <el-menu-item index="3-2" @click="onactivestudents()" :class="{ active_1: activeItem === 'activestudents' }">Active Students</el-menu-item>
+                    <el-menu-item index="3-2" @click="onclasscode()" :class="{ active_1: activeItem === 'classcode' }">Class Code</el-menu-item>
                 </el-submenu>
                 <el-submenu index="4" @click.native="activeMenu = 'employees'" :class="{ active: activeMenu === 'employees' }">
                     <template slot="title">
                     <i class="fas fa-users"></i>
                     <span style="margin-left: 10px">EMPLOYEES</span>
                     </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="4-1">item one</el-menu-item>
-                    <el-menu-item index="4-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="4-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="4-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="4-4-1">item one</el-menu-item>
-                    </el-submenu>
+                    <el-menu-item index="4-1" @click="onaddnewemployee()" :class="{ active_1: activeItem === 'addnewemployee' }">Add New Employee</el-menu-item>
+                    <el-menu-item index="4-2" @click="onallemployee()" :class="{ active_1: activeItem === 'allemployee' }">All Employee</el-menu-item>
                 </el-submenu>
                 <el-submenu index="5" @click.native="activeMenu = 'classes'" :class="{ active: activeMenu === 'classes' }">
                     <template slot="title">
@@ -200,10 +172,14 @@ export default {
     data() {
         return {
             activeItem: '',
-            activeMenu: ''
+            activeMenu: 'dash'
         }
     },
     methods:{
+        ondashboardMenu() {
+            this.$router.push({ name: 'AdminDashboardTab' }).catch(() => {})
+            this.activeMenu != 'dash' ? this.activeMenu = 'dash' : ''
+        },
         ontrainingcategories(){
             this.activeItem = 'trainingcateg'
             // this.$router.push({name: "TrainingsCategories"}).catch(()=>{})
@@ -212,9 +188,29 @@ export default {
             this.activeItem = 'addnewtraining'
             this.$router.push({name: "AddNewTraining"}).catch(()=>{})
         },
-        drp() {
-            this.activeMenu = 'dash'
+        onaddnewemployee(){
+            this.activeItem = 'addnewemployee'
+            this.$router.push({name: "AddNewEmployee"}).catch(()=>{})
+        },
+        onallemployee(){
+            this.activeItem = 'allemployee'
+            this.$router.push({name: "AllEmployee"}).catch(()=>{})
+        },
+        onallstudents(){
+            this.activeItem = 'allstudents'
+            this.$router.push({ name: 'AllStudents' }).catch(()=>{});
+        },
+        onactivestudents(){
+            this.activeItem = 'activestudents'
+            this.$router.push({ name: 'ActiveStudents' }).catch(()=>{})
+        },
+        onclasscode(){
+            this.activeItem = 'classcode'
+            this.$router.push({ name: 'ClassCode' }).catch(()=>{})
         }
+        // drp() {
+        //     this.activeMenu = 'dash'
+        // }
     },
 }
 </script>
