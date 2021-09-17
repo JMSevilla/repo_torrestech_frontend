@@ -35,14 +35,15 @@ export default {
     props:{
         trainingtask: Object,
         onback: Function,
-        onnext: Function,
-        rules: Object
+        rules: Object,
+        onsave: Function
     },
     methods:{
         onsubmit(ruleForm){
             this.$refs[ruleForm].validate((valid) =>{
                 if(valid){
                     alert("Successfully Saved")
+                    this.onsave();
                 }
                 else{
                     return false;
