@@ -61,9 +61,11 @@ export default {
                     setTimeout(() => {
                         this.$refs[ruleForm].validate((valid) =>{
                             if(valid){
-                                this.$store.dispatch(`actions_training_add`, {
+                               try {
+                                    this.$store.dispatch(`actions_training_add`, {
                                     object: this.trainingtask
                                 }).then(() => {
+                                    console.log(this.TResponse)
                                     if(this.TResponse === "SUCCESS CREATE TRAINING"){
                                         loading.close()
                                         this.$notify.success({
@@ -73,7 +75,16 @@ export default {
                                         }); 
                                         
                                     }
+                                }).catch((e) => {
+                                    if(this.TResponse == null || undefined){
+                                        loading.close()
+                                        console.log("FAIL" , e)
+                                    }
                                 })
+                               } catch (error){
+                                   loading.close()
+                                   console.log(error)
+                               }
                             }
                             else{
                                 return false;
