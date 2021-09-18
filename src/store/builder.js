@@ -42,6 +42,8 @@ const state = {
             response.responseData(restful, resolve);
         } catch(error) {
             alert(error);
+        }
+    },
     signinController(obj, resolve) { 
         try {
             var restful = http.post(api.EntryPoint(`v1/resources/signin`) + `/standard-login`, constructor.signindata(obj))
@@ -102,6 +104,7 @@ const request = {
     },
     async reportbug_request(obj) {
         return await api.requestSetup.report_bug_setup(obj);
+    },
     async signin_request(obj) {
         return await api.requestSetup.signin_setup(obj);
     },

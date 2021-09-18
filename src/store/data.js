@@ -39,6 +39,7 @@ class __constructor__ {
         data.append("bugdescription", obj.bugDescription);
         data.append("bugLocation", obj.bugLink);
         return data;
+    }
     signindata(obj) { 
         var data = new FormData();
         data.append("email", obj.email)

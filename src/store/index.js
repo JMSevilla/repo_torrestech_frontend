@@ -82,7 +82,8 @@ export default new Vuex.Store({
     actions_training_add({commit}, {object}){
       return new Promise((resolve) => {
         addtrainingprocess(object).then(({ data }) => {
-          return resolve(commit(`mutate_training`, data.message))
+          console.log(data)
+          return resolve(commit(`mutate_training`, data))
         })
       })
     },
