@@ -153,3 +153,7 @@
 .el-tabs__active-bar {
   background: #2d4059;
 }
+
+[class^=el-icon-] {
+  font-weight: bold;
+}

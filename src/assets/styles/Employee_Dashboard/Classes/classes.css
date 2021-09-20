@@ -77,25 +77,63 @@ p{
 
 .classname-title{
     text-align: center;
-    margin-top: 20px;
     font-weight: bold;
     color: #2d4059;
+}
+
+.classname-subtitle{
+    text-align: center;
+    font-weight: bold;
+    color: #2d4059;
+    font-size: 14px;
 }
 
 .class-code{
     color: #2d4059;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.class-btn{
+/* .class-btn{
     font-size: 14px;
     font-weight: bold;
-    color: #fff;
-    background: #0f5298;
-    width: 45%;
+    background: #fff;
+    color: #0f5298;
 }
 
 .class-btn:hover{
-    background: #0d55a1;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    color: #0f5298;
+} */
+
+.class-btn-view{
+    font-size: 14px;
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-weight: bold;
+}
+
+.class-btn-view:hover{
+    background: #0f5298;
+    color: #fff;
+}
+
+.class-btn-edit{
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.class-total{
+    font-size: 25px;
+    font-weight: bold;
+    color: #2d4059;
+    background: #d7e2ed;
+}
+
+span{
+    color: #2d4059;
+    font-size: 14px;
 }
