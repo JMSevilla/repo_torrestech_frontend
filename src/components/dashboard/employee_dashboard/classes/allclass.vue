@@ -31,7 +31,10 @@
                 
 
             </div>
-            <div class="row justify-content-center m-5">
+            <div>
+                <AllClassContent />
+            </div>
+            <!-- <div class="row justify-content-center m-5">
                 <div class="col-md">
                     <el-card shadow="always" :body-style="{ padding: '0px' }">
                         <div class="row">
@@ -73,7 +76,6 @@
                         
                        
                         <div>
-                            <!-- <h6 class="sub-title">Active Students</h6>   -->
                             <center> <el-link style="color: #2d4059; font-weight: bold; margin: 10px" :underline="false">10 Students</el-link> </center>
                         </div>
                     </el-card>
@@ -92,25 +94,25 @@
                         </h3>
                     </el-card>
                 </div>
-                <!-- <div class="col-md">
-                    <el-card shadow="always">
-                        <h3>
-                            fdfkajfjd
-                        </h3>
-                    </el-card>
-                </div> -->
-            </div>
+            </div> -->
             <div class="card-footer p-3"  style="background: #FFF;">
-                <!-- <div class="block"> -->
                     <el-pagination
                         background
                         layout="prev, pager, next"
                         :total="1000" class="pagination">
                     </el-pagination>
-                <!-- </div> -->
             </div>
         </div>
     </div>
 </template>
 
 <style scoped src="@/assets/styles/Employee_Dashboard/Classes/classes.css"></style>
+
+<script>
+import AllClassContent from "./allclass_content"
+export default {
+    components:{
+        AllClassContent
+    }
+}
+</script>
