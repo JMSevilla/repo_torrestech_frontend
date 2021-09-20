@@ -141,6 +141,11 @@ const routes = [
         path: '/employeedash/all-class',
         name: 'AllClass',
         component: () => import("@/views/employee_dashboard/classes/all_class")
+      },
+      {
+      path: '/employeedash/add-quizes',
+      name: 'AddQuiz',
+      component: () => import("@/views/employee_dashboard/quizes/add_quizes")
       }
     ]
    },

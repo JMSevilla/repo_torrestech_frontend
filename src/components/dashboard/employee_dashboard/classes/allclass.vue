@@ -1,8 +1,35 @@
 <template>
     <div>
         <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
-            <div class="card-header" style="background: #FFF">
-              <h3 class="classcode-headline">All Classes</h3>
+            <div class="card-header" style="background: #FFF">                
+                <el-row>
+                    <el-col :span="2">
+                        <h3 class="classcode-headline">All Classes</h3>
+                    </el-col>
+                    <el-col :span="6">
+                        <div class="input-form">
+                            <el-input placeholder="Search for ..." v-model="input"></el-input>    
+                        </div>
+                    </el-col>
+                    <el-col :span="4">
+                        <div>
+                            <el-dropdown>
+                            <el-button class="filter-btn" style="primary">FILTER <i class="fas fa-caret-down"></i></i>
+                            </el-button>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>Class Name</el-dropdown-item>
+                                <el-dropdown-item>Training Under</el-dropdown-item>
+                                <el-dropdown-item>Status</el-dropdown-item>
+                            </el-dropdown-menu>
+                            </el-dropdown>
+                        </div>
+                    </el-col>
+                    <el-col :span="12" style="add-btn">
+                        <el-button class="add-btn"><i class="fas fa-plus"></i> ADD NEW</el-button>
+                    </el-col>
+                </el-row>
+                
+
             </div>
             <div class="row justify-content-center m-5">
                 <div class="col-md">
@@ -76,9 +103,9 @@
             <div class="card-footer p-3"  style="background: #FFF;">
                 <!-- <div class="block"> -->
                     <el-pagination
-                        style="float: right"
+                        background
                         layout="prev, pager, next"
-                        :total="200">
+                        :total="1000" class="pagination">
                     </el-pagination>
                 <!-- </div> -->
             </div>
