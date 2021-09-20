@@ -154,6 +154,12 @@
   background: #2d4059;
 }
 
+
 [class^=el-icon-] {
   font-weight: bold;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color:#0F5298;
+  color: #FFF;
 }
