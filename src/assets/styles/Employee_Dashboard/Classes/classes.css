@@ -1,0 +1,146 @@
+h3{
+    font-weight: bold;
+    color: #2d4059
+}
+
+.classcode-btn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+    width: 75px;
+}
+
+.classcode-btn:hover{
+    background: #0f5298;
+    color: #fff;
+}
+
+.classcode-headline{
+    font-weight: bold;
+    color: #2d4059;
+    margin: 0;
+    padding: 0;
+}
+
+.add-classcode-btn{
+    color: #fff;
+    background: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.add-classcode-btn:hover{
+    background-color: #0d55a1;
+}
+
+.add-btn {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #0f5298;
+
+}
+
+.filter-btn{
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #0f5298;
+    margin-left: 1.5em;
+}
+
+.el-icon-plus{
+    font-weight: bold;
+}
+
+.save-button{
+    background: #0f5298;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    width: 13%;
+    float: right;
+    margin: 30px 0 0 30px;
+}
+
+.save-button:hover{
+    background-color: #0d55a1;
+}
+
+.sub-title{
+    font-weight: bold;
+    color: #2d4059;
+    margin-top: 15px;
+}
+
+.submission-link{
+    font-size: 28px;
+    color: #2d4059;
+    font-weight: bold;
+}
+
+.submission-text{
+    color: #2d4059;
+    font-size: 14px;
+}
+
+p{
+    font-size: 14px;
+    color: #7f7f7f;
+    text-align: justify; 
+}
+
+.classname-title{
+    text-align: center;
+    font-weight: bold;
+    color: #2d4059;
+}
+
+.classname-subtitle{
+    text-align: center;
+    font-weight: bold;
+    color: #2d4059;
+    font-size: 14px;
+}
+
+.class-code{
+    color: #2d4059;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.class-btn-view{
+    font-size: 14px;
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-weight: bold;
+}
+
+.class-btn-view:hover{
+    background: #0f5298;
+    color: #fff;
+}
+
+.class-btn-edit{
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.class-total{
+    font-size: 25px;
+    font-weight: bold;
+    color: #2d4059;
+    background: #d7e2ed;
+}
+
+span{
+    color: #2d4059;
+    font-size: 14px;
+}
+
+.pagination {
+    float: right;
+}

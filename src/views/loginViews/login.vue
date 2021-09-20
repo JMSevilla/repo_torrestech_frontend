@@ -4,7 +4,7 @@
             <Nav />
         </div>
         <div>
-             <Login :login="loginData" :labelPosition="labelPosition" :rules="rules" :signIn="sign" />
+             <Login :login="loginData" :labelPosition="labelPosition" :rules="rules" />
         </div>
         <div>
             <Footer />

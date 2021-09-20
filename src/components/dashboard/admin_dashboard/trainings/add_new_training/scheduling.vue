@@ -1,6 +1,6 @@
 <template>
     <div>
-         <div class="justify-content-center mt-5 mb-1 paragtext">
+         <div class="justify-content-center mt-5 paragtext">
             <h6>Fill each section and click 'Next' to continue.</h6>
             <div>
                 <el-form status-icon :model="trainingtask" :rules="rules" ref="ruleForm" label-position="top">
@@ -31,21 +31,11 @@
                                 </el-form-item>
                             </el-col>
                         </el-row>
-                        <el-form-item label="Enrollment Closes" prop="enrolmentcloses">
-                            <el-date-picker 
-                                type="date" 
-                                placeholder="Pick a date" 
-                                v-model="trainingtask.enrolmentcloses" 
-                                format="yyyy/MM/dd" 
-                                value-format="yyyy/MM/dd" 
-                                style="width: 45%;">
-                            </el-date-picker>
-                        </el-form-item>
                     </div>
-                    <div class="card-footer"  style="background: #FFF">
-                        <el-form-item>
+                    <div class="card-footer p-0"  style="background: #FFF">
+                        <el-form-item style="margin-right: 30px">
                             <el-button class="next-button" @click="onsubmit('ruleForm')">NEXT</el-button>
-                            <el-button class="next-button" @click="onback()">BACK</el-button>
+                            <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>

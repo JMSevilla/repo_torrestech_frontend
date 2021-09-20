@@ -1,14 +1,18 @@
 h3{
     font-weight: bold;
-    font-size: 40px;
+    /* font-size: 40px; */
     color: #2d4059
 }
 
 .training-headline{
+    padding: 0;
+    margin: 0;
     font-weight: bold;
-    font-size: 40px;
+    /* font-size: 40px; */
     color: #2d4059;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    /* margin-left: 10px */
 }
 
 .paragtext{
@@ -24,6 +28,16 @@ h6 {
 .next-button{
     background: #0f5298;
     color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    width: 13%;
+    float: right;
+    margin: 30px 0 0 30px;
+}
+
+.back-button{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
     font-size: 14px;
     font-weight: bold;
     width: 13%;

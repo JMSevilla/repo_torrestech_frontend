@@ -31,6 +31,31 @@ const requestSetup = {
         return await new Promise(resolve => {
             return statemanagement.state.studentRegister(obj, resolve);
         });
+    },
+    async report_bug_setup(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.reportBug(obj, resolve);
+        });
+    },
+    async signin_setup(obj) {
+        return await new Promise(resolve => {
+            return statemanagement.state.signinController(obj, resolve);
+        })
+    },
+    async updatetoken_setup(email, token, decision) {
+        return await new Promise(resolve => {
+            return statemanagement.state.updateTokenController(email, token, decision, resolve)
+        })
+    },
+    async scantoken_setup(token, email) {
+        return await new Promise((resolve) => {
+            return statemanagement.state.scanTokenLoader(token, email, resolve)
+        })
+    },
+    async addTraining_setup(obj){
+        return await new Promise((resolve) => {
+            return statemanagement.state.TrainingAdding(obj, resolve)
+        })
     }
 }
 

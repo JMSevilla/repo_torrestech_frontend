@@ -1,0 +1,25 @@
+h3{
+    font-weight: bold;
+    color: #2d4059;
+}
+
+.activity-btn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+    width: 45%; 
+}
+
+.activity-btn:hover, .delete-btn:hover{
+    background: #0f5298;
+    color: #fff;
+}
+
+.delete-btn{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+    width: 50%; 
+}

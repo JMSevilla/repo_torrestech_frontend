@@ -31,21 +31,88 @@
 <style scoped src="@/assets/styles/login/login.css">
 </style>
 <script>
+import {mapGetters} from 'vuex'
 export default {
    props:{
        login:Object,
-       signIn:Function,
        labelPosition:String,
        rules:Object
-   },methods:{
+   },
+   data() {
+       return { 
+           tokenGetter: ''
+       }
+   },
+   computed: {
+       ...mapGetters({
+           getresponsesignin : 'claims_get_response_signin_single',
+           tokenResponse : 'claims_get_response_token_update'
+         })
+   },
+   methods:{
        forgetPass(){
            this.$router.push({name:"forgetPassword"}).catch(()=> {});
+       },
+       randomizeToken(length) {
+            var result           = [];
+                var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var charactersLength = characters.length;
+                for ( var i = 0; i < length; i++ ) {
+                result.push(characters.charAt(Math.floor(Math.random() *
+            charactersLength)));
+            }
+            return this.tokenGetter = result.join('');
        },
        signIn(formName){
            this.$refs[formName].validate((valid) => { 
                if (valid) { alert('submit!'); 
                } else { 
-                   console.log('error submit!!'); return false;
+                  this.$store.dispatch(`actions_user_signin`, {
+                      object: this.login
+                  }).then(() => {
+                      console.log(this.getresponsesignin)
+                      if(this.getresponsesignin === "wrong password") {
+                          this.$notify.error({
+                            title: 'Oops!',
+                            message: 'Sorry but the password is wrong',
+                            offset: 100
+                            });
+                            return false
+                      } else if(this.getresponsesignin.status === "SUCCESS ADMIN") { 
+                          this.$notify.success({
+                            title: 'Nice!',
+                            message: 'Successfully login',
+                            offset: 100
+                            });
+                            this.$store.state.signinArray = this.getresponsesignin.databulk
+                            this.randomizeToken(10)
+                            this.$store.dispatch(`actions_token_update`, {
+                                email : this.login.email,
+                                token : this.tokenGetter,
+                                decision: true
+                            }).then(() => {
+                               this.$store.state.tokenArray = this.tokenResponse.databulk
+                               localStorage.setItem("state", this.tokenGetter)
+                               localStorage.setItem("ems", this.login.email)
+                               this.$router.push({name : 'AddNewTraining'}).catch(() => {})
+                            })
+                            console.log(this.getresponsesignin)
+                      } else if(this.getresponsesignin === "no user") { 
+                         this.$notify.error({
+                            title: 'Oops!',
+                            message: 'no user',
+                            offset: 100
+                            });
+                            return false
+                      } else if(this.getresponsesignin === "account disabled") { 
+                         this.$notify.error({
+                            title: 'Oops!',
+                            message: 'Account disabled',
+                            offset: 100
+                            });
+                            return false
+                      }
+                  })
                 } });
        }
    }

@@ -1,6 +1,6 @@
 <template>
     <div>
-         <div class="justify-content-center mt-5 mb-1 paragtext">
+         <div class="justify-content-center mt-5 paragtext">
             <h6>Fill each section and click 'Next' to continue.</h6>
             <div>
                 <el-form status-icon :model="trainingtask" :rules="rules" ref="ruleForm" label-position="top">
@@ -52,7 +52,7 @@
                         </el-row>
                         <el-row>
                             <el-col :span="12">
-                                 <el-form-item label="Payment Required" prop="payment">
+                                <el-form-item label="Payment Required" prop="payment">
                                     <el-select style="width: 90%" v-model="trainingtask.payment">
                                         <el-option
                                             v-for="item in trainingtask.listpayment"
@@ -64,7 +64,7 @@
                                 </el-form-item>
                             </el-col>
                             <el-col :span="12">
-                                <el-form-item label="Course Fee" prop="coursefee">
+                                <el-form-item label="Course Fee">
                                     <el-input type="number" style="width: 90%" v-model="trainingtask.coursefee" placeholder="Please enter number only" ></el-input>
                                 </el-form-item>
                             </el-col>
@@ -92,10 +92,10 @@
                             </el-select>
                         </el-form-item>
                     </div>
-                    <div class="card-footer"  style="background: #FFF">
-                        <el-form-item>
+                    <div class="card-footer p-0"  style="background: #FFF">
+                        <el-form-item style="margin-right: 30px">
                             <el-button class="next-button" @click="onsubmit('ruleForm')">NEXT</el-button>
-                            <el-button class="next-button" @click="onback()">BACK</el-button>
+                            <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>

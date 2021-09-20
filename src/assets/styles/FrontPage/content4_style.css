@@ -23,7 +23,13 @@
     text-align: center;
 }
 
-#row2 span{
+img{
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.services-sub-header{
     color: #2D4059;
     display: flex;
     justify-content: center;
@@ -31,170 +37,35 @@
     font-size:  15px;
     margin-bottom: 10px;
 }
-#row2 p{
+
+.services-description{
     color: #7f7f7f;;
     text-align: justify;
     font-size: 14px;
 }
 
-#row2 img{
-    margin-bottom: 10px;
-    width: 100%;
-    height: auto;
-}
-
-#learnmorebtn{
+.learnmore-btn{
     background: #0F5298;
     color: #f0f0f0;
     font-weight: bold;
 }
 
-#learnmorebtn:hover{
+.learnmore-btn:hover{
     background-color: #0d55a1;
 }
 
-.el-carousel__item:nth-child(2n) {
-background-color: #fff;
-}
-
-.el-carousel__item:nth-child(2n+1) {
-background-color: #fff;
-}
-
-.carouselDisplay{
-display: block;
-}
-.cardDisplay{
-display: block;
-}
-
-.carouselDisplay2{
-    display: block; 
-}
-
-@media screen and (max-width: 1920px){
-
-.cardDisplay{
-    display: block;
-}
-
-.carouselDisplay{
-    display: none;
-}
-
-.carouselDisplay2{
-    display: none;
-}
-}
-    
-
-@media screen and (max-width: 1367px){
-
-.cardDisplay{
-    display: block;
-}
-
-.carouselDisplay{
-    display: none;
-}
-
-.carouselDisplay2{
-    display: none;
-}
-}
 
 @media screen and (max-width: 1025px){ 
-.carouselCenter{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.carouselDisplay{
-    display: block;
-    z-index: 1;
-}
-
-.cardDisplay{
-    display: none;
-}
-
-.carouselDisplay2{
-    display: none;
-}
-
-#row2 img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    width: 70%;
-    height: auto;
-}
-
+       
 .header-column{
     width: 60%;
 }
 
-
 }
 
 @media screen and (max-width: 768px) { 
-.carouselCenter{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.carouselDisplay{
-    display: block;
-    z-index: 1;
-}
-
-.cardDisplay{
-    display: none;
-}
-
-.carouselDisplay2{
-    display: none;
-}
-
-#row2 p{
-    color: #7f7f7f;
-    font-size: 14px;
-}
-
-
-#row2 img{
-    margin-bottom: 10px;
-    width: 80%;
-    height: auto;
-}
-
 .header-column{
     width: 90%;
 }
 }
-
-@media screen and (max-width: 415px) { 
-
-.carouselDisplay{
-    display: none;
-}
-
-.cardDisplay{
-    display: none;
-}
-
-.carouselDisplay2{
-    display: block;
-    z-index: 1;
-}
-
-.carouselCenter{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-}
+    
