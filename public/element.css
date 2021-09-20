@@ -135,3 +135,26 @@
   color: #0f5298;
 }
 /* sidebar */
+
+.el-pager li{
+  font-size: 14px;
+  color: #2d4059;
+}
+
+.el-pager li.active {
+  color: #2d4059;
+  text-decoration: underline;
+}
+
+.el-form--label-top .el-form-item__label {
+  padding: 0px;
+}
+
+.el-tabs__active-bar {
+  background: #2d4059;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color:#0F5298;
+  color: #FFF;
+}

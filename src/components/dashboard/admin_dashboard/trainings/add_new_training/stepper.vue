@@ -25,7 +25,7 @@
                     <Scheduling :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
                 </div>
                 <div v-else-if="active == 4" >
-                    <Assignee :trainingtask="trainingtask" :onnext="onnext" :onback="onback" :rules="rules"/>
+                    <Assignee :trainingtask="trainingtask" :onsave="onsave" :onback="onback" :rules="rules"/>
                 </div>
             </div>
         </div>
@@ -48,6 +48,10 @@ export default {
         return{
             active: 0,
             trainingtask:{
+                uploadpercent: 0,
+                img1:'',
+                imageData:'',
+                imageurl: '',
                 types:'',
                 trainingName:'',
                 shortDescription:'',
@@ -55,41 +59,41 @@ export default {
                 whatyoulearn:'',
                 liststatus:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: '1'
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: '0'
                     }
                 ],
                 status:'',
                 listforum:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: '1'
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: '0'
                     }
                 ],
                 forum:'',
                 listlivechat:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: '1'
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: '0'
                     }
                 ],
                 livechat:'',
                 capacity:'',
                 listpayment:[{
                         label: 'Yes',
-                        value: 'Yes'
+                        value: '1'
                     },{
                         label: 'No',
-                        value: 'No'
+                        value: '0'
                     }
                 ],
                 payment:'',
@@ -175,6 +179,9 @@ export default {
         },
         onback(){
             this.active--
+        },
+        onsave(){
+            this.active=0
         }
         
     }

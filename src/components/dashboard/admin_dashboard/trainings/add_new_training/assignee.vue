@@ -31,23 +31,67 @@
 <style scoped src="@/assets/styles/Administrator/Training/addNewTrainings.css"></style>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
     props:{
         trainingtask: Object,
         onback: Function,
-        onnext: Function,
-        rules: Object
+        rules: Object,
+        onsave: Function
+    },
+    computed: {
+        ...mapGetters({
+            TResponse : 'claims_get_training_response'
+         })
     },
     methods:{
         onsubmit(ruleForm){
-            this.$refs[ruleForm].validate((valid) =>{
-                if(valid){
-                    alert("Successfully Saved")
-                }
-                else{
-                    return false;
-                }
-            })
+            this.$confirm('Are you sure you want to add this training?', 'Warning', {
+                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Yes',
+                type: 'warning'
+                })
+                .then(() => {
+                    const loading = this.$loading({
+                    lock: true,
+                    text: 'please wait...',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                    });
+                    setTimeout(() => {
+                        this.$refs[ruleForm].validate((valid) =>{
+                            if(valid){
+                               try {
+                                    this.$store.dispatch(`actions_training_add`, {
+                                    object: this.trainingtask
+                                }).then(() => {
+                                    console.log(this.TResponse)
+                                    if(this.TResponse === "SUCCESS CREATE TRAINING"){
+                                        loading.close()
+                                        this.$notify.success({
+                                        title: 'Yey',
+                                        message: 'Successfully created',
+                                        offset: 100
+                                        }); 
+                                        
+                                    }
+                                }).catch((e) => {
+                                    if(this.TResponse == null || undefined){
+                                        loading.close()
+                                        console.log("FAIL" , e)
+                                    }
+                                })
+                               } catch (error){
+                                   loading.close()
+                                   console.log(error)
+                               }
+                            }
+                            else{
+                                return false;
+                            }
+                        })
+                    }, 3000)
+                })
         }
     }
 }

@@ -2,14 +2,10 @@
     <div>
         <el-card shadow="always">
           <el-table
-            :cell-style="{padding: '0', height: '40px'}"
             :data="tableData.filter(data => !search || data.activity.toLowerCase().includes(search.toLowerCase()) || 
             data.location.toLowerCase().includes(search.toLowerCase()) || 
             data.device.toLowerCase().includes(search.toLowerCase()))"
             style="width: 100%">
-            <el-table-column
-              type="selection">
-            </el-table-column>
             <el-table-column
               sortable
               label="Date"
@@ -28,18 +24,18 @@
               prop="device">
             </el-table-column>
             <el-table-column
+              width="200"
               align="right">
-              <template slot="header" slot-scope="scope">
+              <template slot="header" >
                 <el-input
                   v-model="search"
                   size="medium"
                   placeholder="Type to search"/>
               </template>
-              <template slot-scope="scope">
+              <template>
                 <el-button
                   size="mini"
-                  class="activity-btn"
-                  @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+                  class="delete-btn">Delete</el-button>
               </template>
             </el-table-column>
           </el-table>

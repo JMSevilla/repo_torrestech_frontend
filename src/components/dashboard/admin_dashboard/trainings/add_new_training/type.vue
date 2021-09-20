@@ -7,8 +7,8 @@
                     <div  style="margin-left: 50px">
                         <el-form-item prop="types">
                             <el-radio-group v-model="trainingtask.types">
-                                <el-radio style="display: block; margin-bottom: 10px" label="Online"></el-radio>
-                                <el-radio label="In-person"></el-radio>
+                                <el-radio style="display: block; margin-bottom: 10px" label="1">Online</el-radio>
+                                <el-radio label="0">In-Person</el-radio>
                             </el-radio-group>
                         </el-form-item>
                     </div>
