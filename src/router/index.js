@@ -75,7 +75,13 @@ const routes = [
         path: '/admindash/add-new-training',
         name: 'AddNewTraining',
         component: () => import("@/views/admindash_views/trainings/add_new_training")
-      }
+      },
+        {
+          path: 'admindash/manage-categories',
+          name: 'manageCat',
+          component: () => import("@/views/admindash_views/trainings/manage_categories")
+        }
+
     ]
    },
     {
@@ -83,7 +89,7 @@ const routes = [
       name: 'ReportABug',
       component: () => import("@/views/ReportABug")
     }
-
+    
 ]
 
 const router = new VueRouter({

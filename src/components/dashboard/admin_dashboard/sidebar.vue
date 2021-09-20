@@ -201,7 +201,7 @@
 export default {
     methods:{
         ontrainingcategories(){
-            this.$router.push({name: "TrainingsCategories"}).catch(()=>{})
+            this.$router.push({name: "manageCat"}).catch(()=>{})
            
         },
         onaddnewtraining(){
