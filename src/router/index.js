@@ -146,6 +146,11 @@ const routes = [
       path: '/employeedash/add-quizes',
       name: 'AddQuiz',
       component: () => import("@/views/employee_dashboard/quizes/add_quizes")
+      },
+      {
+      path: '/employeedash/view-class',
+      name: 'ViewClass',
+      component: () => import("@/views/employee_dashboard/view_class/viewClass")
       }
     ]
    },
@@ -153,8 +158,7 @@ const routes = [
       path: '/report-a-bug',
       name: 'ReportABug',
       component: () => import("@/views/ReportABug")
-    }
-    
+    }  
 ]
 
 const router = new VueRouter({
