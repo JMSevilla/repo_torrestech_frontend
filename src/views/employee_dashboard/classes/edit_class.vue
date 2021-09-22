@@ -4,7 +4,7 @@
             <Subheader />
         </div>
         <div class="p-4">
-            <AddClass :classcode="classcode" :rules="rules" />
+            <EditClass :classcode="classcode" :rules="rules" />
         </div>
     </div>
 </template>
