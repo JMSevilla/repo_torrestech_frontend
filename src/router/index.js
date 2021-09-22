@@ -148,6 +148,11 @@ const routes = [
       path: '/report-a-bug',
       name: 'ReportABug',
       component: () => import("@/views/ReportABug")
+    },
+    {
+      path: '/choose-platform',
+      name: 'ChoosePlatform',
+      component: () => import("@/views/choose_platform")
     }
 
 ]
