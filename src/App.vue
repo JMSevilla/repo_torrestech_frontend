@@ -20,7 +20,7 @@ export default {
     },
     created() {
         this.loadCheck()
-        this.checkLoaderToken()
+        
     },
     methods: {
       checkLoaderToken() { 
@@ -43,7 +43,7 @@ export default {
                   this.$router.push({name : 'admin'}).catch(() => {})
                 }
                 else{
-                    
+                    this.checkLoaderToken()
                 }
             })
         },
