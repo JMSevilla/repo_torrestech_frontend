@@ -34,3 +34,7 @@ export function scantokenprocess(token, email){
 export function addtrainingprocess(obj){
     return initiateRequest.request.addTraining_request(obj)
 }
+
+export function setupsessionprocess(email){
+    return initiateRequest.request.session_request(email)
+}

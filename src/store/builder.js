@@ -80,6 +80,14 @@ const state = {
         } catch (error) {
             alert("Add training error" + error)
         }
+    },
+    accessSession(email, resolve){
+        try {
+            const request = http.put(api.EntryPoint(`v1/resources/signin`) + `/access-session` + constructor.setSession(email))
+            response.responseData(request, resolve)
+        } catch (error) {
+            alert(error)
+        }
     }
 }
 
@@ -116,6 +124,9 @@ const request = {
     },
     async addTraining_request(obj){
         return await api.requestSetup.addTraining_setup(obj)
+    },
+    async session_request(email){
+        return await api.requestSetup.session_setup(email)
     }
 }
 
