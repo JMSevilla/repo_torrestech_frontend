@@ -138,6 +138,11 @@ const routes = [
         component: () => import("@/views/employee_dashboard/classes/add_class")
       },
       {
+        path: '/employeedash/edit-class',
+        name: 'EditClass',
+        component: () => import("@/views/employee_dashboard/classes/edit_class")
+      },
+      {
         path: '/employeedash/all-class',
         name: 'AllClass',
         component: () => import("@/views/employee_dashboard/classes/all_class")
