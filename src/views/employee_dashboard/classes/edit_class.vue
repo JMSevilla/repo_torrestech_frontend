@@ -47,11 +47,11 @@ export default {
                 status:'',
                 liststatus:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: 1
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: 0
                     }
                 ],
                 description:''
