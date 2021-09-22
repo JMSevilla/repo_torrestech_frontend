@@ -138,6 +138,11 @@ const routes = [
         component: () => import("@/views/employee_dashboard/classes/add_class")
       },
       {
+        path: '/employeedash/edit-class',
+        name: 'EditClass',
+        component: () => import("@/views/employee_dashboard/classes/edit_class")
+      },
+      {
         path: '/employeedash/all-class',
         name: 'AllClass',
         component: () => import("@/views/employee_dashboard/classes/all_class")
@@ -158,7 +163,12 @@ const routes = [
       path: '/report-a-bug',
       name: 'ReportABug',
       component: () => import("@/views/ReportABug")
-    }  
+    },
+    {
+      path: '/choose-platform',
+      name: 'ChoosePlatform',
+      component: () => import("@/views/choose_platform")
+    }
 ]
 
 const router = new VueRouter({
