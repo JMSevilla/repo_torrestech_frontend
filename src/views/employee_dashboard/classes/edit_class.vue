@@ -4,17 +4,17 @@
             <Subheader />
         </div>
         <div class="p-4">
-            <AddClass :classcode="classcode" :rules="rules" />
+            <EditClass :classcode="classcode" :rules="rules" />
         </div>
     </div>
 </template>
 
 <script>
 import Subheader from "@/components/dashboard/employee_dashboard/classes/subheader"
-import AddClass from "@/components/dashboard/employee_dashboard/classes/addclass"
+import EditClass from "@/components/dashboard/employee_dashboard/classes/editclass"
 export default {
     components: {
-        Subheader, AddClass
+        Subheader, EditClass
     },
     data(){
         return{
@@ -47,11 +47,11 @@ export default {
                 status:'',
                 liststatus:[{
                         label: 'Enable',
-                        value: 'Enable'
+                        value: 1
                     },
                     {
                         label: 'Disable',
-                        value: 'Disable'
+                        value: 0
                     }
                 ],
                 description:''

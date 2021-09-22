@@ -2,7 +2,7 @@
     <div>
         <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
           <div class="card-header" style="background: #FFF">
-              <h3 class="classcode-headline">Add New Class</h3>
+              <h3 class="classcode-headline">Edit Class</h3>
           </div>
           <div style="margin: 10px 0px">
                 <el-form status-icon :model="classcode" :rules="rules" ref="ruleForm" label-position="top">
@@ -27,18 +27,6 @@
                             </el-col>
                         </el-row>
                         <el-row>
-                            <!-- <el-col :span="12">
-                                <el-form-item label="Class Type" prop="classtype">
-                                    <el-select style="width: 90%" v-model="classcode.classtype" placeholder="Select class type">
-                                        <el-option
-                                            v-for="item in classcode.listclasstype"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </el-form-item>
-                            </el-col> -->
                             <el-col :span="24">
                                 <el-form-item label="Status" prop="status">
                                     <el-select style="width: 95%" v-model="classcode.status" placeholder="Select status">

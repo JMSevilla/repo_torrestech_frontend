@@ -74,7 +74,7 @@ export default {
             }
         }
         return{
-            active:4,
+            active:0,
             labelPosition: 'left',
             signup:{
                 ccode:'',

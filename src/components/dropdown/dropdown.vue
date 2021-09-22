@@ -7,7 +7,7 @@
   </span>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item command="AdminProfile">Profile</el-dropdown-item>
-    <el-dropdown-item command="ActivityLog">Activity Log</el-dropdown-item>
+    <el-dropdown-item @click.native="onactivitylog()">Activity Log</el-dropdown-item>
     <el-dropdown-item command="Login">Logout</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
@@ -42,6 +42,7 @@ import {mapGetters} from 'vuex'
         this.$refs.dropdown.visible = false;
       },
         handleCommand(command) {
+            
         if(command=="Login"){
           const loading = this.$loading({
                     lock: true,
@@ -66,6 +67,9 @@ import {mapGetters} from 'vuex'
           }, 2000)
         }
       },
+      onactivitylog(){
+        this.$router.push({name: 'ActivityLog'}).catch(() => {})
+      }
 
     }
   }

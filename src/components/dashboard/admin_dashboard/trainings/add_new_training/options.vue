@@ -52,7 +52,7 @@
                         </el-row>
                         <el-row>
                             <el-col :span="12">
-                                 <el-form-item label="Payment Required" prop="payment">
+                                <el-form-item label="Payment Required" prop="payment">
                                     <el-select style="width: 90%" v-model="trainingtask.payment">
                                         <el-option
                                             v-for="item in trainingtask.listpayment"

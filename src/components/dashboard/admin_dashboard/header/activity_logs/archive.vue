@@ -2,13 +2,8 @@
     <div>
         <el-card shadow="always">
           <el-table
-            :cell-style="{padding: '0', height: '40px'}"
             :data="tableData.filter(data => !search || data.activity.toLowerCase().includes(search.toLowerCase()))"
             style="width: 100%">
-            <el-table-column
-              type="selection"
-              width="55">
-            </el-table-column>
             <el-table-column
               width="180"
               sortable
@@ -20,9 +15,9 @@
               prop="activity">
             </el-table-column>
             <el-table-column
-              align="right"
+              align="center"
               width="250">
-              <template slot="header" slot-scope="scope">
+              <template slot="header">
                 <el-input
                   v-model="search"
                   size="medium"
