@@ -14,7 +14,7 @@
                     <el-col :span="4">
                         <div>
                             <el-dropdown>
-                            <el-button class="filter-btn" style="primary">FILTER <i class="fas fa-caret-down"></i></i>
+                            <el-button class="filter-btn" style="primary">FILTER <i class="fas fa-caret-down"></i>
                             </el-button>
                             <el-dropdown-menu slot="dropdown">
                                 <el-dropdown-item>Class Name</el-dropdown-item>
@@ -32,7 +32,7 @@
 
             </div>
             <div>
-                <AllClassContent />
+                <AllClassContent/>
             </div>
             <!-- <div class="row justify-content-center m-5">
                 <div class="col-md">
@@ -113,6 +113,6 @@ import AllClassContent from "./allclass_content"
 export default {
     components:{
         AllClassContent
-    }
+    },
 }
 </script>

@@ -58,6 +58,7 @@
                     <div class="card-footer p-0"  style="background: #FFF">
                         <el-form-item style="margin-right: 30px">
                             <el-button class="save-button" @click="onsave('ruleForm')">SAVE</el-button>
+                            <el-button class="back-button" @click="back()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>
@@ -85,6 +86,9 @@ export default {
                 }
             });
         },
+        back(){
+            this.$router.push({name: 'AllClass'}).catch(() => {})
+        }
     }
 }
 </script>
