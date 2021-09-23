@@ -1,0 +1,15 @@
+.search-button{
+    background: #0f5298;
+    color:#fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px 0px 0px 12px;
+}
+.add-button{
+    background: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+}
+.search-bar{
+    margin: 0px 0px 0px 12px ;
+}
