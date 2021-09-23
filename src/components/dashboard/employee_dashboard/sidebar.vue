@@ -27,7 +27,7 @@
             <span style="margin-left: 10px">STUDENTS</span>
             </template>
             <el-menu-item-group title="Group One">
-            <el-menu-item index="3-1">item one</el-menu-item>
+            <el-menu-item index="3-1" @click="onaddnewstudent()">Add New Student</el-menu-item>
             <el-menu-item index="3-2">item one</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="Group Two">
