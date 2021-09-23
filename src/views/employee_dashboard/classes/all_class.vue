@@ -4,7 +4,7 @@
             <Subheader />
         </div>
         <div class="p-4">
-            <AllClass :GotoEditPage="goToEditPage"/>
+            <AllClass />
         </div>
     </div>
 </template>
@@ -15,12 +15,6 @@ import AllClass from "@/components/dashboard/employee_dashboard/classes/allclass
 export default {
     components: {
         Subheader, AllClass
-    },
-    methods:{
-        goToEditPage: function(){
-            
-        }
     }
-    
 }
 </script>
