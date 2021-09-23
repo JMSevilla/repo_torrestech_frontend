@@ -17,7 +17,7 @@
                                 veritatis corporis quia voluptates nobis exercitationem.
                             </p>
                             <div style="float: right">
-                                <el-button class="class-btn-view" size="mini" icon="el-icon-edit">Edit</el-button>
+                                <el-button @click.native="goToEditPage()" class="class-btn-view" size="mini" icon="el-icon-edit" >Edit</el-button>
                                 <el-button class="class-btn-view" size="mini" icon="el-icon-view">View</el-button>
                             </div>
                         </div>
@@ -168,3 +168,12 @@
 </template>
 
 <style scoped src="@/assets/styles/Employee_Dashboard/Classes/classes.css"></style>
+<script>
+export default {
+    methods: {
+        goToEditPage(){
+            this.$router.push({name: 'EditClass'}).catch(() => {})
+        }
+    }
+}
+</script>
