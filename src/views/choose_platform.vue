@@ -6,7 +6,7 @@
                     <Vbar/>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-3 mb-2">
                 </div>
                 <div class="col-md-3 mb-2">
