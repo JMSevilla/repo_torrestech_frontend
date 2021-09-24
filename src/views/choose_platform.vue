@@ -24,7 +24,7 @@
    
 </template>
 <script>
-import Vbar from "@/components/Validationbar"
+import Vbar from "@/components/Cards/Validationbar"
 import ED_Card from "@/components/Cards/employee_dashboard"
 import UAM_Card from "@/components/Cards/user_access_management"
 export default {
