@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div @click="onChoose()">
+        <div @click="onChoose()" class="justify-content-center">
             <el-card shadow="hover" id="edCard">
                 <center>
                     <img src="@/assets/img/employee.png" alt="No Image" class="img-fluid">

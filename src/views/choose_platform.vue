@@ -2,7 +2,9 @@
     <div style="background: #F5F5F5;">
         <div class="container">
             <div class="row mb-5" style="margin-top:9rem;">
-                <Vbar/>
+                <div class="col-md-12">
+                    <Vbar/>
+                </div>
             </div>
             <div class="row" >
                 <div class="col-md-3 mb-2">
