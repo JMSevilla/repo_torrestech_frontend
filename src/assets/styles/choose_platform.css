@@ -1,0 +1,13 @@
+#uamCard,#edCard {
+    cursor: pointer;
+    max-height:250px;
+    min-height:230px;
+    min-width: 195px;
+    margin: 5px;
+}
+img{
+    width:100%;
+    height:145px;
+    min-height:120px;
+    padding-top:5px;
+}
