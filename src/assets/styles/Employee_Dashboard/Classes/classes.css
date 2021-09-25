@@ -40,7 +40,7 @@ h3{
     font-weight: bold;
 }
 
-.add-classcode-btn:hover{
+.add-classcode-btn:hover, .add-btn:hover{
     background-color: #0d55a1;
 }
 
@@ -146,11 +146,40 @@ p{
     background: #d7e2ed;
 }
 
-span{
+.classn-name-allclass{
     color: #2d4059;
     font-size: 14px;
 }
 
 .pagination {
     float: right;
+}
+
+.class_code{
+    color: #2d4059;
+    font-size: 20px;
+}
+
+.return-btn{
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #0f5298;
+}
+
+.return-btn:hover{
+    background-color: #0d55a1;
+}
+
+.student-action-btn{
+    font-size: 14px;
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-weight: bold;
+}
+
+.student-action-btn:hover{
+    background: #0f5298;
+    color: #fff;
 }

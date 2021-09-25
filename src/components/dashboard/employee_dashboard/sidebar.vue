@@ -21,7 +21,7 @@
             <el-menu-item index="2-1" @click="onaddclass()" :class="{ active_1: activeItem === 'addclasscode' }">Add New Class</el-menu-item>
             <el-menu-item index="2-2" @click="onmanageclass()" :class="{ active_1: activeItem === 'manageclasscode' }">All Class</el-menu-item>
         </el-submenu>
-        <el-submenu index="3" @click.native="activeMenu = 'students'" :class="{ active: activeMenu === 'students' }">
+        <!-- <el-submenu index="3" @click.native="activeMenu = 'students'" :class="{ active: activeMenu === 'students' }">
             <template slot="title">
             <i class="fas fa-users"></i>
             <span style="margin-left: 10px">STUDENTS</span>
@@ -84,7 +84,7 @@
                 <i class="fas fa-calendar-alt"></i>
                 <span style="margin-left: 10px">CALENDAR</span>
             </template>
-        </el-submenu>
+        </el-submenu> -->
         </el-menu>
     </div>
 </template>
