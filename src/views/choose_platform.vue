@@ -1,20 +1,24 @@
 <template>
-    <div id="bg">
-        <div class="Vbar">
-            <Vbar/>
-        </div>
-        <div class="row" style="margin-top:9rem; margin-left:5%; margin-right:5%;">
-            <div class="col-xl-6">
-                <UAM_Card/>
+    <div style="background: #F5F5F5;">
+        <div class="container" style="background: #F5F5F5; margin-top:9rem; ">
+            <div class="row mb-5 pt-2 justify-content-md-center">
+                <div class="col-md-10">
+                    <Vbar/>
+                </div>
             </div>
-            <div class="col-xl-6">
-                <ED_Card/>
+            <div class="row justify-content-md-center" >
+                <div class="col-md-3 mb-2">
+                    <ED_Card/>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <UAM_Card/>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-import Vbar from "@/components/Validationbar"
+import Vbar from "@/components/Cards/Validationbar"
 import ED_Card from "@/components/Cards/employee_dashboard"
 import UAM_Card from "@/components/Cards/user_access_management"
 export default {
@@ -26,21 +30,14 @@ export default {
     created() {
         document.querySelector("html").classList.add("someClass");
         },
-        destroyed() {
+    destroyed() {
         document.querySelector("html").classList.remove("someClass");
-        }   
+        }  
+    
 }
 </script>
 <style>
  .someClass {
    background: #F5F5F5;
  }
-</style>
-
-<style scoped>
-
-#bg{
-    background: #F5F5F5;
-}
-
 </style>
