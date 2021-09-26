@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div @click="onChoose()" class="justify-content-center">
+        <div @click="onChoose()" >
             <el-card shadow="hover" id="edCard">
                 <center>
-                    <img src="@/assets/img/employee.png" alt="No Image" class="img-fluid">
+                    <img src="@/assets/img/employee.png" alt="No Image" class="image">
                 </center> 
                 <h6 class="text-center mt-2">Employee Dashboard</h6>
                 <h6 class="text-center mb-2" style="font-weight:bold;">EM</h6>
