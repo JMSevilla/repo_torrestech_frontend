@@ -4,17 +4,17 @@
             <Subheader />
         </div>
         <div class="p-4">
-            <AllClass />
+            <ViewClass />
         </div>
     </div>
 </template>
 
 <script>
 import Subheader from "@/components/dashboard/employee_dashboard/classes/subheader"
-import AllClass from "@/components/dashboard/employee_dashboard/classes/allclass"
+import ViewClass from "@/components/dashboard/employee_dashboard/classes/viewclass"
 export default {
-    components: {
-        Subheader, AllClass
+    components:{
+        Subheader, ViewClass
     }
 }
 </script>

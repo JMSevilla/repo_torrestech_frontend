@@ -80,6 +80,10 @@ class __constructor__ {
         data.append("assignee", obj.assignee)
         return data
     }
+    setSession(email){
+        const markup = `?email=${email}`
+        return markup
+    }
 }
 
 export default new __constructor__();

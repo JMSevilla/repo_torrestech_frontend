@@ -2,7 +2,7 @@
     <div>
         <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
           <div class="card-header" style="background: #FFF">
-              <h3 class="classcode-headline">Add New Class</h3>
+              <h3 class="classcode-headline">Edit Class</h3>
           </div>
           <div style="margin: 10px 0px">
                 <el-form status-icon :model="classcode" :rules="rules" ref="ruleForm" label-position="top">
@@ -58,6 +58,7 @@
                     <div class="card-footer p-0"  style="background: #FFF">
                         <el-form-item style="margin-right: 30px">
                             <el-button class="save-button" @click="onsave('ruleForm')">SAVE</el-button>
+                            <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>
                     </div>
                 </el-form>
@@ -84,6 +85,9 @@ export default {
                     return false;
                 }
             });
+        },
+        onback(){
+            this.$router.push({name: 'AllClass'}).catch(() => {})
         }
     }
 }
