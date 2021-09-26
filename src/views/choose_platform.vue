@@ -1,20 +1,32 @@
 <template>
-    <div id="bg">
-        <div class="Vbar">
-            <Vbar/>
-        </div>
-        <div class="row" style="margin-top:9rem; margin-left:5%; margin-right:5%;">
-            <div class="col-xl-6">
-                <UAM_Card/>
+    <div style="background: #F5F5F5;">
+        <div class="container">
+            <div class="row mb-5" style="margin-top:9rem;">
+                <div class="col-md-12">
+                    <Vbar/>
+                </div>
             </div>
-            <div class="col-xl-6">
-                <ED_Card/>
+            <div class="row">
+                <div class="col-md-3 mb-2">
+                </div>
+                <div class="col-md-3 mb-2">
+                    <ED_Card/>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <UAM_Card/>
+                </div>
+                <div class="col-md-3 mb-2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12"></div>
             </div>
         </div>
     </div>
+   
 </template>
 <script>
-import Vbar from "@/components/Validationbar"
+import Vbar from "@/components/Cards/Validationbar"
 import ED_Card from "@/components/Cards/employee_dashboard"
 import UAM_Card from "@/components/Cards/user_access_management"
 export default {
@@ -35,12 +47,4 @@ export default {
  .someClass {
    background: #F5F5F5;
  }
-</style>
-
-<style scoped>
-
-#bg{
-    background: #F5F5F5;
-}
-
 </style>
