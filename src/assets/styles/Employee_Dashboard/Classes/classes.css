@@ -3,6 +3,16 @@ h3{
     color: #2d4059
 }
 
+.back-button{
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-size: 14px;
+    font-weight: bold;
+    width: 13%;
+    float: right;
+    margin: 30px 0 0 30px;
+}
+
 .classcode-btn{
     border: 1.5px #0f5298 solid;
     color: #0f5298;
@@ -30,8 +40,25 @@ h3{
     font-weight: bold;
 }
 
-.add-classcode-btn:hover{
+.add-classcode-btn:hover, .add-btn:hover{
     background-color: #0d55a1;
+}
+
+.add-btn {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #0f5298;
+
+}
+
+.filter-btn{
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #0f5298;
+    margin-left: 1.5em;
 }
 
 .el-icon-plus{
@@ -77,25 +104,82 @@ p{
 
 .classname-title{
     text-align: center;
-    margin-top: 20px;
     font-weight: bold;
     color: #2d4059;
+}
+
+.classname-subtitle{
+    text-align: center;
+    font-weight: bold;
+    color: #2d4059;
+    font-size: 14px;
 }
 
 .class-code{
     color: #2d4059;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.class-btn{
+.class-btn-view{
+    font-size: 14px;
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-weight: bold;
+}
+
+.class-btn-view:hover{
+    background: #0f5298;
+    color: #fff;
+}
+
+.class-btn-edit{
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.class-total{
+    font-size: 25px;
+    font-weight: bold;
+    color: #2d4059;
+    background: #d7e2ed;
+}
+
+.classn-name-allclass{
+    color: #2d4059;
+    font-size: 14px;
+}
+
+.pagination {
+    float: right;
+}
+
+.class_code{
+    color: #2d4059;
+    font-size: 20px;
+}
+
+.return-btn{
+    float: right;
     font-size: 14px;
     font-weight: bold;
     color: #fff;
     background: #0f5298;
-    width: 45%;
 }
 
-.class-btn:hover{
-    background: #0d55a1;
+.return-btn:hover{
+    background-color: #0d55a1;
+}
+
+.student-action-btn{
+    font-size: 14px;
+    border: 1.5px #0f5298 solid;
+    color: #0f5298;
+    font-weight: bold;
+}
+
+.student-action-btn:hover{
+    background: #0f5298;
+    color: #fff;
 }

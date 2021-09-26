@@ -90,6 +90,10 @@ class __constructor__ {
         data.append('apikey', obj.apikey);
         return data;
     }
+    setSession(email){
+        const markup = `?email=${email}`
+        return markup
+    }
 }
 
 export default new __constructor__();

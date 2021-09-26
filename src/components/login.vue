@@ -50,6 +50,7 @@ export default {
          })
    },
    methods:{
+       
        forgetPass(){
            this.$router.push({name:"forgetPassword"}).catch(()=> {});
        },
@@ -84,6 +85,11 @@ export default {
                             message: 'Successfully login',
                             offset: 100
                             });
+                            //set session
+                            this.$store.dispatch(`actions_session_setup`, {
+                                    email : this.login.email
+                                })
+                            //set session end
                             this.$store.state.signinArray = this.getresponsesignin.databulk
                             this.randomizeToken(10)
                             this.$store.dispatch(`actions_token_update`, {

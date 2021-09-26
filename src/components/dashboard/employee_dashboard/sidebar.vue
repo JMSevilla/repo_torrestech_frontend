@@ -21,13 +21,13 @@
             <el-menu-item index="2-1" @click="onaddclass()" :class="{ active_1: activeItem === 'addclasscode' }">Add New Class</el-menu-item>
             <el-menu-item index="2-2" @click="onmanageclass()" :class="{ active_1: activeItem === 'manageclasscode' }">All Class</el-menu-item>
         </el-submenu>
-        <el-submenu index="3" @click.native="activeMenu = 'students'" :class="{ active: activeMenu === 'students' }">
+        <!-- <el-submenu index="3" @click.native="activeMenu = 'students'" :class="{ active: activeMenu === 'students' }">
             <template slot="title">
             <i class="fas fa-users"></i>
             <span style="margin-left: 10px">STUDENTS</span>
             </template>
             <el-menu-item-group title="Group One">
-            <el-menu-item index="3-1">item one</el-menu-item>
+            <el-menu-item index="3-1" @click="onaddnewstudent()">Add New Student</el-menu-item>
             <el-menu-item index="3-2">item one</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="Group Two">
@@ -43,17 +43,7 @@
             <i class="fas fa-file-contract"></i>
             <span style="margin-left: 10px">QUIZ</span>
             </template>
-            <el-menu-item-group title="Group One">
-            <el-menu-item index="4-1">item one</el-menu-item>
-            <el-menu-item index="4-2">item one</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group Two">
-            <el-menu-item index="4-3">item three</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="4-4">
-            <template slot="title">item four</template>
-            <el-menu-item index="4-4-1">item one</el-menu-item>
-            </el-submenu>
+            <el-menu-item index="4-1" @click="onaddquiz()" :class="{ active_1: activeItem === 'addquiz' }">Add New Quiz</el-menu-item>
         </el-submenu>
         <el-submenu index="5" @click.native="activeMenu = 'assignments'" :class="{ active: activeMenu === 'assignments' }">
             <template slot="title">
@@ -89,6 +79,12 @@
             <el-menu-item index="1-4-1">item one</el-menu-item>
             </el-submenu>
         </el-submenu>
+        <el-submenu index="1" @click.native="activeMenu = 'calendar'" :class="{ active: activeMenu === 'calendar' }">
+            <template slot="title">
+                <i class="fas fa-calendar-alt"></i>
+                <span style="margin-left: 10px">CALENDAR</span>
+            </template>
+        </el-submenu> -->
         </el-menu>
     </div>
 </template>
@@ -110,6 +106,10 @@ export default {
         onmanageclass(){
             this.activeItem = 'manageclasscode'
             this.$router.push({name: "AllClass"}).catch(()=>{})
+        },
+        onaddquiz() {
+            this.activeItem = 'addquiz'
+            this.$router.push({name: "AddQuiz"}).catch(()=>{})
         }
     },
 }

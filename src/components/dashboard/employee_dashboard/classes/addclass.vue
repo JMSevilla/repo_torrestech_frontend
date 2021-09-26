@@ -27,21 +27,9 @@
                             </el-col>
                         </el-row>
                         <el-row>
-                            <el-col :span="12">
-                                <el-form-item label="Class Type" prop="classtype">
-                                    <el-select style="width: 90%" v-model="classcode.classtype" placeholder="Select class type">
-                                        <el-option
-                                            v-for="item in classcode.listclasstype"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
+                            <el-col :span="24">
                                 <el-form-item label="Status" prop="status">
-                                    <el-select style="width: 90%" v-model="classcode.status" placeholder="Select status">
+                                    <el-select style="width: 95%" v-model="classcode.status" placeholder="Select status">
                                         <el-option
                                             v-for="item in classcode.liststatus"
                                             :key="item.value"
@@ -96,7 +84,7 @@ export default {
                     return false;
                 }
             });
-        },
+        }
     }
 }
 </script>

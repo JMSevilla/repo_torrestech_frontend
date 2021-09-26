@@ -61,6 +61,11 @@ const requestSetup = {
         return await new Promise((resolve) => {
             return statemanagement.state.InsertEmployee(obj, resolve)
         })
+    },
+    async session_setup(email){
+        return await new Promise((resolve) => {
+            return statemanagement.state.accessSession(email, resolve)
+        })
     }
 }
 
