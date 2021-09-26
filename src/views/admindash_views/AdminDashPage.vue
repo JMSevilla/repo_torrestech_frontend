@@ -24,7 +24,7 @@ import FooterDash from "@/components/dashboard/subfooter"
 export default {
     components: {
         HeaderDash, SideDash, FooterDash, Dashboard
-    }
+    },
 }
 </script>
 
@@ -32,6 +32,6 @@ export default {
   .sidebar-dash {
     background: #fff; 
     width: 18%; min-height: 100vh; 
-    border-right: 3px #e6e6e6 solid
+    border-right: 3px #e6e6e6 solid;
   }
 </style>

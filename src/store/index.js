@@ -1,5 +1,5 @@
 import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess, signinprocess, updatetokenprocess,
-  scantokenprocess, addtrainingprocess} from './request'
+  scantokenprocess, addtrainingprocess, addemployeeprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -18,7 +18,8 @@ export default new Vuex.Store({
       tokenresponse: '',
       tokenArray: [],
       scantokenresponse: '',
-      TrainingResponse: ''
+      TrainingResponse: '',
+      employeeReg: ""
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -47,6 +48,9 @@ export default new Vuex.Store({
     },
     mutate_training: (state, data) => {
       return state.TrainingResponse = data
+    },
+    mutate_employeeadd: (state, data) => {
+      return state.employeeReg = data
     }
   },
   getters: {
@@ -76,6 +80,9 @@ export default new Vuex.Store({
     },
     claims_get_training_response: (state) => {
       return state.TrainingResponse
+    },
+    claims_add_employee_response: (state) => {
+      return state.employeeReg
     }
   },
   actions: {
@@ -140,6 +147,13 @@ export default new Vuex.Store({
     return new Promise(resolve => {
       reportabugprocess(object).then(response => {
         return resolve(commit(`mutate_bug_report`, response.data.message))
+     })
+    })
+  },
+  actions_insert_employee_setup({commit}, {object}) {
+    return new Promise(resolve => {
+      addemployeeprocess(object).then(response => {
+        return resolve(commit(`mutate_employeeadd`, response.data.message))
      })
     })
   }

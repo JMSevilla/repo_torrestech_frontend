@@ -4,17 +4,17 @@
             <HeaderStudents />
         </div>
         <div class="p-4">
-            <ActiveStudents />
+            <Message />
         </div>
     </div>
 </template>
 
 <script>
 import HeaderStudents from "@/components/dashboard/admin_dashboard/students_tab/headerstudents"
-import ActiveStudents from "@/components/dashboard/admin_dashboard/students_tab/activestudents"
+import Message from "@/components/dashboard/admin_dashboard/students_tab/message"
 export default {
     components: {
-        HeaderStudents, ActiveStudents
-    }
+        HeaderStudents, Message
+    },
 }
 </script>

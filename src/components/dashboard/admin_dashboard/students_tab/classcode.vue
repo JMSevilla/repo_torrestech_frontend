@@ -6,10 +6,9 @@
                   <h3 style="color: #2d4059; font-weight: bold">Class Code</h3>
                 </div>
                 <div class="card-body">
-                    <!-- <el-button @click="routeto_()" type="primary" style="float: right; margin-bottom: 20px" class="btnadd el-icon-plus">Add Student</el-button> -->
                     <el-table :cell-style="{padding: '0', height: '40px'}"
                     :data="tableData.filter(data => !search || data.code.toLowerCase().includes(search.toLowerCase()) || data.training.toLowerCase().includes(search.toLowerCase()) || data.owner.toLowerCase().includes(search.toLowerCase()))"
-                    style="width: 70%; padding: 20px 0"
+                    style="width: 100%; padding: 20px 0"
                     border>
                     <el-table-column
                         label="#"
@@ -37,24 +36,19 @@
                             placeholder="Type to search"/>
                         </template>
                         <template slot-scope="scope">
-                        <div style="display: flex;">
+                        <div>
                             <el-button 
                             style="width: 100%"
                             size="mini" class="btnactions"
-                            @click="delConfirm(scope.row.userID)"
-                            >VIEW</el-button>
-                            <el-button 
-                            style="width: 100%"
-                            size="mini" class="btnactions"
-                            @click="delConfirm(scope.row.userID)"
-                            >ARCHIVE</el-button>                              
+                            @click="btnArchive(scope.row.userID)"
+                            >Archive</el-button>                              
                         </div>
                           <!-- </center> -->
                         </template>
                       
                     </el-table-column>
                   </el-table>
-                    <el-pagination style="margin-top: 20px; margin-right: 352px;float: right;"
+                    <el-pagination style="margin-top: 20px; float: right;"
                     background
                     layout="prev, pager, next"
                     :total="10">
@@ -67,24 +61,9 @@
 
 <script>
   export default {
-    data() {
-      return {
-        tableData: [{
-          code: '2016-05-03',
-          training: 'assigned sample',
-          owner: 'emman'
-        }, {
-          code: '2016-05-03',
-          training: 'assigned sample',
-          owner: 'mj'
-        },
-        {
-          code: '2016-05-03',
-          training: 'assigned sample',
-          owner: 'jomar'
-        },],
-        search: '',
-      }
+    props: {
+      tableData: Array,
+      btnArchive: Function
     },
     methods: {
       handleEdit(index, row) {

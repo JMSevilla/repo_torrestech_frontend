@@ -80,6 +80,14 @@ const state = {
         } catch (error) {
             alert("Add training error" + error)
         }
+    },
+    InsertEmployee(obj, resolve){
+        try {
+            const rest = http.post(api.EntryPoint(`v1/resources/employee`) + `/add-employee`, constructor.addemployee(obj))
+            response.responseData(rest, resolve)
+        } catch (error) {
+            alert("Add employee error" + error)
+        }
     }
 }
 
@@ -116,6 +124,9 @@ const request = {
     },
     async addTraining_request(obj){
         return await api.requestSetup.addTraining_setup(obj)
+    },
+    async addEmployee_request(obj){
+        return await api.requestSetup.addEmployee_setup(obj)
     }
 }
 

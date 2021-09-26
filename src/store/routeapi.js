@@ -56,6 +56,11 @@ const requestSetup = {
         return await new Promise((resolve) => {
             return statemanagement.state.TrainingAdding(obj, resolve)
         })
+    },
+    async addEmployee_setup(obj){
+        return await new Promise((resolve) => {
+            return statemanagement.state.InsertEmployee(obj, resolve)
+        })
     }
 }
 

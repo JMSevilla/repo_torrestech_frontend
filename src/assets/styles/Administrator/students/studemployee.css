@@ -27,3 +27,17 @@
   /* font-size: 14px; */
   font-weight: bold;
 }
+
+/* add employee  */
+.btninsert{
+  background: #0f5298;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btnreset{
+  color: #0f5298;
+  border-color: #0f5298;
+  font-size: 14px;
+  font-weight: bold;
+}

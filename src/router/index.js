@@ -101,19 +101,29 @@ const routes = [
         component: () => import("@/views/admindash_views/employee/employee_list")
       },
       {
+        path: '/admindash/employee-info',
+        name: 'EmployeeInfo',
+        component: () => import("@/views/admindash_views/employee/employee_info")
+      },
+      {
         path: '/admindash/allstudents',
         name: 'AllStudents',
         component: () => import("@/views/admindash_views/students/all_students")
       },
       {
-        path: '/admindash/activestudents',
-        name: 'ActiveStudents',
-        component: () => import("@/views/admindash_views/students/active_students")
+        path: 'admindash/student-info',
+        name: 'StudentInfo',
+        component: () => import("@/views/admindash_views/students/student_info")
       },
       {
         path: '/admindash/classcode',
         name: 'ClassCode',
         component: () => import("@/views/admindash_views/students/class_code")
+      },
+      {
+        path: '/admindash/message',
+        name: 'Message',
+        component: () => import("@/views/admindash_views/students/message_view")
       },
       {
         path: '/admindash/activity-logs',

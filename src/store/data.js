@@ -80,6 +80,16 @@ class __constructor__ {
         data.append("assignee", obj.assignee)
         return data
     }
+    addemployee(obj){
+        const data = new FormData();
+        data.append('firstname', obj.firstname);
+        data.append('lastname', obj.lastname);
+        data.append('email', obj.email);
+        data.append('password', obj.password);
+        data.append('platform', obj.platform);
+        data.append('apikey', obj.apikey);
+        return data;
+    }
 }
 
 export default new __constructor__();
