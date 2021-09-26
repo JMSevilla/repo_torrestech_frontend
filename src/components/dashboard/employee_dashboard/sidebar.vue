@@ -110,6 +110,10 @@ export default {
         onaddquiz() {
             this.activeItem = 'addquiz'
             this.$router.push({name: "AddQuiz"}).catch(()=>{})
+        },
+        onaddnewstudent() {
+            this.activeItem= 'addnewstudent'
+            this.$router.push({name: "AddNewStudent"}).catch(()=>{})
         }
     },
 }
