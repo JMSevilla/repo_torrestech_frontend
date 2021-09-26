@@ -69,77 +69,21 @@
 <style scoped src="@/assets/styles/Employee_Dashboard/Classes/classes.css"></style>
 
 <script>
-import {mapGetters} from 'vuex';
 export default {
     props:{
         classcode: Object,
         rules: Object
     },
-    computed:{
-        ...mapGetters({
-            CResponse : 'claims_get_classes_response'
-        })
-    },
     methods:{
          onsave(ruleForm){
-             this.$confirm('Are you sure you want to add this training?', 'Warning', {
-                cancelButtonText: 'Cancel',
-                confirmButtonText: 'Yes',
-                type: 'warning'
-                })
-                .then(() => {
-                    const loading = this.$loading({
-                    lock: true,
-                    text: 'please wait...',
-                    spinner: 'el-icon-loading',
-                    background: 'rgba(0, 0, 0, 0.7)'
-                    });
-                    setTimeout(() => {
-                        this.$refs[ruleForm].validate((valid) =>{
-                            this.generateClasscode(6)
-                            if(valid){
-                               try {
-                                    this.$store.dispatch(`actions_classes_add`, {
-                                    object: this.classcode
-                                }).then(() => {
-                                    console.log(this.CResponse)
-                                    if(this.CResponse === "SUCCESS CREATE CLASSES"){
-                                        loading.close()
-                                        this.$notify.success({
-                                        title: 'Yey',
-                                        message: 'Successfully created',
-                                        offset: 100
-                                        }); 
-                                        
-                                    }
-                                }).catch((e) => {
-                                    if(this.CResponse == null || undefined){
-                                        loading.close()
-                                        console.log("FAIL" , e)
-                                    }
-                                })
-                               } catch (error){
-                                   loading.close()
-                                   console.log(error)
-                               }
-                            }
-                            else{
-                                return false;
-                            }
-                        })
-                    }, 3000)
-                })
-        },
-        generateClasscode(length){
-            var result           = [];
-            var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            var charactersLength = characters.length;
-            for ( var i = 0; i < length; i++ ) {
-                result.push(characters.charAt(Math.floor(Math.random() *
-            charactersLength)));
-            }
-            // console.log(result.join(""));
-            return this.classcode.generatedClasscode = result.join("");
+            this.$refs[ruleForm].validate((valid) => {
+            if(valid){
+                    alert("Successfully Saved")
+                }
+                else{
+                    return false;
+                }
+            });
         }
     }
 }

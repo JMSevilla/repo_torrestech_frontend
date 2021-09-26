@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="my-2">
         <el-table
           :data="tableData.filter(data => !search || data.firstname.toLowerCase().includes(search.toLowerCase())
           || data.lastname.toLowerCase().includes(search.toLowerCase())

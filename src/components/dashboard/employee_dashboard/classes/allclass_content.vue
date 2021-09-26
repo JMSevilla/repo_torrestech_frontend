@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" style="border-left: 7px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+                <div class="card" style="border-left: 5px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
                     <div class="card-body">
                         <el-tag type="success">Enable</el-tag>
                         <div>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card" style="border-left: 7px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+                <div class="card" style="border-left: 5px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
                     <div class="card-body">
                         <el-tag type="success">Enable</el-tag>
                         <div>
