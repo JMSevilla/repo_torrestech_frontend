@@ -26,7 +26,7 @@
             <el-table-column
               width="200"
               align="right">
-              <template slot="header" >
+              <template slot="header" slot-scope="scope">
                 <el-input
                   v-model="search"
                   size="medium"

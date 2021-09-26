@@ -17,7 +17,7 @@
             <el-table-column
               align="center"
               width="250">
-              <template slot="header">
+              <template slot="header" slot-scope="scope">
                 <el-input
                   v-model="search"
                   size="medium"
