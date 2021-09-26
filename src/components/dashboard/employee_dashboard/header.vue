@@ -10,8 +10,8 @@
                         <i class="fas fa-user-alt text-white" style="padding: 19px 0;"></i><i class="el-icon-caret-bottom el-icon--right"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item divided>Profile</el-dropdown-item>
-                        <el-dropdown-item divided>Log Out</el-dropdown-item>
+                        <el-dropdown-item divided @click.native="employeeProfile()">Profile</el-dropdown-item>
+                        <el-dropdown-item divided>Logout</el-dropdown-item>
                         <!-- <el-dropdown-item disabled>Action 4</el-dropdown-item>
                         <el-dropdown-item divided>Action 5</el-dropdown-item> -->
                     </el-dropdown-menu>
@@ -20,6 +20,17 @@
         </nav>
     </div>
 </template>
+
+<script>
+export default {
+    methods:{
+        employeeProfile(){
+            this.$router.push({name: "EmployeeProfile"}).catch(()=>{})
+        }
+    }
+    
+}
+</script>
 
 <style scoped>
     .con-width{

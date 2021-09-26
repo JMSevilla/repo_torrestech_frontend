@@ -148,14 +148,18 @@ const routes = [
         component: () => import("@/views/employee_dashboard/classes/all_class")
       },
       {
-      path: '/employeedash/add-quizes',
-      name: 'AddQuiz',
-      component: () => import("@/views/employee_dashboard/quizes/add_quizes")
+        path: '/employeedash/employee-profile',
+        name: 'EmployeeProfile',
+        component: () => import("@/views/employee_dashboard/header/employee_profile")
+      },
+        path: '/employeedash/add-quizes',
+        name: 'AddQuiz',
+        component: () => import("@/views/employee_dashboard/quizes/add_quizes")
       },
       {
-      path: '/employeedash/view-class',
-      name: 'ViewClass',
-      component: () => import("@/views/employee_dashboard/classes/view_class")
+        path: '/employeedash/view-class',
+        name: 'ViewClass',
+        component: () => import("@/views/employee_dashboard/classes/view_class")
       }
     ]
    },
