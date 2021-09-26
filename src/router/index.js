@@ -155,7 +155,7 @@ const routes = [
       {
       path: '/employeedash/view-class',
       name: 'ViewClass',
-      component: () => import("@/views/employee_dashboard/view_class/viewClass")
+      component: () => import("@/views/employee_dashboard/classes/view_class")
       }
     ]
    },
