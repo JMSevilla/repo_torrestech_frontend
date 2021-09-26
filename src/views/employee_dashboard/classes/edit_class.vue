@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="width:1000px;">
         <div style="background: #fff">
             <Subheader />
         </div>

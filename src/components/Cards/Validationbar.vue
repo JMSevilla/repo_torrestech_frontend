@@ -1,25 +1,16 @@
 <template>
     <div>
-        <div class="container" style="min-width:300px;">
-            <div class="row mb-2">
-                <div class="col-md-12 d-flex">
-                    <el-input prefix-icon="el-icon-search"
-                     v-model="search" type="text" placeholder="Validate API key" clearable></el-input>
-                     <el-button type="primary" style="float: right;"><i class="fas fa-key"></i></el-button>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-12 d-flex justify-content-center">
-                    <h2>Please enter API Key to continue</h2>
-                </div>
-            </div>
+        <div class="d-flex">
+                <el-input prefix-icon="el-icon-key"
+                v-model="apiKey" type="text" placeholder="Please enter API Key to continue" clearable></el-input>
+                <el-button type="primary" style="float: right; background: #0f5298;"><i class="fas fa-key"></i></el-button>
         </div>
     </div>
 </template>
 <script>
 export default {
     props: {
-        search : String,
+        apiKey : String,
     }
 }
 </script>

@@ -1,29 +1,21 @@
 <template>
     <div style="background: #F5F5F5;">
-        <div class="container">
-            <div class="row mb-5" style="margin-top:9rem;">
-                <div class="col-md-12">
+        <div class="container" style="background: #F5F5F5; margin-top:9rem; ">
+            <div class="row mb-5 pt-2 justify-content-md-center">
+                <div class="col-md-10">
                     <Vbar/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 mb-2">
-                </div>
+            <div class="row justify-content-md-center" >
                 <div class="col-md-3 mb-2">
                     <ED_Card/>
                 </div>
                 <div class="col-md-3 mb-2">
                     <UAM_Card/>
                 </div>
-                <div class="col-md-3 mb-2">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12"></div>
             </div>
         </div>
     </div>
-   
 </template>
 <script>
 import Vbar from "@/components/Cards/Validationbar"
@@ -38,9 +30,10 @@ export default {
     created() {
         document.querySelector("html").classList.add("someClass");
         },
-        destroyed() {
+    destroyed() {
         document.querySelector("html").classList.remove("someClass");
-        }   
+        }  
+    
 }
 </script>
 <style>

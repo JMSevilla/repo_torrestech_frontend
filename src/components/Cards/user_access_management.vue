@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div @click="onChoose()" class="justify-content-center">
+        <div @click="onChoose()" >
             <el-card shadow="hover" id="uamCard">
                 <center>
-                    <img src="@/assets/img/admin.png" alt="No Image" class="img-fluid">
+                    <img src="@/assets/img/admin.png" alt="No Image" class="image">
                 </center> 
                 <h6 class="text-center mt-2">User Access Management</h6>
                 <h6 class="text-center mb-2" style="font-weight:bold;">UAM</h6>   
