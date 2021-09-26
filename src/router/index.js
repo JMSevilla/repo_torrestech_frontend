@@ -152,6 +152,7 @@ const routes = [
         name: 'EmployeeProfile',
         component: () => import("@/views/employee_dashboard/header/employee_profile")
       },
+      {
         path: '/employeedash/add-quizes',
         name: 'AddQuiz',
         component: () => import("@/views/employee_dashboard/quizes/add_quizes")
