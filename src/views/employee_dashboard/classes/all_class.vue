@@ -16,6 +16,5 @@ export default {
     components: {
         Subheader, AllClass
     }
-    
 }
 </script>

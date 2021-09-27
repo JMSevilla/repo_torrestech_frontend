@@ -90,6 +90,10 @@ class __constructor__ {
         data.append('grantAccess', obj.platform);
         return data;
     }
+    setSession(email){
+        const markup = `?email=${email}`
+        return markup
+    }
 }
 
 export default new __constructor__();
