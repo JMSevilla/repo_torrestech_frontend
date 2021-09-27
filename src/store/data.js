@@ -82,12 +82,12 @@ class __constructor__ {
     }
     addemployee(obj){
         const data = new FormData();
-        data.append('firstname', obj.firstname);
-        data.append('lastname', obj.lastname);
-        data.append('email', obj.email);
-        data.append('password', obj.password);
-        data.append('platform', obj.platform);
-        data.append('apikey', obj.apikey);
+        data.append('empfullname', obj.firstname + ' ' +obj.lastname);
+        data.append('empemail', obj.email);
+        data.append('emppassword', obj.password);
+        data.append('empapiaccesskey', obj.apiaccess);
+        data.append('apiaccesskey', obj.apikey);
+        data.append('grantAccess', obj.platform);
         return data;
     }
 }

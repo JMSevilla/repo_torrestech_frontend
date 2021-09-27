@@ -83,7 +83,7 @@ const state = {
     },
     InsertEmployee(obj, resolve){
         try {
-            const rest = http.post(api.EntryPoint(`v1/resources/employee`) + `/add-employee`, constructor.addemployee(obj))
+            const rest = http.post(api.EntryPoint(`v2/resources/employee`) + `/add-employee`, constructor.addemployee(obj))
             response.responseData(rest, resolve)
         } catch (error) {
             alert("Add employee error" + error)

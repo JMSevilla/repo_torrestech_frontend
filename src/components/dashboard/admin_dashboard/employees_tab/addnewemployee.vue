@@ -103,7 +103,8 @@ import { mapGetters } from "vuex"
           password: '',
           confirmpass: '',
           platform: '',
-          apikey: ''
+          apikey: '',
+          apiaccess: '1'
         },
         rules: {
             firstname: [
