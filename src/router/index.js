@@ -124,6 +124,11 @@ const routes = [
         path: '/admindash/admin-profile',
         name: 'AdminProfile',
         component: () => import("@/views/admindash_views/header/admin_profile")
+      },
+      {
+        path: '/admindash/manage-categories',
+        name: 'TrainingsCategories',
+        component: () => import("@/views/admindash_views/trainings/manage_categories")
       }
     ]
    },

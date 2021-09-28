@@ -42,6 +42,12 @@ import {mapGetters} from 'vuex'
         this.$refs.dropdown.visible = false;
       },
         handleCommand(command) {
+        if(command=="AdminProfile"){
+          this.$router.push({name : 'AdminProfile'}).catch(() => {})
+        }
+        else if(command=="ActivityLog"){
+          this.$router.push({name : 'ActivityLog'}).catch(() => {})
+        }
         if(command=="Login"){
           const loading = this.$loading({
                     lock: true,

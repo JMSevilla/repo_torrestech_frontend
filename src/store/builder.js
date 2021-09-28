@@ -9,7 +9,7 @@ const state = {
             var restful = http.get(api.EntryPoint(`v1/resources/administrator`) + `/detect-admin-registration`)
             response.responseData(restful, resolve)
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     },
     storeAdmin(obj, resolve){
@@ -17,7 +17,7 @@ const state = {
             var restful = http.post(api.EntryPoint(`v1/resources/administrator`) + `/admin-store-data`, constructor.datamanagement(obj))
             response.responseData(restful, resolve)
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     },
     checkClasscode(obj, resolve) {
@@ -25,7 +25,7 @@ const state = {
             var restful = http.post(api.EntryPoint(`students`) + '/student-classcode', constructor.classcodechecker(obj));
             response.responseData(restful, resolve);
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     },
     studentRegister(obj, resolve) {
@@ -33,7 +33,7 @@ const state = {
             var restful = http.post(api.EntryPoint(`students`) + '/add-student', constructor.registrationstudent(obj));
             response.responseData(restful, resolve);
         } catch (error) {
-            alert(alert)
+            alert(alert);
         }
     },
     reportBug(obj, resolve) {
@@ -42,12 +42,14 @@ const state = {
             response.responseData(restful, resolve);
         } catch(error) {
             alert(error);
+        }
+    },
     signinController(obj, resolve) { 
         try {
             var restful = http.post(api.EntryPoint(`v1/resources/signin`) + `/standard-login`, constructor.signindata(obj))
             response.responseData(restful, resolve)
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     },
     updateTokenController(email, token, decision, resolve) {
@@ -60,7 +62,7 @@ const state = {
                 response.responseData(rest, resolve)
             }
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     },
     scanTokenLoader(token, email, resolve) {
@@ -68,7 +70,7 @@ const state = {
             var restful = http.get(api.EntryPoint(`v1/resources/signin`) + `/check-token` + constructor.scanToken(token, email))
             response.responseData(restful, resolve)
         } catch (error) {
-            alert(error)
+            alert(error);
         }
     },
     TrainingAdding(obj, resolve){
@@ -76,7 +78,7 @@ const state = {
             const rest = http.post(api.EntryPoint(`v1/resources/training`) + `/add-training`, constructor.addTraining(obj))
             response.responseData(rest, resolve)
         } catch (error) {
-            alert("Add training error" + error)
+            alert("Add training error" + error);
         }
     }
 }
@@ -102,6 +104,7 @@ const request = {
     },
     async reportbug_request(obj) {
         return await api.requestSetup.report_bug_setup(obj);
+    },
     async signin_request(obj) {
         return await api.requestSetup.signin_setup(obj);
     },

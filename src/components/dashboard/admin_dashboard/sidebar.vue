@@ -182,7 +182,7 @@ export default {
         },
         ontrainingcategories(){
             this.activeItem = 'trainingcateg'
-            // this.$router.push({name: "TrainingsCategories"}).catch(()=>{})
+            this.$router.push({name: "TrainingsCategories"}).catch(()=>{})
         },
         onaddnewtraining(){
             this.activeItem = 'addnewtraining'
