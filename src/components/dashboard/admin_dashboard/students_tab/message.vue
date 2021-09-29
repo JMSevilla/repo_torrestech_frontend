@@ -64,8 +64,8 @@
                                     </div>
                                     <div class="card-footer p-0 mt-5">
                                         <el-form-item style="float: right; margin-top: 30px; margin-right: 50px;">
-                                        <el-button class="btnreset" @click="resetForm('ruleForm')">Reset</el-button>
-                                        <el-button class="btninsert" @click="Send('ruleForm')">Send</el-button>
+                                        <el-button class="btnreset" @click="resetForm('ruleForm')">RESET</el-button>
+                                        <el-button class="btninsert" @click="Send('ruleForm')">SEND</el-button>
                                       </el-form-item>
                                     </div>
                                 </el-form>

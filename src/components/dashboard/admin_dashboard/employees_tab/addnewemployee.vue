@@ -46,25 +46,26 @@
                                                     <el-input v-model="ruleForm.confirmpass" placeholder="Confirm password" show-password></el-input>
                                                 </el-form-item>
                                             </div>
+                                            <div class="col-md-12">
+                                                <el-form-item label="Copy Generated API Key" prop="apikey">
+                                                    <!-- <div class="d-flex"> -->
+                                                        <el-input v-model="ruleForm.apikey" placeholder="Generate api key">
+                                                            <el-button slot="append" style="color: #fff;background: #0F5298;border-color: #0F5298;font-size: 14px;font-weight: bold;" 
+                                                            @click="genapikey()">API KEY</el-button>
+                                                        </el-input>
+                                                        
+                                                    <!-- </div> -->
+                                                </el-form-item>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-footer p-0 mt-5">
                                         <el-form-item style="float: right; margin-top: 30px; margin-right: 50px;">
-                                        <el-button class="btnreset" @click="resetForm('ruleForm')">Reset</el-button>
-                                        <el-button class="btninsert" @click="Save('ruleForm')">Save</el-button>
+                                        <el-button class="btnreset" @click="resetForm('ruleForm')">RESET</el-button>
+                                        <el-button class="btninsert" @click="Save('ruleForm')">SAVE</el-button>
                                       </el-form-item>
                                     </div>
                                 </el-form>
-                                    <el-dialog
-                                        title="Please copy generated API KEY before you exit"
-                                        :visible.sync="dialogVisible"
-                                        width="30%"
-                                        :before-close="handleClose">
-                                        <p>{{ ruleForm.apikey }}</p>
-                                        <span slot="footer" class="dialog-footer">
-                                            <el-button class="btninsert" @click="Done()">Done</el-button>
-                                        </span>
-                                    </el-dialog>
                             <!-- </div>
                         </div> -->
                     </div>
@@ -126,6 +127,9 @@ import { mapGetters } from "vuex"
             platform: [
                 { required: true, message: 'Please select platform', trigger: 'change' }
             ],
+            apikey: [
+                { required: true, message: 'Please generate api key', trigger: 'blur' }
+            ],
         }
       };
     },
@@ -135,22 +139,26 @@ import { mapGetters } from "vuex"
         })
     },
     methods: {
-        genapikey(length) {
-                var result           = [];
-                var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                var charactersLength = characters.length;
-                for ( var i = 0; i < length; i++ ) {
-                result.push(characters.charAt(Math.floor(Math.random() *
-            charactersLength)));
+        genapikey() {
+            var d = new Date().getTime();
+            
+            if( window.performance && typeof window.performance.now === "function" )
+            {
+                d += performance.now();
             }
-            return this.ruleForm.apikey = result.join('');
+            
+            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c)
+            {
+                var r = (d + Math.random()*16)%16 | 0;
+                d = Math.floor(d/16);
+                return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+            });
+            return this.ruleForm.apikey = uuid
         },
       Save(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            // alert('submit!');
-            this.genapikey(50)
-            this.dialogVisible = true
+              this.Done();
           } else {
             console.log('error submit!!');
             return false;
