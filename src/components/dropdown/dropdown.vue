@@ -3,7 +3,8 @@
     <el-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
     <i class="fas fa-user-alt text-white" style="padding: 19px 0"></i>
-    <i class="el-icon-caret-bottom" style="margin-left: 5px; margin-right: 50px"></i>
+    <i class="el-icon-caret-bottom" style="margin-right: 6px;"></i>
+    <span>Hannah Batungbakal</span>
   </span>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item command="AdminProfile">Profile</el-dropdown-item>

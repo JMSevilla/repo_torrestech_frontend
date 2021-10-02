@@ -1,10 +1,12 @@
 <template>
     <div>
+        <HeaderEmployee />
+        <div class="p-4">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" style="background: #fff">
-                        <h3 style="color: #2d4059; font-weight: bold; margin: 0; padding: 0">Add Employee</h3>
+                        <h3 style="color: #2d4059; font-weight: bold; margin: 0; padding: 0">Employee Information</h3>
                     </div>
                     <div style="padding: 60px 0 0 0">
                         <!-- <div class="row"> -->
@@ -13,13 +15,8 @@
                                     <div style="margin: 0 50px;">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <el-form-item label="First Name" prop="firstname">
-                                                    <el-input v-model="ruleForm.firstname" placeholder="Enter first name"></el-input>
-                                                </el-form-item>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <el-form-item label="Last Name" prop="lastname">
-                                                    <el-input v-model="ruleForm.lastname" placeholder="Enter last name"></el-input>
+                                                <el-form-item label="Full Name" prop="fullname">
+                                                    <el-input v-model="ruleForm.fullname" placeholder="Enter full name"></el-input>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
@@ -29,6 +26,11 @@
                                                         <el-option label="Torress Technology Employee" value="Torress Technology Employee"></el-option>
                                                         <el-option label="Both" value="Both"></el-option>
                                                     </el-select>
+                                                </el-form-item>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <el-form-item label="API Key" prop="apikey">
+                                                    <el-input v-model="ruleForm.apikey" readonly></el-input>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
@@ -46,23 +48,12 @@
                                                     <el-input v-model="ruleForm.confirmpass" placeholder="Confirm password" show-password></el-input>
                                                 </el-form-item>
                                             </div>
-                                            <div class="col-md-12">
-                                                <el-form-item label="Copy Generated API Key" prop="apikey">
-                                                    <!-- <div class="d-flex"> -->
-                                                        <el-input v-model="ruleForm.apikey" placeholder="Generate api key">
-                                                            <el-button slot="append" style="color: #fff;background: #0F5298;border-color: #0F5298;font-size: 14px;font-weight: bold;" 
-                                                            @click="genapikey()">API KEY</el-button>
-                                                        </el-input>
-                                                        
-                                                    <!-- </div> -->
-                                                </el-form-item>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-footer p-0 mt-5">
                                         <el-form-item style="float: right; margin-top: 30px; margin-right: 50px;">
-                                        <el-button class="btnreset" @click="resetForm('ruleForm')">RESET</el-button>
-                                        <el-button class="btninsert" @click="Save('ruleForm')">SAVE</el-button>
+                                        <el-button class="btnreset" @click="back()">BACK</el-button>
+                                        <el-button class="btninsert" @click="Save('ruleForm')">SAVE CHANGES</el-button>
                                       </el-form-item>
                                     </div>
                                 </el-form>
@@ -73,11 +64,15 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import HeaderEmployee from "@/components/dashboard/admin_dashboard/employees_tab/headeremployee"
   export default {
+    components: {
+        HeaderEmployee
+    },
     data() {
           var validatePass = (rule, value, callback) => {
             if (value === '') {
@@ -96,23 +91,18 @@ import { mapGetters } from "vuex"
             }
         }
       return {
-        dialogVisible: false,
+        success: 'success',
         ruleForm: {
-          firstname: '',
-          lastname: '',
+          fullname: '',
           email: '',
           password: '',
           confirmpass: '',
           platform: '',
-          apikey: '',
-          apiaccess: '1'
+          apikey: ''
         },
         rules: {
-            firstname: [
-                { required: true, message: 'Please enter first name', trigger: 'blur' }
-            ],
-            lastname: [
-                { required: true, message: 'Please enter last name', trigger: 'blur' }
+            fullname: [
+                { required: true, message: 'Please enter full name', trigger: 'blur' }
             ],
             email: [
                 { required: true, message: 'Please enter email address', trigger: 'blur' }
@@ -127,46 +117,14 @@ import { mapGetters } from "vuex"
             platform: [
                 { required: true, message: 'Please select platform', trigger: 'change' }
             ],
-            apikey: [
-                { required: true, message: 'Please generate api key', trigger: 'blur' }
-            ],
         }
       };
     },
-    computed: {
-        ...mapGetters({
-            insertEmpReg: 'claims_add_employee_response'
-        })
-    },
     methods: {
-        genapikey() {
-            var d = new Date().getTime();
-            
-            if( window.performance && typeof window.performance.now === "function" )
-            {
-                d += performance.now();
-            }
-            
-            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c)
-            {
-                var r = (d + Math.random()*16)%16 | 0;
-                d = Math.floor(d/16);
-                return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-            });
-            return this.ruleForm.apikey = uuid
-        },
       Save(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-              this.Done();
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-      Done() {
-        this.$confirm('Are you sure you want to exit?', 'Warning', {
+            this.$confirm('Are you sure you want to exit?', 'Warning', {
           confirmButtonText: 'OK',
           cancelButtonText: 'Cancel',
           type: 'warning'
@@ -178,31 +136,30 @@ import { mapGetters } from "vuex"
                 background: 'rgba(0, 0, 0, 0.7)'
             });
             setTimeout(() => {
-                this.$store.dispatch(`actions_insert_employee_setup`, {object: this.signup}).then(() => {
-                    if(this.insertEmpReg === 'success') {
-                        this.$notify.success({
-                            title: 'Success',
-                            message: 'Success'
-                        })
-                        loading.close();
-                        this.dialogVisible = false
-                    }
-                    else {
-                        this.$notify.error({
-                            title: 'Error',
-                            message: 'Error'
-                        })
-                    }
-                })
-            }, 3000);
-        })
+                if(this.success === 'success') {
+                    this.$notify.success({
+                        title: 'Success',
+                        message: 'Success'
+                    })
+                    loading.close();
+                }
+                else {
+                    this.$notify.error({
+                        title: 'Error',
+                        message: 'Error'
+                    })
+                }
+                }, 3000);
+            })
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
       },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
+      back() {
+        this.$router.push({ name: 'AllEmployee' }).catch(()=>{});
       },
-        handleClose(done) {
-           thi.dialogVisible = true
-      }
     }
   }
 </script>

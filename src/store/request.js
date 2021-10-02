@@ -35,6 +35,9 @@ export function addtrainingprocess(obj){
     return initiateRequest.request.addTraining_request(obj)
 }
 
+export function addemployeeprocess(obj){
+    return initiateRequest.request.addEmployee_request(obj)
+}
 export function setupsessionprocess(email){
     return initiateRequest.request.session_request(email)
 }

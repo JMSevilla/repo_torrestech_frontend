@@ -81,6 +81,14 @@ const state = {
             alert("Add training error" + error)
         }
     },
+    InsertEmployee(obj, resolve){
+        try {
+            const rest = http.post(api.EntryPoint(`v2/resources/employee`) + `/add-employee`, constructor.addemployee(obj))
+            response.responseData(rest, resolve)
+        } catch (error) {
+            alert("Add employee error" + error)
+        }
+    },
     accessSession(email, resolve){
         try {
             const request = http.put(api.EntryPoint(`v1/resources/signin`) + `/access-session` + constructor.setSession(email))
@@ -124,6 +132,9 @@ const request = {
     },
     async addTraining_request(obj){
         return await api.requestSetup.addTraining_setup(obj)
+    },
+    async addEmployee_request(obj){
+        return await api.requestSetup.addEmployee_setup(obj)
     },
     async session_request(email){
         return await api.requestSetup.session_setup(email)

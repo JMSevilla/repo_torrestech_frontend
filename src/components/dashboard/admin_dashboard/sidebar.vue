@@ -30,7 +30,7 @@
                     <span style="margin-left: 10px">STUDENTS</span>
                     </template>
                     <el-menu-item index="3-2" @click="onallstudents()" :class="{ active_1: activeItem === 'allstudents' }">All Students</el-menu-item>
-                    <el-menu-item index="3-2" @click="onactivestudents()" :class="{ active_1: activeItem === 'activestudents' }">Active Students</el-menu-item>
+                    <el-menu-item index="3-2" @click="onMessage()" :class="{ active_1: activeItem === 'message' }">Message</el-menu-item>
                     <el-menu-item index="3-2" @click="onclasscode()" :class="{ active_1: activeItem === 'classcode' }">Class Code</el-menu-item>
                 </el-submenu>
                 <el-submenu index="4" @click.native="activeMenu = 'employees'" :class="{ active: activeMenu === 'employees' }">
@@ -40,23 +40,6 @@
                     </template>
                     <el-menu-item index="4-1" @click="onaddnewemployee()" :class="{ active_1: activeItem === 'addnewemployee' }">Add New Employee</el-menu-item>
                     <el-menu-item index="4-2" @click="onallemployee()" :class="{ active_1: activeItem === 'allemployee' }">All Employee</el-menu-item>
-                </el-submenu>
-                <el-submenu index="5" @click.native="activeMenu = 'classes'" :class="{ active: activeMenu === 'classes' }">
-                    <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>CLASSES</span>
-                    </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="5-1">item one</el-menu-item>
-                    <el-menu-item index="5-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="5-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="5-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
                 </el-submenu>
                 <el-submenu index="6" @click.native="activeMenu = 'videolibrary'" :class="{ active: activeMenu === 'videolibrary' }">
                     <template slot="title">
@@ -75,40 +58,6 @@
                     <el-menu-item index="1-4-1">item one</el-menu-item>
                     </el-submenu>
                 </el-submenu>
-                <el-submenu index="7" @click.native="activeMenu = 'attendance'" :class="{ active: activeMenu === 'attendance' }">
-                    <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>ATTENDANCE</span>
-                    </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="7-1">item one</el-menu-item>
-                    <el-menu-item index="7-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="7-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="7-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
-                </el-submenu>
-                <el-submenu index="8" @click.native="activeMenu = 'tests'" :class="{ active: activeMenu === 'tests' }">
-                    <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>TESTS</span>
-                    </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="8-1">item one</el-menu-item>
-                    <el-menu-item index="8-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="8-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="8-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
-                </el-submenu>
                 <el-submenu index="9" @click.native="activeMenu = 'reports'" :class="{ active: activeMenu === 'reports' }">
                     <template slot="title">
                     <i class="fas fa-chart-pie"></i>
@@ -122,23 +71,6 @@
                     <el-menu-item index="9-3">item three</el-menu-item>
                     </el-menu-item-group>
                     <el-submenu index="9-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
-                </el-submenu>
-                <el-submenu index="10" @click.native="activeMenu = 'homework'" :class="{ active: activeMenu === 'homework' }">
-                    <template slot="title">
-                    <i class="el-icon-location"></i>
-                    <span>HOMEWORK</span>
-                    </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="10-1">item one</el-menu-item>
-                    <el-menu-item index="10-2">item one</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="10-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="10-4">
                     <template slot="title">item four</template>
                     <el-menu-item index="1-4-1">item one</el-menu-item>
                     </el-submenu>
@@ -200,17 +132,14 @@ export default {
             this.activeItem = 'allstudents'
             this.$router.push({ name: 'AllStudents' }).catch(()=>{});
         },
-        onactivestudents(){
-            this.activeItem = 'activestudents'
-            this.$router.push({ name: 'ActiveStudents' }).catch(()=>{})
+        onMessage(){
+            this.activeItem = 'message'
+            this.$router.push({ name: 'Message' }).catch(()=>{})
         },
         onclasscode(){
             this.activeItem = 'classcode'
             this.$router.push({ name: 'ClassCode' }).catch(()=>{})
         }
-        // drp() {
-        //     this.activeMenu = 'dash'
-        // }
     },
 }
 </script>

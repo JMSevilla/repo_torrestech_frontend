@@ -2,13 +2,14 @@
     <div>
         <div>
             <div class="card">
-                <div class="card-header" style="background: #fff">
+                <div class="card-header d-flex" style="background: #fff; justify-content: space-between">
                   <h3 style="color: #2d4059; font-weight: bold; padding: 0; margin: 0;">All Employee</h3>
+                  <el-button @click="routeto_adding()" type="primary" class="btnadd el-icon-plus">  ADD EMPLOYEE</el-button>
                 </div>
                 <div class="card-body">
-                    <el-button @click="routeto_adding()" type="primary" style="float: right; margin-bottom: 20px" class="btnadd el-icon-plus">  Add Employee</el-button>
                     <el-table :cell-style="{padding: '0', height: '40px'}"
-                    :data="tableData.filter(data => !search || data.firstname.toLowerCase().includes(search.toLowerCase()) || data.lastname.toLowerCase().includes(search.toLowerCase()))"
+                    :data="tableData.filter(data => !search || data.firstname.toLowerCase().includes(search.toLowerCase())
+                      || data.platform.toLowerCase().includes(search.toLowerCase()) || data.lastname.toLowerCase().includes(search.toLowerCase()))"
                     style="width: 100%; padding: 20px 0"
                     border>
                     <el-table-column
@@ -17,12 +18,9 @@
                       width="50">
                     </el-table-column>
                     <el-table-column
-                      prop="code"
-                      label="CODE">
-                    </el-table-column>
-                    <el-table-column
                       prop="profile"
                       label="PROFILE">
+                      <i class="el-icon-user-solid" style="color: #f5f7f8; font-size: 15px; background: #7f7f7f; padding: 6px; border-radius: 50%"></i>
                     </el-table-column>
                     <el-table-column
                       prop="firstname"
@@ -45,16 +43,17 @@
                             placeholder="Type to search"/>
                         </template>
                         <template slot-scope="scope">
-                        <div style="display:flex; justify-content: center">                      
-                          <el-button @click="onactivate(scope.row.userID)" class="btnactions" size="mini">API KEY</el-button>                       
+                        <div style="display:flex; justify-content: center">                                           
                               <el-button 
+                              style="width: 50%"
                               size="mini" class="btnactions"
-                              @click="dialogVisible = true"
-                              >VIEW</el-button>
+                              @click="viewinfo()"
+                              >View</el-button>
                                 <el-button 
-                              size="mini" class="btnactions"
-                              @click="delConfirm(scope.row.userID)"
-                              >ARCHIVE</el-button>                            
+                                style="width: 50%"
+                                size="mini" class="btnactions"
+                                @click="btnArchive(scope.row.userID)"
+                                >Archive</el-button>                            
                         </div>
                           <!-- </center> -->
                         </template>  
@@ -73,35 +72,14 @@
 
 <script>
   export default {
-    data() {
-      return {
-        tableData: [{
-          code: '2016-05-03',
-          profile: 'Tom',
-          firstname: 'Ma. Julina',
-          lastname: 'Barrameda',
-          platform: 'assigned sample'
-        }, {
-          code: '2016-05-03',
-          profile: 'Tom',
-          firstname: 'Emmandadsadsadsadsadsadsadsadsadsadsadsadasdsadsadsa',
-          lastname: 'Borricodadsadsadsdadasdasdsadsadsadsadsadsadsaddsad',
-          platform: 'assigned sample'
-        },
-        {
-          code: '2016-05-03',
-          profile: 'Tom',
-          firstname: 'Jomar',
-          lastname: 'Tecling',
-          platform: 'assigned sample'
-        },],
-        search: '',
-      }
+    props: {
+      search: String,
+      tableData: Array,
+      routeto_adding: Function,
+      viewinfo: Function,
+      btnArchive: Function
     },
     methods: {
-      routeto_adding() {
-        this.$router.push({ name: 'AddNewEmployee' }).catch(()=>{});
-      },
       handleEdit(index, row) {
         console.log(index, row);
       },
