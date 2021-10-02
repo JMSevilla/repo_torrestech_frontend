@@ -163,6 +163,17 @@ const routes = [
         component: () => import("@/views/employee_dashboard/header/employee_profile")
       },
       {
+
+      path: '/employeedash/view-class',
+      name: 'ViewClass',
+      component: () => import("@/views/employee_dashboard/view_class/viewClass")
+      },
+      {
+        path: '/employeedash/add-new-student',
+        name: 'AddNewStudent',
+        component: () => import("@/views/employee_dashboard/student/add_new_student")
+        },
+      {
         path: '/employeedash/add-quizes',
         name: 'AddQuiz',
         component: () => import("@/views/employee_dashboard/quizes/add_quizes")
@@ -172,6 +183,7 @@ const routes = [
         name: 'ViewClass',
         component: () => import("@/views/employee_dashboard/classes/view_class")
       }
+
     ]
    },
     {
