@@ -46,16 +46,11 @@
                                                     <el-input v-model="ruleForm.confirmpass" placeholder="Confirm password" show-password></el-input>
                                                 </el-form-item>
                                             </div>
-                                            <div class="col-md-12">
-                                                <el-form-item label="Copy Generated API Key" prop="apikey">
-                                                    <!-- <div class="d-flex"> -->
-                                                        <el-input v-model="ruleForm.apikey" placeholder="Generate api key">
-                                                            <el-button slot="append" style="color: #fff;background: #0F5298;border-color: #0F5298;font-size: 14px;font-weight: bold;" 
-                                                            @click="genapikey()">API KEY</el-button>
-                                                        </el-input>
-                                                        
-                                                    <!-- </div> -->
-                                                </el-form-item>
+                                            <div class="col-md-6">
+                                                
+                                            </div>
+                                            <div class="col-md-6">
+                                                
                                             </div>
                                         </div>
                                     </div>
