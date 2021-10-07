@@ -80,17 +80,10 @@
                     <i class="fas fa-cog"></i>
                     <span style="margin-left: 10px">SETTINGS</span>
                     </template>
-                    <el-menu-item-group title="Group One">
-                    <el-menu-item index="10-1">item one</el-menu-item>
-                    <el-menu-item index="10-2">item one</el-menu-item>
+                    <el-menu-item-group title="Platform Settings">
+                    <el-menu-item index="10-1" @click="onaddapikeys">Add API Keys</el-menu-item>
+                      <el-menu-item index="10-2" @click="onaddplatform">Add Platform</el-menu-item>
                     </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                    <el-menu-item index="10-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-submenu index="10-4">
-                    <template slot="title">item four</template>
-                    <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-submenu>
                 </el-submenu>
                 </el-menu>
             <!-- </el-col>
@@ -100,6 +93,7 @@
 
 
 <script>
+
 export default {
     data() {
         return {
@@ -107,7 +101,22 @@ export default {
             activeMenu: 'dash'
         }
     },
+    //AdminDashboard
     methods:{
+        onaddplatform: function(){
+          this.$router.push({name : 'addplatform'}).catch(() => {})
+          this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+          this.$store.state.routeSettings.secondaryroutingName = "Adding Platforms"
+          this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+          this.$store.state.routeSettings.routePathSecondary = "addplatform"
+        },
+        onaddapikeys : function(){
+          this.$router.push({name : 'PlatformSettings'}).catch(() => {})
+          this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+          this.$store.state.routeSettings.secondaryroutingName = "Adding API Key"
+          this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+          this.$store.state.routeSettings.routePathSecondary = "PlatformSettings"
+        },
         ondashboardMenu() {
             this.$router.push({ name: 'AdminDashboardTab' }).catch(() => {})
             this.activeMenu != 'dash' ? this.activeMenu = 'dash' : ''
