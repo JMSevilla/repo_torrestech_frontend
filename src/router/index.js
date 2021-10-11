@@ -134,6 +134,16 @@ const routes = [
         path: '/admindash/admin-profile',
         name: 'AdminProfile',
         component: () => import("@/views/admindash_views/header/admin_profile")
+      },
+      {
+        path: '/admindash/settings/platform'+ makeid(200),
+        name: 'PlatformSettings',
+        component: () => import("@/views/admindash_views/settings/platform_settings")
+      },
+      {
+        path: '/admindash/settings/platform/add' + makeid(200),
+        name: 'addplatform',
+        component: () => import("@/views/admindash_views/settings/add_platform")
       }
     ]
    },

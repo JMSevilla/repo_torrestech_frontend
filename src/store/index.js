@@ -6,6 +6,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    routeSettings: {
+      primaryroutingName : "",
+      secondaryroutingName: "",
+      routePathPrimary : "",
+      routePathSecondary: ""
+    },
     detector : "",
     adminsetup_response : "",
     classcode_checker: "",
@@ -61,6 +67,18 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    claims_routename_dynamic: (state) => {
+      return state.routeSettings.primaryroutingName
+    },
+    claims_secondaryroutename_dynamic: (state) => {
+      return state.routeSettings.secondaryroutingName
+    },
+    claims_primaryroutepath_dynamic: (state) => {
+      return state.routeSettings.routePathPrimary
+    },
+    claims_secondaryroutepath_dynamic: (state) => {
+      return state.routeSettings.routePathSecondary
+    },
     claims_get_session_BE_response : (state) => {
       return state.session_setting.session_set
     },
