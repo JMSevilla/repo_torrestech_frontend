@@ -1,23 +1,25 @@
 <template>
     <div class="con-width">
-        <nav class="container d-flex" style="justify-content: space-between; ">
-            <div>
-                <i class="el-icon-s-unfold text-white" style="padding: 19px 0"></i>
-            </div>
-            <div style="flex">
-                <el-dropdown>
-                    <span class="el-dropdown-link">
-                        <i class="fas fa-user-alt text-white" style="padding: 19px 0;"></i><i class="el-icon-caret-bottom el-icon--right"></i>
-                    </span>
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item divided @click.native="employeeProfile()">Profile</el-dropdown-item>
-                        <el-dropdown-item divided>Logout</el-dropdown-item>
-                        <!-- <el-dropdown-item disabled>Action 4</el-dropdown-item>
-                        <el-dropdown-item divided>Action 5</el-dropdown-item> -->
-                    </el-dropdown-menu>
-                </el-dropdown>
-            </div>
-        </nav>
+        <b-navbar>
+            <nav class="container-fluid">
+                <div>
+                    <i class="el-icon-s-unfold text-white show-sidebar1" style="padding: 0px; cursor: pointer" @click="showNav()"></i>
+                    <i class="el-icon-s-unfold text-white show-sidebar2" style="padding: 0px; cursor: pointer" @click="toggleSidebar()"></i>
+                </div>
+                <div style="flex">
+                    <el-dropdown>
+                        <span class="el-dropdown-link">
+                            <i class="fas fa-user-alt text-white" style="padding: 15px 0; margin-right: 3px"></i><i class="el-icon-caret-bottom"></i>
+                            <span style="margin-right: 15px ">Hi, Teacher!</span>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item divided @click.native="employeeProfile()">Profile</el-dropdown-item>
+                            <el-dropdown-item divided>Logout</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </div>
+            </nav>
+        </b-navbar>
     </div>
 </template>
 
@@ -27,7 +29,11 @@ export default {
         employeeProfile(){
             this.$router.push({name: "EmployeeProfile"}).catch(()=>{})
         }
-    }
+    },
+    props:{
+        showNav: Function,
+        toggleSidebar: Function
+     },
     
 }
 </script>
@@ -40,16 +46,28 @@ export default {
     }
   .el-dropdown-link {
     cursor: pointer;
-    /* color: #7e858d; */
     color: white;
     
   }
   .el-icon-caret-bottom {
     font-size: 12px;
-    margin-right: 50px;
-    margin-left: 5px;
+    margin-right: 10px;
   
   }
+
+.show-sidebar2{
+    display: none;
+}
+
+
+@media screen and (max-width: 415px){
+.show-sidebar1{
+    display: none;
+}
+.show-sidebar2{
+    display: flex;
+}
+}
  
 
 </style>

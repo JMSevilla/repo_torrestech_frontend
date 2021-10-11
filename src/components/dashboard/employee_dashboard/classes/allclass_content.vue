@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row justify-content-center my-4 mx-3">
-            <div class="col-md-4">
+            <div class="col-md-4  allclass-content-column">
                 <div class="card" style="border-left: 5px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
                     <div class="card-body">
                         <el-tag type="success">Enable</el-tag>
@@ -17,14 +17,14 @@
                                 veritatis corporis quia voluptates nobis exercitationem.
                             </p>
                             <div style="float: right">
-                                <el-button @click.native="goToEditPage()" class="class-btn-view" size="medium" icon="el-icon-edit" >Edit</el-button>
-                                <el-button @click="onviewclasses()" class="class-btn-view" size="medium" icon="el-icon-view">View</el-button>
+                                <el-button @click.native="goToEditPage()" class="class-btn-view" size="mini" icon="el-icon-edit" >Edit</el-button>
+                                <el-button @click="onviewclasses()" class="class-btn-view" size="mini" icon="el-icon-view">View</el-button>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer p-0"  style="background: #FFF;">
                         <div class="row">
-                            <div class="col-md" style="border-right: 1px solid #DFDFDF ;margin-left: 10px">
+                            <div class="col-md allclass-content-stats" style="border-right: 1px solid #DFDFDF ;margin-left: 10px">
                                 <h6 class="classname-subtitle my-2">Quiz</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md" style="border-right: 1px solid #DFDFDF">
+                            <div class="col-md allclass-content-stats" style="border-right: 1px solid #DFDFDF">
                                 <h6 class="classname-subtitle my-2">Assignment</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md" style="margin-right: 10px">
+                            <div class="col-md allclass-content-stats" style="margin-right: 10px">
                                 <h6 class="classname-subtitle my-2">Students</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 allclass-content-column">
                 <div class="card" style="border-left: 5px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
                     <div class="card-body">
                         <el-tag type="success">Enable</el-tag>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="card-footer p-0"  style="background: #FFF;">
                         <div class="row">
-                            <div class="col-md" style="border-right: 1px solid #DFDFDF ;margin-left: 10px">
+                            <div class="col-md allclass-content-stats" style="border-right: 1px solid #DFDFDF ;margin-left: 10px">
                                 <h6 class="classname-subtitle my-2">Quiz</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md" style="border-right: 1px solid #DFDFDF">
+                            <div class="col-md allclass-content-stats" style="border-right: 1px solid #DFDFDF">
                                 <h6 class="classname-subtitle my-2">Assignment</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md" style="margin-right: 10px">
+                            <div class="col-md allclass-content-stats" style="margin-right: 10px">
                                 <h6 class="classname-subtitle my-2">Students</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 allclass-content-column">
                 <div class="card" style="border-left: 5px solid #0f5298; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
                     <div class="card-body">
                         <el-tag type="success">Enable</el-tag>
@@ -132,7 +132,7 @@
                     </div>
                     <div class="card-footer p-0"  style="background: #FFF;">
                         <div class="row">
-                            <div class="col-md" style="border-right: 1px solid #DFDFDF ;margin-left: 10px">
+                            <div class="col-md allclass-content-stats" style="border-right: 1px solid #DFDFDF ;margin-left: 10px">
                                 <h6 class="classname-subtitle my-2">Quiz</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -141,7 +141,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md" style="border-right: 1px solid #DFDFDF">
+                            <div class="col-md allclass-content-stats" style="border-right: 1px solid #DFDFDF">
                                 <h6 class="classname-subtitle my-2">Assignment</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>
@@ -150,7 +150,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md" style="margin-right: 10px">
+                            <div class="col-md allclass-content-stats" style="margin-right: 10px">
                                 <h6 class="classname-subtitle my-2">Students</h6>
                                 <div style="text-align: center">
                                     <el-tag class="class-total mt-1">10</el-tag>

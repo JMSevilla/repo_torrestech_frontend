@@ -4,13 +4,13 @@ h3{
 }
 
 .back-button{
-    border: 1.5px #0f5298 solid;
+    border: 1px #0f5298 solid;
     color: #0f5298;
     font-size: 14px;
     font-weight: bold;
-    width: 13%;
+    width: 80px;
     float: right;
-    margin: 30px 0 0 30px;
+    margin: 30px 0px 0px 0px;
 }
 
 .classcode-btn{
@@ -70,9 +70,9 @@ h3{
     color: #fff;
     font-size: 14px;
     font-weight: bold;
-    width: 13%;
+    width: 80px;
     float: right;
-    margin: 30px 0 0 30px;
+    margin: 30px 0 0 15px;
 }
 
 .save-button:hover{
@@ -183,3 +183,87 @@ p{
     background: #0f5298;
     color: #fff;
 }
+
+@media screen and (max-width: 1025px) {
+    /* all class */
+    .allclass-column1{
+        min-width: 20%;
+    }
+    .allclass-column2{
+        max-width: 60%;
+    }
+    .allclass-column3{
+        max-width: 20%;
+    }
+    /* all class */
+}
+
+
+
+@media screen and (max-width: 769px){ 
+    /* add class */
+    .save-button{
+        margin-right: -50px;
+    }
+    /* add class */
+
+    /* all class*/
+    .allclass-column1{
+        min-width: 100%;
+    }
+    .allclass-column2{
+        margin-top: 10px;
+        min-width: 80%;
+    }
+    .allclass-column3{
+        min-width: 20%;
+        margin-top: 10px;
+    }
+
+    .allclass-content-column{
+        min-width: 50%;
+        margin-top: 10px;
+    }
+    .class-btn-view{
+        width: 45%;
+    }
+    /* all class*/
+    
+}
+
+@media screen and (max-width: 415px){
+    /* add class */
+    .add-class-row{
+        display: grid;
+    }
+    /* add class */
+
+    /* all class*/
+    .allclass-column1{
+        min-width: 100%;
+    }
+    .allclass-column2{
+        min-width: 100%;
+    }
+    .allclass-column3{
+        min-width: 100%;
+    }
+    .filter-btn{
+        margin-left: 20px;
+        width: 100%;
+    }
+    .add-btn{
+        width: 100%;
+    }
+    .allclass-content-stats{
+        max-width: 30%;
+    }
+    .classn-name-allclass, .classname-subtitle{
+        font-size: 12px;
+    }
+    .pagination{
+        margin: 0px;
+    }
+    /* all class*/
+}
+  

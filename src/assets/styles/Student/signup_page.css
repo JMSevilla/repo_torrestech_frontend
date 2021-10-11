@@ -84,7 +84,7 @@ h6 {
     }
 
     .stepper-column{
-        width: 70%;
+        min-width: 70%;
     }
     .stepper-card{
         margin-top: 10%;
@@ -93,7 +93,7 @@ h6 {
 
 @media screen and (max-width: 769px){ 
     .stepper-column{
-        width: 85%;
+        min-width: 80%;
     }
 
     .previousbtn{

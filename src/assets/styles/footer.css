@@ -46,21 +46,25 @@
     font-size: 12px;
 }
 
-.sub-footer-link{
+.sub-footer-link, .report-a-bug-link{
     cursor: pointer;
 }
 
-.sub-footer-link:hover{
+.sub-footer-link:hover, .report-a-bug-link:hover{
     text-decoration: underline;
 }
 
+
 @media screen and (max-width: 1025px) { 
 .sub-footer-link-column1{
-    width: 70%;
+    max-width: 70%;
 }
+    
 .sub-footer-link-column2{
-    width: 30%;
+    min-width: 30%;
 }
+
+    
 }
 
 @media screen and (max-width: 769px) { 
@@ -69,7 +73,7 @@
 } 
 
 .sub-footer-link-column1, .sub-footer-link-column2{
-    width: 100%;
+    min-width: 100%;
     text-align: center;
 }
 }

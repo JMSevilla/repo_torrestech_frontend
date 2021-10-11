@@ -1,14 +1,16 @@
 <template>
     <div class="con-width">
-        <nav class="con-tainer d-flex" style="justify-content: space-between; ">
-            <div>
-                <i class="el-icon-s-unfold text-white bar" style="padding: 19px 0"></i>
-                <!-- <i class="fas fa-times text-white close_x" style="padding: 19px 0"></i> -->
-            </div>
-            <div style="display: flex">
-                <Dropdown />
-            </div>
-        </nav>
+        <b-navbar>
+            <nav class="container-fluid con-tainer">
+                <div>
+                    <i class="el-icon-s-unfold text-white bar" style="padding: 0px; cursor: pointer"  @click="showNav()"></i>
+                    <i class="el-icon-s-unfold text-white show-sidebar2" style="padding: 0px; cursor: pointer" @click="toggleSidebar()"></i>
+                </div>
+                <div>
+                    <Dropdown />
+                </div>
+            </nav>
+        </b-navbar>
     </div>
 </template>
 
@@ -19,8 +21,8 @@
         background: #2d4059;
     }
     .con-tainer{
-        width:96%;
-        margin: auto;
+        margin-right: 1%;
+        
     }
     .bar{
         display: flex;
@@ -28,13 +30,22 @@
     .two{
         display: none;
     }
+    .show-sidebar2{
+    display: none;
+    }
+
     @media screen and (max-width: 768px) {
-        .bar{
-            display: none;
-        }
         .close_x{
             display: flex;
         }
+    }
+    @media screen and (max-width: 415px){
+    .bar{
+        display: none;
+    }
+    .show-sidebar2{
+        display: flex;
+    }
     }
 </style>
 
@@ -43,7 +54,9 @@ import Dropdown from "../../dropdown/dropdown.vue";
 
 export default {
     props: {
-        clickpo: Function
+        clickpo: Function,
+        showNav: Function,
+        toggleSidebar: Function
     },
     components: {
         Dropdown

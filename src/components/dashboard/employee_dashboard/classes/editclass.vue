@@ -7,15 +7,15 @@
           <div style="margin: 10px 0px">
                 <el-form status-icon :model="classcode" :rules="rules" ref="ruleForm" label-position="top">
                     <div style="margin: 0 50px">
-                        <el-row>
-                            <el-col :span="12">
+                        <div class="row">
+                            <div class="col-md">
                                 <el-form-item label="Class Name" prop="classname">
-                                    <el-input style="width: 90%" v-model="classcode.classname" placeholder="Enter class name" ></el-input>
+                                    <el-input style="width: 95%;" v-model="classcode.classname" placeholder="Enter class name" ></el-input>
                                 </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
+                            </div>
+                            <div class="col-md">
                                 <el-form-item label="Training Under" prop="training">
-                                    <el-select style="width: 90%" v-model="classcode.training" placeholder="Select training">
+                                    <el-select style="width: 95%; " v-model="classcode.training" placeholder="Select training">
                                         <el-option
                                             v-for="item in classcode.listtraining"
                                             :key="item.value"
@@ -24,12 +24,12 @@
                                         </el-option>
                                     </el-select>
                                 </el-form-item>
-                            </el-col>
-                        </el-row>
+                            </div>
+                        </div>
                         <el-row>
                             <el-col :span="24">
                                 <el-form-item label="Status" prop="status">
-                                    <el-select style="width: 95%" v-model="classcode.status" placeholder="Select status">
+                                    <el-select style="width: 98%" v-model="classcode.status" placeholder="Select status">
                                         <el-option
                                             v-for="item in classcode.liststatus"
                                             :key="item.value"
@@ -44,7 +44,7 @@
                             <el-col>
                                 <el-form-item label="Description" prop="description">
                                     <el-input
-                                        style="width: 95%"
+                                        style="width: 98%"
                                         type="textarea"
                                         :rows="4"
                                         placeholder="Type your description here"
@@ -56,7 +56,7 @@
         
                     </div>
                     <div class="card-footer p-0"  style="background: #FFF">
-                        <el-form-item style="margin-right: 30px">
+                        <el-form-item style="margin-right: 50px">
                             <el-button class="save-button" @click="onsave('ruleForm')">SAVE</el-button>
                             <el-button class="back-button" @click="onback()">BACK</el-button>
                         </el-form-item>

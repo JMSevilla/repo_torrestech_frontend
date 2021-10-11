@@ -2,9 +2,9 @@
   <div>
     <el-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
-    <i class="fas fa-user-alt text-white" style="padding: 19px 0"></i>
+    <i class="fas fa-user-alt text-white" style="padding: 15px 0;"></i>
     <i class="el-icon-caret-bottom" style="margin-right: 6px;"></i>
-    <span>Hannah Batungbakal</span>
+    <span>Hi, Admin!</span>
   </span>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item command="AdminProfile">Profile</el-dropdown-item>

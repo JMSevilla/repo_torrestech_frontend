@@ -2,10 +2,10 @@
     <div style="background: #F5F7F8">
       <div class="d-flex">
         <div class="sidebar-dash">
-          <SideDash />
+          <SideDash :isCollapse="isCollapse"/>
         </div>
         <div style="width: 100%;">
-          <HeaderDash />
+          <HeaderDash :showNav="showNav" :toggleSidebar="toggleSidebar"/>
           <router-view>
           </router-view>
         </div>
@@ -25,13 +25,31 @@ export default {
     components: {
         HeaderDash, SideDash, FooterDash, Dashboard
     },
+    data() {
+      return {
+        isCollapse: false,
+      };
+    },
+    methods:{
+        showNav(){
+            if(this.isCollapse == true){
+                this.isCollapse = false
+            }
+            else{
+                this.isCollapse = true
+            }
+        },
+        toggleSidebar(){
+            document.getElementById('showSidebar').style.display = 'block'
+        }
+    }
 }
 </script>
 
 <style scoped>
   .sidebar-dash {
     background: #fff; 
-    width: 18%; min-height: 100vh; 
-    border-right: 3px #e6e6e6 solid;
+    min-height: 100vh; 
+    border-right: 3px #e6e6e6 solid
   }
 </style>
