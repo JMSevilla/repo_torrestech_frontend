@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="px-4 py-3">
+        <div class="px-4 py-3 flex">
             <div class="row">
-               <div class="col-md-3">
+               <div class="col-md col-sm">
                   <div class="card">
                       <div class="card-body d-flex align-items-center">
                         <div>
@@ -15,7 +15,7 @@
                       </div>
                   </div>
                </div>
-               <div class="col-md-3">
+               <div class="col-md  col-sm">
                   <div class="card">
                       <div class="card-body d-flex align-items-center">
                         <div>
@@ -28,7 +28,7 @@
                       </div>
                   </div>
                </div>
-               <div class="col-md-3">
+               <div class="col-md  col-sm">
                   <div class="card">
                       <div class="card-body d-flex align-items-center">
                         <div>
@@ -41,7 +41,7 @@
                       </div>
                   </div>
                </div>
-               <div class="col-md-3">
+               <div class="col-md  col-sm column4">
                   <div class="card">
                       <div class="card-body d-flex align-items-center">
                         <div>
@@ -62,5 +62,19 @@
 <style scoped>
     svg {
         fill: white;
+    }
+
+    @media screen and (max-width:1025px) {
+    
+    .column4{
+        max-width:33%;
+    }
+    }
+
+    @media screen and (max-width:769px) {
+    
+    .column4{
+        max-width:100%;
+    }
     }
 </style>

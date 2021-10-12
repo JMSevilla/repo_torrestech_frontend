@@ -2,11 +2,11 @@
     <div style="background: #F5F7F8">
       <div class="d-flex">
         <div class="sidebar-dash">
-          <SideDash />
+          <SideDash :isCollapse="isCollapse"/>
         </div>
         <div style="width: 100%;">
-          <HeaderDash  />
-          <div style="background: #fff">
+        <HeaderDash :showNav="showNav" :toggleSidebar="toggleSidebar" />
+        <div style="background: #fff; width: 100%">
             <Header :routename="claims_routename_dynamic"
                     :secondaryRoute="claims_secondaryroutename_dynamic"
                     :primaryPath="claims_primaryroutepath_dynamic"
@@ -34,7 +34,25 @@ export default {
     components: {
         HeaderDash, SideDash, FooterDash, Dashboard, Header
     },
-  computed:{
+    data() {
+      return {
+        isCollapse: false,
+      };
+    },
+    methods:{
+        showNav(){
+            if(this.isCollapse == true){
+                this.isCollapse = false
+            }
+            else{
+                this.isCollapse = true
+            }
+        },
+        toggleSidebar(){
+            document.getElementById('showSidebar').style.display = 'block'
+        }
+    },
+    computed:{
       ...mapGetters({
         claims_routename_dynamic: 'claims_routename_dynamic',
         claims_secondaryroutename_dynamic: 'claims_secondaryroutename_dynamic',
@@ -48,7 +66,7 @@ export default {
 <style scoped>
   .sidebar-dash {
     background: #fff; 
-    width: 18%; min-height: 100vh; 
-    border-right: 3px #e6e6e6 solid;
+    min-height: 100vh; 
+    border-right: 3px #e6e6e6 solid
   }
 </style>

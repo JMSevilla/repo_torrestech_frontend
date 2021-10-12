@@ -43,9 +43,7 @@
         </div>
         <div>
             <Subfooter />
-        </div>
-       
-  
+        </div>     
     </div>
 </template>
 

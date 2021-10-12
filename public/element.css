@@ -61,6 +61,9 @@
     .el-form-item--label-top .el-form-item__content {
       margin-left: 0!important;
     }
+    .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+      margin: 0 1px
+    }
   }
   /* signup stepper: Hannah */
 
