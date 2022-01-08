@@ -41,3 +41,11 @@ export function addemployeeprocess(obj){
 export function setupsessionprocess(email){
     return initiateRequest.request.session_request(email)
 }
+
+export function getfooterprocess(){
+    return initiateRequest.request.get_footer_request();
+}
+
+export function getnavbarprocess(){
+    return initiateRequest.request.get_Navbar_request();
+}

@@ -3,6 +3,7 @@
         <nav class="container space_between">
             <div class="py-2">
                 <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" class="logo" @click="homelink()">
+                <!-- {{navbarArray[0].navbarDesignIdentifier}} -->
             </div>
             <i class="fas fa-bars toggle-bars" @click="btnbars()"></i> 
             <i class="fas fa-times toggle-close" id="btnclose" @click="btn_close()"></i>
@@ -19,7 +20,7 @@
             </ul>
             <div class="btn_nav">
                 <div>
-                <el-button @click="btnlogin()" plain class="btnlogin">Login</el-button>
+                <el-button @click="navigateLogin()" plain class="btnlogin">Login</el-button>
                 </div>
                 <div>
                 <el-button @click="onsignup()" class="btnsignup">Sign Up</el-button>
@@ -30,9 +31,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
     methods: {
-        btnlogin(){
+        navigateLogin : function(){
             this.$router.push({name:"Login"}).catch(()=>{});
         },
         btnbars() {
@@ -60,7 +62,14 @@ export default {
         AboutUs(){
             this.$router.push({name: "AboutUs"}).catch(() =>{});
         },
-    }
+
+    },
+        data() {
+        return {
+                navbarArray : []
+            }
+        },
+
 }
 </script>
 

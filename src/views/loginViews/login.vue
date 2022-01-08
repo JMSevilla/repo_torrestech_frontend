@@ -34,7 +34,6 @@ export default {
                 password:[
 
                     {required:true,message:'Please input your Password'},
-                    { min: 8, max: 100, message: 'Please input your new password', }
                 ]
             }
             

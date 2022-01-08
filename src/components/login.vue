@@ -6,19 +6,26 @@
                     <div class="col-md-4">
                         <el-card  style="padding: 30px" shadow="always" >
                                 <h3 class="sign">Login</h3>
+                                
                                 <el-form ref="formName" :model="login" label-width="120px" :labelPosition="labelPosition" :rules="rules">
                                     <el-form-item label="Email or Username" prop="email">
-                                        <el-input  type="email" v-model="login.email"  placeholder="Enter your email" clearable></el-input>
+                                          <TextField  type="email" placeholder="Enter email or username" v-model="login.email" ></TextField>
                                     </el-form-item>
                                     <el-form-item label="Password" prop="password">
-                                        <el-input type="password" v-model="login.password" clearable show-password placeholder="Enter your password"></el-input>
+                                        <TextField  :type="ispassword" placeholder="Enter password" v-model="login.password" ></TextField>
+                                        <div v-if="booleanIsPassword">
+                                            <el-link style="float: right; margin-top: 5px; margin-bottom: 5px;" type="primary" @click="onshowHide">Show Password</el-link>
+                                        </div>
+                                        <div v-else>
+                                            <el-link style="float: right; margin-top: 5px; margin-bottom: 5px;" type="primary" @click="onHide">Hide Password</el-link>
+                                        </div>
                                     </el-form-item> 
                                     <el-form-item>
                                         <el-checkbox v-model="checked">Remember me </el-checkbox>
                                          <el-link @click="forgetPass()" id="forget">Forgot Password</el-link> 
                                     </el-form-item>
                                     <el-form-item>
-                                        <el-button style="margin:20px 0; width:100%" @click="signIn('formName')" class="logbtn" >SIGN IN</el-button>
+                                        <el-button v-loading.fullscreen.lock="fullscreenLoading" style="margin:20px 0; width:100%" @click="signIn()" class="logbtn" >SIGN IN</el-button>
                                     </el-form-item>
                                     </el-form>
                         </el-card>
@@ -32,15 +39,20 @@
 </style>
 <script>
 import {mapGetters} from 'vuex'
+import TextField from "@/components/TextField/TextField"
 export default {
    props:{
        login:Object,
        labelPosition:String,
        rules:Object
    },
+   components: {
+       TextField
+   },
    data() {
        return { 
-           tokenGetter: ''
+           tokenGetter: '', fullscreenLoading: false,
+           ispassword: 'password',  booleanIsPassword : true
        }
    },
    computed: {
@@ -64,20 +76,34 @@ export default {
             }
             return this.tokenGetter = result.join('');
        },
-       signIn(formName){
-           this.$refs[formName].validate((valid) => { 
-               if (valid) { alert('submit!'); 
-               } else { 
-                  this.$store.dispatch(`actions_user_signin`, {
+       onshowHide: function() {
+           this.ispassword = "text"
+           this.booleanIsPassword = false
+       },
+       onHide: function() {
+           this.ispassword = "password"
+           this.booleanIsPassword = true
+       },
+       signIn(){
+           const loading = this.$loading({
+                lock: true,
+                text: 'Loading',
+                spinner: 'el-icon-loading',
+                background: 'rgba(0, 0, 0, 0.7)'
+                });
+                    try {
+                        setTimeout(() => {
+                             this.$store.dispatch(`actions_user_signin`, {
                       object: this.login
                   }).then(() => {
                       console.log(this.getresponsesignin)
-                      if(this.getresponsesignin === "wrong password") {
+                      if(this.getresponsesignin.status === "wrong password") {
                           this.$notify.error({
                             title: 'Oops!',
                             message: 'Sorry but the password is wrong',
                             offset: 100
                             });
+                            loading.close();
                             return false
                       } else if(this.getresponsesignin.status === "SUCCESS ADMIN") { 
                           this.$notify.success({
@@ -100,15 +126,16 @@ export default {
                                this.$store.state.tokenArray = this.tokenResponse.databulk
                                localStorage.setItem("state", this.tokenGetter)
                                localStorage.setItem("ems", this.login.email)
+                               loading.close();
                                this.$router.push({name : 'AddNewTraining'}).catch(() => {})
                             })
-                            console.log(this.getresponsesignin)
                       } else if(this.getresponsesignin === "no user") { 
                          this.$notify.error({
                             title: 'Oops!',
                             message: 'no user',
                             offset: 100
                             });
+                            loading.close();
                             return false
                       } else if(this.getresponsesignin === "account disabled") { 
                          this.$notify.error({
@@ -116,10 +143,16 @@ export default {
                             message: 'Account disabled',
                             offset: 100
                             });
+                            loading.close();
                             return false
                       }
                   })
-                } });
+                        }, 3000)
+                    } catch (error) {
+                        loading.close();
+                    } finally {
+                        loading.close();
+                    }
        }
    }
 
