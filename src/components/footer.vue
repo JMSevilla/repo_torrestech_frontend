@@ -8,7 +8,7 @@
                             <img src="@/assets/img/FrontPage/TorresLogoWhite.png" alt="FooterLogo" id="FooterLogo">
                         </a>
                         <p id="parag">
-                            Creating Positive Work Environment with the guide of our enthusiastic professionals.
+                            <!-- {{footerArray[0].footerDescription}} -->
                         </p>
                     </div>
                     <div class="col-md-2">
@@ -34,7 +34,7 @@
                         </ul>
                     </div>
                     <div class="col-md-3" id="location">
-                        <span>National Highway, Calamba, 4027</span> <br>
+                        <!-- <span>{{footerArray[0].footerAddress}}</span> <br> -->
                         <span><a href="mailto:cldtorrestechnology@gmail.com">cldtorrestechnology@gmail.com </a></span> <br>
                         <span><a href="tel:09178753242"> 09178753242</a></span>
                     </div>
@@ -52,9 +52,32 @@
 
 <script>
 import Subfooter from "./subfooter"
+import {mapGetters} from "vuex"
 export default {
     components: {
         Subfooter
+    },
+    data() {
+        return {
+            footerArray: []
+        }
+    },
+    // computed: {
+    //     ...mapGetters({
+    //         claims_footer_content : 'claims_footer_content'
+    //     })
+    // },
+    created() {
+        // this.reloadFooterContent();
+    },
+    methods : {
+        // reloadFooterContent: function() {
+        //     this.$store.dispatch(`actions_footer_get`)
+        //     .then(() => {
+        //         this.footerArray = this.claims_footer_content
+                
+        //     })
+        // }
     }
 }
 </script>

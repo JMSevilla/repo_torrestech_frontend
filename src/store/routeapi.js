@@ -1,3 +1,4 @@
+
 import statemanagement from './builder'
 /**
   API Logical Routing
@@ -65,6 +66,16 @@ const requestSetup = {
     async session_setup(email){
         return await new Promise((resolve) => {
             return statemanagement.state.accessSession(email, resolve)
+        })
+    },
+    async getContentFooter(){
+        return await new Promise((resolve) => {
+            return statemanagement.state.GetFooterContent(resolve);
+        })
+    },
+    async getContentNavbar(){
+        return await new Promise((resolve) => {
+            return statemanagement.state.GetNavbarContent(resolve);
         })
     }
 }

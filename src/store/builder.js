@@ -96,6 +96,22 @@ const state = {
         } catch (error) {
             alert(error)
         }
+    },
+    GetFooterContent(resolve) {
+        try {
+            const request = http.get(api.EntryPoint(`footer-get-content`) + `/get-content`);
+            response.responseData(request, resolve)
+        } catch (error) {
+            alert(error)
+        }
+    },
+    GetNavbarContent(resolve) {
+        try {
+            const request = http.get(api.EntryPoint(`v3/navbar-dynamic`) + `/get-content`);
+            response.responseData(request, resolve)
+        } catch (error) {
+            alert (error)
+        }
     }
 }
 
@@ -138,6 +154,12 @@ const request = {
     },
     async session_request(email){
         return await api.requestSetup.session_setup(email)
+    },
+    async get_footer_request(){ 
+        return await api.requestSetup.getContentFooter();
+    },
+    async get_Navbar_request(){
+        return await api.requestSetup.getContentNavbar();
     }
 }
 

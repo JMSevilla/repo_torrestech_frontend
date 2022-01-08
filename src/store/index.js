@@ -1,11 +1,13 @@
 import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess, signinprocess, updatetokenprocess,
-  scantokenprocess, addtrainingprocess, addemployeeprocess, setupsessionprocess} from './request'
+  scantokenprocess, addtrainingprocess, addemployeeprocess, setupsessionprocess, getfooterprocess, getnavbarprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    dynamicNavbarResponse: [],
+    dynamicFooterResponse: [],
     routeSettings: {
       primaryroutingName : "",
       secondaryroutingName: "",
@@ -29,7 +31,7 @@ export default new Vuex.Store({
       session_setting: {
         session_set : false,
         session_get : false
-      }
+      },
   },
   mutations: {
     mutate_check_admin_registration:(state, data) => {
@@ -64,9 +66,21 @@ export default new Vuex.Store({
     },
     mutate_session_setup : (state, data) => {
       return state.session_setting.session_set = data
+    },
+    mutate_footer_content : (state, data) => {
+      return state.dynamicFooterResponse = data
+    },
+    mutate_navbar_content : (state, data) => {
+      return state.dynamicNavbarResponse = data
     }
   },
   getters: {
+    claims_navbar_content : (state) => {
+      return state.dynamicNavbarResponse
+    }, 
+    claims_footer_content : (state) => {
+      return state.dynamicFooterResponse
+    },
     claims_routename_dynamic: (state) => {
       return state.routeSettings.primaryroutingName
     },
@@ -114,6 +128,22 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async actions_footer_get({commit}){
+      return await new Promise((resolve) => {
+        getfooterprocess()
+        .then((data) => {
+          return resolve(commit(`mutate_footer_content`, data.data))
+        })
+      })
+    },
+     action_navbar_get({commit}){
+      return new Promise((resolve) => {
+        getnavbarprocess()
+        .then((data) => {
+          return resolve(commit(`mutate_navbar_content`, data.data))
+        })
+      })
+    },
     async actions_session_setup({commit}, {email}) {
       return await new Promise((resolve) => {
         setupsessionprocess(email)
