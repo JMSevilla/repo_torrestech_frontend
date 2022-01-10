@@ -2,6 +2,7 @@ import {checkadminprocess, adminprocess, classcodescannerprocess, registrationst
   scantokenprocess, addtrainingprocess, addemployeeprocess, setupsessionprocess, getfooterprocess, getnavbarprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
+import client from "./auth"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -32,8 +33,12 @@ export default new Vuex.Store({
         session_set : false,
         session_get : false
       },
+      navbarArray : []
   },
   mutations: {
+    mutate_get_navbar_content : (state, data) => { 
+      return state.navbarArray = data
+    },
     mutate_check_admin_registration:(state, data) => {
       return state.detector = data
     },
@@ -75,6 +80,9 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    claims_navbar_get_content : (state) => {
+      return state.navbarArray
+    },
     claims_navbar_content : (state) => {
       return state.dynamicNavbarResponse
     }, 
@@ -128,6 +136,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async actions_get_nav_content({commit}){
+      return await new Promise((resolve) => {
+        const request = client.get(`/api/v3/navbar-dynamic/get-content`);
+        return request.then((resp) => {
+          return resolve(commit(`mutate_get_navbar_content`, resp))
+        })
+      })
+    },
     async actions_footer_get({commit}){
       return await new Promise((resolve) => {
         getfooterprocess()
@@ -176,8 +192,12 @@ export default new Vuex.Store({
    },
    actions_user_signin({commit}, {object}) { 
     return new Promise((resolve) => {
-      signinprocess(object).then(response => {
-        return resolve(commit(`mutate_signin`, response.data))
+      var data = new FormData();
+      data.append("email", object.email)
+      data.append("password", object.password)
+      const request = client.post(`/api/v1/resources/signin/standard-login`, data)
+      return request.then((resp) => {
+        return resolve(commit(`mutate_signin`, resp.data))
       })
     })
    },
