@@ -126,18 +126,19 @@ export default {
                                this.$store.state.tokenArray = this.tokenResponse.databulk
                                localStorage.setItem("state", this.tokenGetter)
                                localStorage.setItem("ems", this.login.email)
+                               
+                               this.$router.push({name : 'AdminDashboardTab'}).catch(() => {})
                                loading.close();
-                               this.$router.push({name : 'AddNewTraining'}).catch(() => {})
                             })
-                      } else if(this.getresponsesignin === "no user") { 
+                      } else if(this.getresponsesignin.status === "no user") { 
                          this.$notify.error({
                             title: 'Oops!',
-                            message: 'no user',
+                            message: 'Account not found',
                             offset: 100
                             });
                             loading.close();
                             return false
-                      } else if(this.getresponsesignin === "account disabled") { 
+                      } else if(this.getresponsesignin.status === "account disabled") { 
                          this.$notify.error({
                             title: 'Oops!',
                             message: 'Account disabled',

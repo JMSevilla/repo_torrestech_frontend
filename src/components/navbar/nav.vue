@@ -1,6 +1,6 @@
 <template>
     <div class="nav_color">
-        <nav class="container space_between">
+        <nav  class="container space_between">
             <div class="py-2">
                 <img src="@/assets/img/FrontPage/torres-logo-blue.png" alt="" class="logo" @click="homelink()">
                 <!-- {{navbarArray[0].navbarDesignIdentifier}} -->
@@ -33,6 +33,9 @@
 <script>
 import { mapGetters } from 'vuex';
 export default {
+    created() {
+        this.getNavigation()
+    },
     methods: {
         navigateLogin : function(){
             this.$router.push({name:"Login"}).catch(()=>{});
@@ -66,7 +69,7 @@ export default {
     },
         data() {
         return {
-                navbarArray : []
+                navbarArray : [],
             }
         },
 
