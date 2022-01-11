@@ -11,7 +11,7 @@
                                         <TextField  type="password" placeholder="Enter password"  v-model="resetPassword.password" ></TextField>
                                     </el-form-item>
                                     <el-form-item label="Confirm Password" prop="cpassword">
-                                        <TextField  type="password" placeholder="Confirm password"  v-model="resetPassword.cpassword"  ></TextField>
+                                        <TextField  type="password" placeholder="Confirm password"  v-model="resetPassword.cpassword" ></TextField>
                                     </el-form-item> 
                                     <el-form-item>
                                         <el-button style="margin:20px 0; width:45%" class="cBtn" id="cancel">Cancel</el-button>

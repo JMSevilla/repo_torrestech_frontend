@@ -9,21 +9,21 @@
                             type="email"
                             placeholder="Enter your Email Address"
                             v-model="signup.email"
-                            clearable>
+                            >
                         </TextField>
                     </el-form-item>
                     <el-form-item prop="password" label="Password" class="el-form-item--label-top">
                         <TextField 
                             placeholder="Enter your password" 
                             v-model="signup.password" 
-                            show-password>
+                            >
                         </TextField>
                     </el-form-item>
                     <el-form-item prop="confirmpwd" label=" Confirm Password" class="el-form-item--label-top">
                         <TextField 
                             placeholder="Confirm password" 
                             v-model="signup.confirmpwd" 
-                            show-password>
+                            >
                         </TextField>
                     </el-form-item>
                     <el-form-item class="mt-4">
