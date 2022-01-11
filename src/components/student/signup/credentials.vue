@@ -5,26 +5,26 @@
                 <h6>Please enter your credentials.</h6>
                 <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" :labelPosition="labelPosition" label-width="140px">
                     <el-form-item prop="email" label="Email" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             type="email"
                             placeholder="Enter your Email Address"
                             v-model="signup.email"
                             clearable>
-                        </el-input>
+                        </TextField>
                     </el-form-item>
                     <el-form-item prop="password" label="Password" class="el-form-item--label-top">
-                        <el-input 
+                        <TextField 
                             placeholder="Enter your password" 
                             v-model="signup.password" 
                             show-password>
-                        </el-input>
+                        </TextField>
                     </el-form-item>
                     <el-form-item prop="confirmpwd" label=" Confirm Password" class="el-form-item--label-top">
-                        <el-input 
+                        <TextField 
                             placeholder="Confirm password" 
                             v-model="signup.confirmpwd" 
                             show-password>
-                        </el-input>
+                        </TextField>
                     </el-form-item>
                     <el-form-item class="mt-4">
                         <el-button class="previousbtn credentialsbtn" @click="onprevious()">PREVIOUS</el-button> 
@@ -39,6 +39,7 @@
 <style scoped src="@/assets/styles/Student/signup_page.css"> </style>
 
 <script>
+import TextField from "@/components/TextField/TextField"
 import { mapGetters } from "vuex";
 export default {
     props:{
@@ -47,6 +48,9 @@ export default {
         signup: Object,
         rules: Object,
         labelPosition: String
+    },
+    components: {
+        TextField
     },
     computed: {
         ...mapGetters({

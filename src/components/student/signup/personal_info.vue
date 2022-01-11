@@ -5,46 +5,46 @@
                 <h6>Please complete the following details below.</h6>
                 <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" label-width="120px" :labelPosition="labelPosition">
                     <el-form-item label="Firstname" prop="firstname"  class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             placeholder="Enter your First Name" 
                             v-model="signup.firstname"
-                            clearable>
-                        </el-input>
+                            >
+                        </TextField>
                     </el-form-item>
                     <el-form-item label="Last Name" prop="lastname" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             placeholder="Enter your Last Name" 
                             v-model="signup.lastname"
-                            clearable>
-                        </el-input>
+                            >
+                        </TextField>
                     </el-form-item>
                      <el-form-item label="Birthdate" prop="bdate" class="el-form-item--label-top">
                         <el-date-picker type="date" placeholder="Pick a date" v-model="signup.bdate" 
                          format="yyyy/MM/dd" value-format="yyyy/MM/dd" style="width: 100%;"></el-date-picker>
                     </el-form-item>
                     <el-form-item label="Age" prop="age" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             placeholder="Enter your Age" 
                             style="width: 60%"
                             type="number" 
                             v-model="signup.age">
-                        </el-input>
+                        </TextField>
                     </el-form-item>
                     <el-form-item label="Gender" prop="gender">
                         <el-radio v-model="signup.gender" label="1">Female</el-radio>
                         <el-radio v-model="signup.gender" label="2">Male</el-radio>
                     </el-form-item>
                     <el-form-item label="Mobile Number" prop="mobile" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             style="width: 60%"
                             type="number"
                             v-model="signup.mobile"
                             id="contact"
                             oninput="if(value.length > 11) value=value.slice(0, 11)"
-                            clearable
+                            
                             placeholder="Enter your mobile number"
                             >
-                        </el-input>
+                        </TextField>
                     </el-form-item>
                     <el-form-item class="mt-4">
                         <el-button class="previousbtn" @click="onprevious()">PREVIOUS</el-button> 
@@ -59,6 +59,7 @@
 <style scoped src="@/assets/styles/Student/signup_page.css"> </style>
 
 <script>
+import TextField from "@/components/TextField/TextField"
 export default {
     props:{
         onprevious: Function,
@@ -66,6 +67,9 @@ export default {
         signup: Object,
         rules: Object,
         labelPosition: String
+    },
+    components:{
+        TextField
     },
     methods:{
         onsubmit(ruleForm){

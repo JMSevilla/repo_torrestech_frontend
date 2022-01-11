@@ -5,18 +5,18 @@
                 <h6>Please enter your complete address.</h6>
                 <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" :labelPosition="labelPosition" label-width="125px">
                     <el-form-item label="House / Bldg No." prop="house" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             placeholder="Enter House No. / Bldg No."
                             v-model="signup.house"
-                            clearable>
-                        </el-input>
+                            >
+                        </TextField>
                     </el-form-item>
                     <el-form-item label="Street" prop="street" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             placeholder="Enter Street" 
                             v-model="signup.street"
-                            clearable>
-                        </el-input>
+                            >
+                        </TextField>
                     </el-form-item>
                     <el-form-item label="Province" prop="province" class="el-form-item--label-top">
                         <el-select style="width: 100%" v-model="signup.province" filterable placeholder="Select province">
@@ -39,12 +39,12 @@
                         </el-select>
                     </el-form-item>
                     <el-form-item label="Zip code" prop="zipcode" class="el-form-item--label-top">
-                        <el-input
+                        <TextField
                             placeholder="Enter Zip code"
                             v-model="signup.zipcode"
-                            clearable
+                            
                             type="number">
-                        </el-input>
+                        </TextField>
                     </el-form-item>
                     <el-form-item class="mt-4">
                         <el-button class="previousbtn" @click="onprevious()">PREVIOUS</el-button> 
@@ -59,6 +59,7 @@
 <style scoped src="@/assets/styles/Student/signup_page.css"> </style>
 
 <script>
+import TextField from "@/components/TextField/TextField"
 export default {
     props:{
         onprevious: Function,
@@ -66,6 +67,9 @@ export default {
         signup: Object,
         rules: Object,
         labelPosition: String
+    },
+    components: {
+        TextField
     },
      methods:{
         onsubmit(ruleForm){

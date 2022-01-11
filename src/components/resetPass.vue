@@ -8,10 +8,10 @@
                                 <h3 class="forget">Reset Password</h3>
                                 <el-form ref="formName" :model="resetPassword" label-width="120px" :labelPosition="labelPosition" :rules="rules">
                                     <el-form-item label="Enter New Password" prop="password">
-                                        <el-input  type="password" v-model="resetPassword.password" clearable></el-input>
+                                        <TextField  type="password" placeholder="Enter password"  v-model="resetPassword.password" ></TextField>
                                     </el-form-item>
                                     <el-form-item label="Confirm Password" prop="cpassword">
-                                        <el-input type="password" v-model="resetPassword.cpassword" clearable ></el-input>
+                                        <TextField  type="password" placeholder="Confirm password"  v-model="resetPassword.cpassword" clearable ></TextField>
                                     </el-form-item> 
                                     <el-form-item>
                                         <el-button style="margin:20px 0; width:45%" class="cBtn" id="cancel">Cancel</el-button>
@@ -43,13 +43,18 @@
 <style scoped src="@/assets/styles/login/resetPass.css">
 </style>
 <script>
+import TextField from '@/components/TextField/TextField'
 export default {
     props:{
        labelPosition:String,
        resetPassword:Object,
        send:Function,
        rules:Object
-    },methods:{
+    },
+    components:{
+        TextField
+    },
+    methods:{
         send(formName){
             this.$refs[formName].validate((valid) =>{
                if (valid){

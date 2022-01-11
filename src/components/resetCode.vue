@@ -11,7 +11,7 @@
                                 </div>
                                 <el-form :model="resetByCode"  ref="formName" label-width="120px" :labelPosition="labelPosition" :rules="rules">
                                     <el-form-item label="Enter Code" prop="code" >
-                                        <el-input type="text" v-model="resetByCode.code"  clearable></el-input>
+                                        <TextField type="text" v-model="resetByCode.code" ></TextField>
                                     </el-form-item>
                                     <el-form-item>
                                         <el-button style="margin:20px 0; width:45%" class="cBtn" id="cancel">Cancel</el-button>
@@ -28,13 +28,18 @@
 <style scoped src="@/assets/styles/login/resetCode.css">
 </style>
 <script>
+import TextField from "@/components/TextField/TextField"
 export default {
     props:{
        resetByCode:Object,
        labelPosition:String,
        rules:Object
 
-    },methods:{
+    },
+    components:{
+        TextField
+    },
+    methods:{
         send(formName){
             this.$refs[formName].validate((valid) => { 
                if (valid) { 

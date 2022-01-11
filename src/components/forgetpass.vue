@@ -11,7 +11,7 @@
                                 </div>
                                 <el-form :model="forgetPassword"  ref="formName" label-width="120px" :labelPosition="labelPosition" :rules="rules">
                                     <el-form-item label="Email" prop="email" >
-                                        <el-input type="email" v-model="forgetPassword.email" placeholder = "Enter your email" clearable></el-input>
+                                        <TextField type="email" v-model="forgetPassword.email" placeholder = "Enter your email" ></TextField>
                                     </el-form-item>
                                     <el-form-item>
                                         <el-button style="margin:20px 0; width:45%" class="cBtn" id="cancel">Cancel</el-button>
@@ -27,12 +27,17 @@
 </template>
 <style scoped src="@/assets/styles/login/forgot.css"></style>
 <script>
+import TextField from "@/components/TextField/TextField"
 export default {
     props:{
         forgetPassword:Object,
         labelPosition:String,
         rules:Object
-    },methods:{
+    },
+    components: {
+       TextField
+   },
+   methods:{
         send(formName){
             this.$refs[formName].validate((valid) => { 
                if (valid) { 

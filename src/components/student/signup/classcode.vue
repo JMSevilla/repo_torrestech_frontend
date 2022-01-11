@@ -6,11 +6,14 @@
                 <div class="mb-4">
                     <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" label-position="top">
                         <el-form-item label="Enter Class Code" prop="ccode">
-                            <el-input v-model="signup.ccode" placeholder="Enter your Class Code" clearable></el-input>
+                            <TextField v-model="signup.ccode" placeholder="Enter your Class Code" ></TextField>
                         </el-form-item>
                         <el-form-item class="mt-4">
                             <el-button id="CCcancelbtn" @click="oncancel()">CANCEL</el-button> 
-                            <el-button id="CCnextbtn" @click="onsubmit('ruleForm')">VERIFY</el-button>
+                            <el-button id="CCnextbtn" 
+                            @click="onsubmit('ruleForm')"
+                            
+                            >VERIFY</el-button>
                         </el-form-item>
                     </el-form>
                 </div>
@@ -23,12 +26,16 @@
 
 <script>
 import { mapGetters } from "vuex"
+import TextField from "@/components/TextField/TextField"
 export default {
     props:{
         onnext: Function,
         oncancel: Function,
         signup: Object,
         rules: Object
+    },
+    components: {
+        TextField
     },
     computed: {
         ...mapGetters({
@@ -55,6 +62,7 @@ export default {
             }
             });
         },
+       
     }
 }
 </script>

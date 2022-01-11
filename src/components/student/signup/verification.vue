@@ -5,11 +5,11 @@
                 <h6>Please enter the code we have sent to your email.</h6>
                 <el-form status-icon :model="signup" :rules="rules" ref="ruleForm" :labelPosition="labelPosition" label-width="90px">
                     <el-form-item prop="verificationcode" label="Code" >
-                        <el-input
+                        <TextField
                             placeholder="Enter your code" 
                             v-model="signup.verificationcode"
-                            clearable>
-                        </el-input>
+                            >
+                        </TextField>
                     </el-form-item>
                    <el-form-item class="mt-4">
                         <el-button class="previousbtn verificationbtn" @click="onprevious()">PREVIOUS</el-button> 
@@ -24,6 +24,7 @@
 <style scoped src="@/assets/styles/Student/signup_page.css"> </style>
 
 <script>
+import TextField from "@/components/TextField/TextField"
 export default {
     props:{
         onprevious: Function,
@@ -31,6 +32,9 @@ export default {
         signup: Object,
         rules: Object,
         labelPosition: String
+    },
+    components: {
+        TextField
     },
     methods:{
         onsubmit(ruleForm){
