@@ -57,9 +57,9 @@ export default {
     <div  id="wrapper2" class="wrapper">
       <div
         class="row"
-        id="row2"
+        id="r1c1"
       >
-        <div class="col-lg-7 order-lg-2">
+        <div class="col-lg-6">
           <img
             id="imgWWCD"
             src="../../assets/img/AboutUs/section-what-we-do-v1.png"
@@ -67,7 +67,7 @@ export default {
             
           />
         </div>
-        <div id="r2c2" class="col-lg-5 order-lg-12">
+        <div id="r2c2" class="col-lg-6 order-lg-12">
           <h3>What We Do</h3>
           <p>
             We partner with our clients to solve their toughest business

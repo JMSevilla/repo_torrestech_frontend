@@ -28,10 +28,11 @@ export default {
           token: localStorage.getItem('state'),
           email : localStorage.getItem('ems')
         }).then(() => {
+          console.log(this.identifyscanned)
           if(this.identifyscanned === "home direct") { 
             this.$router.push({name : 'Home'}).catch(() => {})
           } else if(this.identifyscanned === "admin direct") {
-            this.$router.push({name : 'AddNewTraining'}).catch(() => {})
+            this.$router.push({name : 'AdminDashboard'}).catch(() => {})
           } else{
             //student dashboard direct
           }

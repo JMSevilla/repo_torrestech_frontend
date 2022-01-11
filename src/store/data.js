@@ -94,6 +94,13 @@ class __constructor__ {
         const markup = `?email=${email}`
         return markup
     }
+    addaboutus(obj){
+        const data = new FormData()
+        data.append('about_title', obj.title)
+        data.append('about_desc', obj.description)
+        data.append('about_imageurl', obj.aboutimage)
+        return data
+    }
 }
 
 export default new __constructor__();
