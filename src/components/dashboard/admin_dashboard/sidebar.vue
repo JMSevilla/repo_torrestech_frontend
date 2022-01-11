@@ -83,6 +83,7 @@
             <el-menu-item-group title="Platform Settings">
             <el-menu-item index="10-1" @click="onaddapikeys">Add API Keys</el-menu-item>
               <el-menu-item index="10-2" @click="onaddplatform">Add Platform</el-menu-item>
+              <el-menu-item index="10-3" @click="oncontentadding">Content Management</el-menu-item>
             </el-menu-item-group>
          </el-submenu>
         </el-menu>
@@ -144,6 +145,13 @@ export default {
     },
     //AdminDashboard
     methods:{
+        oncontentadding: function() {
+        this.$router.push({name : 'content_ourservices'}).catch(() => {})
+          this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+          this.$store.state.routeSettings.secondaryroutingName = "Content Management"
+          this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+          this.$store.state.routeSettings.routePathSecondary = "content_ourservices"
+        },
         onaddplatform: function(){
           this.$router.push({name : 'addplatform'}).catch(() => {})
           this.$store.state.routeSettings.primaryroutingName = "Dashboard"

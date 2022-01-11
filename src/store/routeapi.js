@@ -77,6 +77,11 @@ const requestSetup = {
         return await new Promise((resolve) => {
             return statemanagement.state.GetNavbarContent(resolve);
         })
+    },
+    async postAbout(obj){
+        return await new Promise((resolve) => {
+            return statemanagement.state.addAboutUs(obj, resolve)
+        })
     }
 }
 

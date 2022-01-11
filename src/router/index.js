@@ -82,8 +82,8 @@ const routes = [
     children: [
       {
         path: '/admindash',
-        name: 'AdminDashboardTab',
-        component: () => import("@/components/dashboard/admin_dashboard/dashboard")
+        name: 'AdminDashboard',
+        component: () => import("@/views/admindash_views/AdminDash_Index")
       },
       {
         path: '/admindash/add-new-training/' + makeid(200),
@@ -144,6 +144,11 @@ const routes = [
         path: '/admindash/settings/platform/add' + makeid(200),
         name: 'addplatform',
         component: () => import("@/views/admindash_views/settings/add_platform")
+      },
+      {
+        path : '/admindash/content/ourservices' + makeid(200),
+        name : 'content_ourservices',
+        component : () => import("@/views/admindash_views/content/content_ourservices")
       }
     ]
    },
