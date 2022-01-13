@@ -26,11 +26,11 @@ p{
 #r1c1{
     padding: 60px 0% 0 0;
 }
-#r1c2{
-   padding: 35px 0 0 5% ;
+#r2c2{
+   margin-left: 0px ;
 }
 #imgCompany{
-    width: 110%;
+    width: 100%;
     height: auto;
     padding: 0 4% 0 2%;
 }

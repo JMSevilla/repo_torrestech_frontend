@@ -9,10 +9,10 @@
                                 
                                 <el-form ref="formName" :model="login" label-width="120px" :labelPosition="labelPosition" :rules="rules">
                                     <el-form-item label="Email or Username" prop="email">
-                                          <TextField  type="email" placeholder="Enter email or username" v-model="login.email" ></TextField>
+                                          <TextField @keyup.enter.native="checkEnter" trigger="1" type="email" placeholder="Enter email or username" v-model="login.email" ></TextField>
                                     </el-form-item>
                                     <el-form-item label="Password" prop="password">
-                                        <TextField  :type="ispassword" placeholder="Enter password" v-model="login.password" ></TextField>
+                                        <TextField @keyup.enter.native="checkEnter" trigger="1" :type="ispassword" placeholder="Enter password" v-model="login.password" ></TextField>
                                         <div v-if="booleanIsPassword">
                                             <el-link style="float: right; margin-top: 5px; margin-bottom: 5px;" type="primary" @click="onshowHide">Show Password</el-link>
                                         </div>
@@ -62,7 +62,9 @@ export default {
          })
    },
    methods:{
-       
+       checkEnter(){
+           this.signIn()
+       },
        forgetPass(){
            this.$router.push({name:"forgetPassword"}).catch(()=> {});
        },
@@ -127,7 +129,7 @@ export default {
                                localStorage.setItem("state", this.tokenGetter)
                                localStorage.setItem("ems", this.login.email)
                                
-                               this.$router.push({name : 'AdminDashboardTab'}).catch(() => {})
+                               this.$router.push({name : 'AdminDashboard'}).catch(() => {})
                                loading.close();
                             })
                       } else if(this.getresponsesignin.status === "no user") { 

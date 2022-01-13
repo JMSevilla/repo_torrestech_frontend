@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="margin-top: 100px" class="container-fluid">
+    <div style="margin-top: 100px; margin-bottom:50px;" class="container-fluid">
       <div class="row">
         <div class="col-sm">
           <el-card shadow="always">

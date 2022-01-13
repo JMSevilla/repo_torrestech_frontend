@@ -49,3 +49,7 @@ export function getfooterprocess(){
 export function getnavbarprocess(){
     return initiateRequest.request.get_Navbar_request();
 }
+
+export function postaboutprocess(obj){
+    return initiateRequest.request.postAbout_request(obj)
+}

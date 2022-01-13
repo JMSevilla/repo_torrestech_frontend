@@ -14,36 +14,36 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <el-form-item label="First Name" prop="firstname">
-                                                    <el-input v-model="ruleForm.firstname" placeholder="Enter first name"></el-input>
+                                                    <TextField type="text" v-model="ruleForm.firstname" placeholder="Enter first name" trigger="1"></TextField>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
                                                 <el-form-item label="Last Name" prop="lastname">
-                                                    <el-input v-model="ruleForm.lastname" placeholder="Enter last name"></el-input>
+                                                    <TextField type="text" v-model="ruleForm.lastname" placeholder="Enter last name" trigger="1"></TextField>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
                                                 <el-form-item label="Choose Platform" prop="platform">
                                                     <el-select v-model="ruleForm.platform" placeholder="Choose platform" style="width: 100%">
-                                                        <el-option label="Torres Technology UAM" value="Torres Technology UAM"></el-option>
-                                                        <el-option label="Torress Technology Employee" value="Torress Technology Employee"></el-option>
-                                                        <el-option label="Both" value="Both"></el-option>
+                                                        <el-option label="Torres Technology UAM" value="1"></el-option>
+                                                        <el-option label="Torress Technology Employee" value="2"></el-option>
+                                                        <el-option label="Both" value="3"></el-option>
                                                     </el-select>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
                                                 <el-form-item label="Email Address" prop="email">
-                                                    <el-input v-model="ruleForm.email" placeholder="Enter email address"></el-input>
+                                                    <TextField type="email" v-model="ruleForm.email" placeholder="Enter email address" trigger="1"></TextField>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
                                                 <el-form-item label="Password" prop="password">
-                                                    <el-input v-model="ruleForm.password" placeholder="Enter password" show-password></el-input>
+                                                    <TextField type="password" v-model="ruleForm.password" placeholder="Enter password" trigger="1"></TextField>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
                                                 <el-form-item label="Confirm Password" prop="confirmpass">
-                                                    <el-input v-model="ruleForm.confirmpass" placeholder="Confirm password" show-password></el-input>
+                                                    <TextField type="password" v-model="ruleForm.confirmpass" placeholder="Confirm password" trigger="1"></TextField>
                                                 </el-form-item>
                                             </div>
                                             <div class="col-md-6">
@@ -72,7 +72,11 @@
 
 <script>
 import { mapGetters } from "vuex"
+import TextField from "@/components/TextField/TextField"
   export default {
+      components: {
+          TextField
+      },
     data() {
           var validatePass = (rule, value, callback) => {
             if (value === '') {
@@ -133,6 +137,9 @@ import { mapGetters } from "vuex"
             insertEmpReg: 'claims_add_employee_response'
         })
     },
+    created(){
+        this.genapikey();
+    },
     methods: {
         genapikey() {
             var d = new Date().getTime();
@@ -173,20 +180,14 @@ import { mapGetters } from "vuex"
                 background: 'rgba(0, 0, 0, 0.7)'
             });
             setTimeout(() => {
-                this.$store.dispatch(`actions_insert_employee_setup`, {object: this.signup}).then(() => {
-                    if(this.insertEmpReg === 'success') {
+                this.$store.dispatch(`actions_insert_employee_setup`, {object: this.ruleForm}).then(() => {
+                    if(this.insertEmpReg.data === 'success add employee') {
                         this.$notify.success({
                             title: 'Success',
                             message: 'Success'
                         })
                         loading.close();
                         this.dialogVisible = false
-                    }
-                    else {
-                        this.$notify.error({
-                            title: 'Error',
-                            message: 'Error'
-                        })
                     }
                 })
             }, 3000);

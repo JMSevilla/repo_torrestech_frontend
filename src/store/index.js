@@ -1,5 +1,7 @@
 import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess, signinprocess, updatetokenprocess,
-  scantokenprocess, addtrainingprocess, addemployeeprocess, setupsessionprocess, getfooterprocess, getnavbarprocess} from './request'
+  scantokenprocess, addtrainingprocess, addemployeeprocess,
+   setupsessionprocess, getfooterprocess, getnavbarprocess,
+   postaboutprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import client from "./auth"
@@ -7,6 +9,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    aboutUsResponse : null,
     dynamicNavbarResponse: [],
     dynamicFooterResponse: [],
     routeSettings: {
@@ -36,6 +39,9 @@ export default new Vuex.Store({
       navbarArray : []
   },
   mutations: {
+    mutate_post_about_us : (state, data) => {
+      return state.aboutUsResponse = data
+    },
     mutate_get_navbar_content : (state, data) => { 
       return state.navbarArray = data
     },
@@ -80,6 +86,9 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    claims_about_post : (state) => {
+      return state.aboutUsResponse
+    },
     claims_navbar_get_content : (state) => {
       return state.navbarArray
     },
@@ -136,6 +145,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    action_post_about_us({commit}, {object}){
+      return new Promise((resolve) => {
+        postaboutprocess(object)
+        .then((data) => {
+          return resolve(commit(`mutate_post_about_us`, data.data))
+        })
+      })
+    },
     async actions_get_nav_content({commit}){
       return await new Promise((resolve) => {
         const request = client.get(`/api/v3/navbar-dynamic/get-content`);
@@ -238,12 +255,22 @@ export default new Vuex.Store({
   },
   actions_insert_employee_setup({commit}, {object}) {
     return new Promise(resolve => {
-      addemployeeprocess(object).then(response => {
-        return resolve(commit(`mutate_employeeadd`, response.data.message))
-     })
+        const data = new FormData();
+        data.append('empfullname', object.firstname + "  " + object.lastname);
+        data.append('empemail', object.email);
+        data.append('emppassword', object.password);
+        data.append('empapiaccesskey', object.apiaccess);
+        data.append('apiaccesskey', object.apikey);
+        data.append('grantAccess', object.platform);
+        const request = client.post(`/api/v2/employee/add-employee`, data)
+        return request.then((res) => {
+          resolve(commit(`mutate_employeeadd`, res))
+        })
     })
   }
   },
   modules: {
   }
 })
+
+

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <HeaderStudents />
+            <!-- <HeaderStudents /> -->
         </div>
         <div class="p-4">
             <ClassCode :tableData="tableData" :btnArchive="btnArchive" />

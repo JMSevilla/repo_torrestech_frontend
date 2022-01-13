@@ -83,7 +83,7 @@ const state = {
     },
     InsertEmployee(obj, resolve){
         try {
-            const rest = http.post(api.EntryPoint(`v2/resources/employee`) + `/add-employee`, constructor.addemployee(obj))
+            const rest = http.post(api.EntryPoint(`v2/employee`) + `/add-employee`, constructor.addemployee(obj))
             response.responseData(rest, resolve)
         } catch (error) {
             alert("Add employee error" + error)
@@ -112,6 +112,14 @@ const state = {
         } catch (error) {
             alert (error)
         }
+    },
+    addAboutUs(object, resolve) {
+        try {
+            const request = http.post(api.EntryPoint(`our-services`) + `/adding-about-us`, constructor.addaboutus(object))
+            response.responseData(request, resolve)
+        } catch (error) {
+            alert(error)
+        }
     }
 }
 
@@ -122,6 +130,9 @@ const response = {
 }
 
 const request = { 
+    async postAbout_request(obj){
+        return await api.requestSetup.postAbout(obj)
+    },
     async check_admin(){
         return await api.requestSetup.admin_data_check()
     },
