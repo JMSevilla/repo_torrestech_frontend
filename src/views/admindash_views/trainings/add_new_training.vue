@@ -1,7 +1,7 @@
 <template>
     <div>
         <div style="background: #fff">
-            <Header />
+            <!-- <Header /> -->
         </div>
         <div class="p-4">
            <Stepper />

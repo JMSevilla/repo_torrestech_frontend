@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <HeaderEmployee />
+            <!-- <HeaderEmployee /> -->
         </div>
         <div class="p-4">
             <AddNewEmployee />

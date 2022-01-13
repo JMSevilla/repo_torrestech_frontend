@@ -80,16 +80,18 @@ class __constructor__ {
         data.append("assignee", obj.assignee)
         return data
     }
-    addemployee(obj){
-        const data = new FormData();
-        data.append('empfullname', obj.firstname + ' ' +obj.lastname);
-        data.append('empemail', obj.email);
-        data.append('emppassword', obj.password);
-        data.append('empapiaccesskey', obj.apiaccess);
-        data.append('apiaccesskey', obj.apikey);
-        data.append('grantAccess', obj.platform);
-        return data;
-    }
+    /* Deprecated Add employee */
+    // addemployee(obj){
+    //     console.log(obj)
+    //     // const data = new FormData();
+    //     // data.append('empfullname', obj.firstname + ' ' +obj.lastname);
+    //     // data.append('empemail', obj.email);
+    //     // data.append('emppassword', obj.password);
+    //     // data.append('empapiaccesskey', obj.apiaccess);
+    //     // data.append('apiaccesskey', obj.apikey);
+    //     // data.append('grantAccess', obj.platform);
+    //     // return data;
+    // }
     setSession(email){
         const markup = `?email=${email}`
         return markup

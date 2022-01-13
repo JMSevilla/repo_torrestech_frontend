@@ -59,6 +59,7 @@
     </div>
 </template>
 
+
 <style scoped>
     svg {
         fill: white;

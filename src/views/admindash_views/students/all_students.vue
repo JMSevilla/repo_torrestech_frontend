@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <HeaderStudents />
+            <!-- <HeaderStudents /> -->
         </div>
         <div class="p-4">
             <AllStudents :btnArchive="btnArchive" :tableData="tableData" :viewStudent="viewStudent" :search="search"/>
