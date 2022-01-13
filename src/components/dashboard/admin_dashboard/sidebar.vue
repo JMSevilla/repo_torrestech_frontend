@@ -21,7 +21,7 @@
             <span style="margin-left: 10px">TRAININGS</span>
             </template>
             <el-menu-item index="2-1" @click="onaddnewtraining()" :class="{ active_1: activeItem === 'addnewtraining' }">Add New Training</el-menu-item>
-            <el-menu-item index="2-2">All Trainings</el-menu-item>
+            <el-menu-item index="2-2" @click="allTrainings()">All Trainings</el-menu-item>
             <el-menu-item index="2-3" @click="ontrainingcategories()" :class="{ active_1: activeItem === 'trainingcateg' }">Manage Categories</el-menu-item>
         </el-submenu>
         <el-submenu index="3" @click.native="activeMenu = 'students'" :class="{ active: activeMenu === 'students' }">
@@ -143,8 +143,21 @@ export default {
             activeMenu: 'dash'
         }
     },
+    beforeCreate(){
+        this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+          this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+        //   this.$store.state.routeSettings.routePathSecondary = ""
+        //   this.$store.state.routeSettings.secondaryroutingName = "Dashboard"
+    },
     //AdminDashboard
     methods:{
+        allTrainings() {
+            this.$router.push({name : 'AllTraining'}).catch(() => {})
+            this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+          this.$store.state.routeSettings.secondaryroutingName = "All Trainings"
+          this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+          this.$store.state.routeSettings.routePathSecondary = "AllTraining"
+        },
         oncontentadding: function() {
         this.$router.push({name : 'content_ourservices'}).catch(() => {})
           this.$store.state.routeSettings.primaryroutingName = "Dashboard"
@@ -167,8 +180,12 @@ export default {
           this.$store.state.routeSettings.routePathSecondary = "PlatformSettings"
         },
         ondashboardMenu() {
-            this.$router.push({ name: 'AdminDashboardTab' }).catch(() => {})
+            this.$router.push({ name: 'AdminDashboard' }).catch(() => {})
             this.activeMenu != 'dash' ? this.activeMenu = 'dash' : ''
+            this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.secondaryroutingName = ""
+          this.$store.state.routeSettings.routePathSecondary = ""
         },
         ontrainingcategories(){
             this.activeItem = 'trainingcateg'
@@ -177,26 +194,50 @@ export default {
         onaddnewtraining(){
             this.activeItem = 'addnewtraining'
             this.$router.push({name: "AddNewTraining"}).catch(()=>{})
+            this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.secondaryroutingName = "Add New Training"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.routePathSecondary = "AddNewTraining"
         },
         onaddnewemployee(){
             this.activeItem = 'addnewemployee'
             this.$router.push({name: "AddNewEmployee"}).catch(()=>{})
+             this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.secondaryroutingName = "Add New Employee"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.routePathSecondary = "AddNewEmployee"
         },
         onallemployee(){
             this.activeItem = 'allemployee'
             this.$router.push({name: "AllEmployee"}).catch(()=>{})
+            this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.secondaryroutingName = "All Employee"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.routePathSecondary = "AllEmployee"
         },
         onallstudents(){
             this.activeItem = 'allstudents'
             this.$router.push({ name: 'AllStudents' }).catch(()=>{});
+            this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.secondaryroutingName = "All Students"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.routePathSecondary = "AllStudents"
         },
         onMessage(){
             this.activeItem = 'message'
             this.$router.push({ name: 'Message' }).catch(()=>{})
+            this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.secondaryroutingName = "Student Message"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.routePathSecondary = "Message"
         },
         onclasscode(){
             this.activeItem = 'classcode'
             this.$router.push({ name: 'ClassCode' }).catch(()=>{})
+             this.$store.state.routeSettings.primaryroutingName = "Dashboard"
+            this.$store.state.routeSettings.secondaryroutingName = "Student Class Code"
+            this.$store.state.routeSettings.routePathPrimary = "AdminDashboard"
+            this.$store.state.routeSettings.routePathSecondary = "ClassCode"
         },
         icon_close(){
             document.getElementById('showSidebar').style.display = 'none'

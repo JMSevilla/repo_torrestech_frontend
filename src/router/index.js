@@ -149,6 +149,11 @@ const routes = [
         path : '/admindash/content/ourservices' + makeid(200),
         name : 'content_ourservices',
         component : () => import("@/views/admindash_views/content/content_ourservices")
+      },
+      {
+        path: '/admindash/all-training/' + makeid(200),
+        name : 'AllTraining',
+        component : () => import("@/views/admindash_views/trainings/all_trainings")
       }
     ]
    },

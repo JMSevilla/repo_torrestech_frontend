@@ -255,12 +255,22 @@ export default new Vuex.Store({
   },
   actions_insert_employee_setup({commit}, {object}) {
     return new Promise(resolve => {
-      addemployeeprocess(object).then(response => {
-        return resolve(commit(`mutate_employeeadd`, response.data.message))
-     })
+        const data = new FormData();
+        data.append('empfullname', object.firstname + "  " + object.lastname);
+        data.append('empemail', object.email);
+        data.append('emppassword', object.password);
+        data.append('empapiaccesskey', object.apiaccess);
+        data.append('apiaccesskey', object.apikey);
+        data.append('grantAccess', object.platform);
+        const request = client.post(`/api/v2/employee/add-employee`, data)
+        return request.then((res) => {
+          resolve(commit(`mutate_employeeadd`, res))
+        })
     })
   }
   },
   modules: {
   }
 })
+
+
