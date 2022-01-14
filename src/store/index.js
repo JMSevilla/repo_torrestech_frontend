@@ -1,7 +1,7 @@
 import {checkadminprocess, adminprocess, classcodescannerprocess, registrationstudentprocess, reportabugprocess, signinprocess, updatetokenprocess,
   scantokenprocess, addtrainingprocess, addemployeeprocess,
    setupsessionprocess, getfooterprocess, getnavbarprocess,
-   postaboutprocess} from './request'
+   postaboutprocess, gettrainingprocess} from './request'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import client from "./auth"
@@ -12,6 +12,7 @@ export default new Vuex.Store({
     aboutUsResponse : null,
     dynamicNavbarResponse: [],
     dynamicFooterResponse: [],
+    allTrainingsResponse : [],
     routeSettings: {
       primaryroutingName : "",
       secondaryroutingName: "",
@@ -83,9 +84,15 @@ export default new Vuex.Store({
     },
     mutate_navbar_content : (state, data) => {
       return state.dynamicNavbarResponse = data
+    },
+    List_Of_Trainings : (state, payload) => {
+      return state.allTrainingsResponse = payload
     }
   },
   getters: {
+    claims_response_all_trainings : (state) => {
+      return state.allTrainingsResponse
+    },
     claims_about_post : (state) => {
       return state.aboutUsResponse
     },
@@ -145,6 +152,13 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    getTraining(){
+      return new Promise((resolve) => {
+        gettrainingprocess().then(res => {
+          return resolve(res)
+        })
+      })
+    },
     action_post_about_us({commit}, {object}){
       return new Promise((resolve) => {
         postaboutprocess(object)

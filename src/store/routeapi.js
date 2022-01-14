@@ -82,6 +82,11 @@ const requestSetup = {
         return await new Promise((resolve) => {
             return statemanagement.state.addAboutUs(obj, resolve)
         })
+    },
+    async gettraining(){
+        return await new Promise((resolve) => {
+            return statemanagement.state.getAllTrainings(resolve)
+        })
     }
 }
 

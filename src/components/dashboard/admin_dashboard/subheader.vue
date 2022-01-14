@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-5 p-3">
           <el-breadcrumb separator="/">
-            <el-breadcrumb-item to="">{{routename}}</el-breadcrumb-item>
+            <el-breadcrumb-item>{{routename}}</el-breadcrumb-item>
             <el-breadcrumb-item :to="{name: `${secondaryPath}`}">{{ secondaryRoute }}</el-breadcrumb-item>
           </el-breadcrumb>
         </div>

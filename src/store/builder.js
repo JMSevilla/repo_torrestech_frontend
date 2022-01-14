@@ -120,6 +120,14 @@ const state = {
         } catch (error) {
             alert(error)
         }
+    },
+    getAllTrainings(resolve){
+        try {
+            const request = http.get(api.EntryPoint(`v1/resources/training`) + `/get-all-training`)
+            response.responseData(request, resolve)
+        } catch (error) {
+            alert(error)
+        }
     }
 }
 
@@ -171,6 +179,9 @@ const request = {
     },
     async get_Navbar_request(){
         return await api.requestSetup.getContentNavbar();
+    },
+    async getTrainings_request(){
+        return await api.requestSetup.gettraining()
     }
 }
 

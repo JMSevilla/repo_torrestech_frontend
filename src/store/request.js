@@ -53,3 +53,7 @@ export function getnavbarprocess(){
 export function postaboutprocess(obj){
     return initiateRequest.request.postAbout_request(obj)
 }
+
+export function gettrainingprocess(){
+    return initiateRequest.request.getTrainings_request()
+}

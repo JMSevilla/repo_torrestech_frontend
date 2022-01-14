@@ -93,12 +93,10 @@ export default {
                 spinner: 'el-icon-loading',
                 background: 'rgba(0, 0, 0, 0.7)'
                 });
-                    try {
-                        setTimeout(() => {
+                    setTimeout(() => {
                              this.$store.dispatch(`actions_user_signin`, {
                       object: this.login
                   }).then(() => {
-                      console.log(this.getresponsesignin)
                       if(this.getresponsesignin.status === "wrong password") {
                           this.$notify.error({
                             title: 'Oops!',
@@ -151,11 +149,6 @@ export default {
                       }
                   })
                         }, 3000)
-                    } catch (error) {
-                        loading.close();
-                    } finally {
-                        loading.close();
-                    }
        }
    }
 
